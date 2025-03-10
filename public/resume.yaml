@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=resume-schema.json
+basics:
+  name: James Peter Mitchell
+  label: Software Developer, System Administrator, Technician
+  email: mail@jpmitchell.ca
+  phone: "+ 1 226 973 5817"
+  url: https://jpmitchell.ca
+  location: 
+    address: "12 Forest Park Drive"
+    postalCode: "N0A 1S0"
+    city: "Townsend"
+    countryCode: "CA"
+    region: "Ontario"
+  summary: |
+    I am a Developer & IT Specialist. 
+    I have a life-long passion for computing and information technology.
+    My education is in Software Development.
+    I have experience in System Administration, and other IT services. 
+
+work:
+  - name: ISN Computer Solutions 
+    position: System Technician, Administrator
+    startDate: "2024-03-01"
+    summary: "" 
+    highlights:
+      - "Provide a broad range of PC repair and troubleshooting services in a customer-facing role"
+      - "Deploying and troubleshooting common PC software: Windows, Office, etc..."
+      - "Effective communication with customers, with a focus on their satisfaction"
+    
+
+  - name: Unilever Canada
+    position: General Labour 
+    startDate: "2016-02-01"
+    endDate: "2021-02-01"
+    summary: "" 
+    highlights: 
+      - "Work independently in a fast paced environment, managing supplies on production lines"
+      - "Managed supplies / materials using an SAP software system"
+
+education:
+  - institution: Fanshawe College, London ON
+    area: Computer Programmer Analyst
+    studyType: OCAD
+    startDate: "2012-09-01"
+    endDate: "2015-12-01"
+    courses: ["OOP with C++", "Mobile Development", "Client/Server Application Development"]
+    
+  - institution: Holy Trinity Catholic High School
+    area: Ontario Secondary School Diploma
+    studyType: OSSD
+    startDate: "2005-09-01"
+    endDate: "2009-06-01"
+
+
+
+awards:
+  - title: Tycho Station handball champion
+    date: "2023-06-01"
+    
+skills:
+  - name: C/C++ Programming
+    keywords: []
+  - name: Web Development 
+    keywords: []
+  - name: System Administration
+    keywords: []
+  - name: IT Support & Repair 
+    keywords: []
+
+projects:
+  - name: Homescreen Notes
+    description: Android Notes App 

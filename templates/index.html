@@ -1,0 +1,202 @@
+{% set resume = load_data(path=config.extra.resume_data) %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ resume.basics.name }} | Developer & IT Specialist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- <button class="theme-toggle" id="themeToggle">☀️</button> -->
+            <div class="header-content">
+                <div class="header-img">
+                    <img src="edited-500px.jpg">
+                </div>
+
+                <div class="header-text">
+                    <h1 class="name">{{ resume.basics.name }}</h1>
+                    <p class="title">Developer & IT Specialist</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <a href="mailto:mail@jpmitchell.ca">mail@jpmitchell.ca</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <a href="tel:+12269735817">+1-226-973-5817</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>🌎</span>
+                            <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    {{ resume.basics.summary }}
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skill-list">
+                    <div class="skill-list">
+                        {% for skill in resume.skills %}
+                            <div class="skill-item">{{ skill.name }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">Computer Programmer Analyst Diploma</div>
+                        <div class="item-date">Sep. 2012 – Dec. 2015</div>
+                    </div>
+                    <div class="item-subtitle">Fanshawe College, London ON</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Received in-depth training in areas of commercial and corporate software development.</li>
+                            <li>Named to the Dean's Honour Roll with a GPA of 4.09</li>
+                            <li>Courses included: OOP with C++, Mobile Development, Client/Server Application Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">Ontario Secondary School Diploma (O.S.S.D.)</div>
+                        <div class="item-date">Jun. 2010</div>
+                    </div>
+                    <div class="item-subtitle">Holy Trinity Catholic High School, Simcoe ON</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Awarded as an Ontario Scholar for achieving a grade average above eighty percent in top six classes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">Cisco IT Essentials Certification</div>
+                        <div class="item-date">Jun. 2010</div>
+                    </div>
+                    <div class="item-subtitle">Holy Trinity Catholic High School, Simcoe ON</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Provided entry-level knowledge of PC technology, networking, and security</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div class="item-title">IT Services</div>
+                        <div class="item-date">Mar. 2024 – Mar. 2025</div>
+                    </div>
+                    <div class="item-subtitle">ISN Computer Solutions, Garnet ON</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Provide a broad range of PC repair and troubleshooting services in a customer-facing role</li>
+                            <li>Deploying and troubleshooting common PC software: Windows, Office, etc...</li>
+                            <li>Effective communication with customers, with a focus on sales and satisfaction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div class="item-title">General Labour</div>
+                        <div class="item-date">Feb. 2016 – Feb. 2021</div>
+                    </div>
+                    <div class="item-subtitle">Good Humor-Breyers, Simcoe ON</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Work independently in a fast paced environment, managing supplies on production lines</li>
+                            <li>Managed supplies/materials using an SAP software system</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- <section class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-img">📱</div>
+                        <div class="project-content">
+                            <div class="project-title">Homescreen Notes</div>
+                            <div class="project-description">
+                                A widget-based android app for writing notes directly to the homescreen.
+                            </div>
+                            <div class="project-tech">
+                                Android Studio/SDK, Joda-Time, Apache Commons, EventBus
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-img">💻</div>
+                        <div class="project-content">
+                            <div class="project-title">More Projects</div>
+                            <div class="project-description">
+                                Check out my GitHub repository for more projects and code samples.
+                            </div>
+                            <div class="project-tech">
+                                <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ now() | date(format="%Y") }} {{ resume.basics.name }}. All rights reserved. </p>
+            <p>Site Build Date: {{ now() | date(format="%B %d, %Y") }}</p>
+            <p>🇨🇦 🇩🇪 🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeToggle.textContent = '🌙';
+        }
+        
+        // Theme toggle functionality
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '🌙';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '☀️';
+            }
+        });
+    </script>
+</body>
+</html>
