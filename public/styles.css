@@ -194,6 +194,13 @@ header {
     padding: 0.3rem 0.8rem;
     border-radius: 5px;
     font-size: 0.9rem;
+    position: relative;
+    cursor: help;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
 }
 
 .project-list {

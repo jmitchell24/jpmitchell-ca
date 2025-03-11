@@ -224,7 +224,7 @@
               "type": "string",
               "description": "grade point average, e.g. 3.67/4.0"
             },
-            "courses": {
+            "highlights": {
               "type": "array",
               "description": "List notable courses/subjects",
               "additionalItems": false,

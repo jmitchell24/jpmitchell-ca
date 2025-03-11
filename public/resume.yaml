@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=resume-schema.json
 basics:
   name: James Peter Mitchell
-  label: Software Developer, System Administrator, Technician
+  label: Developer & IT Specialist
   email: mail@jpmitchell.ca
-  phone: "+ 1 226 973 5817"
+  phone: "+12269735817"
   url: https://jpmitchell.ca
   location: 
     address: "12 Forest Park Drive"
@@ -18,14 +18,15 @@ basics:
     I have experience in System Administration, and other IT services. 
 
 work:
-  - name: ISN Computer Solutions 
-    position: System Technician, Administrator
+  - name: Websecure Technologies Inc.  
+    position: IT Specialist
     startDate: "2024-03-01"
+    endDate: "2025-03-01"
     summary: "" 
     highlights:
-      - "Provide a broad range of PC repair and troubleshooting services in a customer-facing role"
-      - "Deploying and troubleshooting common PC software: Windows, Office, etc..."
-      - "Effective communication with customers, with a focus on their satisfaction"
+      - "Performed expert-level PC troubleshooting and repairs in a retail service environment."
+      - "Implemented and troubleshot common enterprise software, focusing on Microsoft Windows and Office environments."
+      - "Built positive customer relationships through effective communication and service delivery."
     
 
   - name: Unilever Canada
@@ -34,8 +35,8 @@ work:
     endDate: "2021-02-01"
     summary: "" 
     highlights: 
-      - "Work independently in a fast paced environment, managing supplies on production lines"
-      - "Managed supplies / materials using an SAP software system"
+      - "Maintained efficient production workflow through independent supply management in a fast-paced manufacturing setting."
+      - "Managed material resources and inventory tracking using SAP ERP software."
 
 education:
   - institution: Fanshawe College, London ON
@@ -43,29 +44,36 @@ education:
     studyType: OCAD
     startDate: "2012-09-01"
     endDate: "2015-12-01"
-    courses: ["OOP with C++", "Mobile Development", "Client/Server Application Development"]
+    highlights:
+      - "Received in-depth training in areas of commercial and corporate software development."
+      - "Named to the Dean's Honour Roll with a GPA of 4.09."
+      - "Courses included: OOP with C++, Mobile Development, Client/Server Application Development."
     
   - institution: Holy Trinity Catholic High School
     area: Ontario Secondary School Diploma
     studyType: OSSD
-    startDate: "2005-09-01"
-    endDate: "2009-06-01"
-
-
-
-awards:
-  - title: Tycho Station handball champion
-    date: "2023-06-01"
+    endDate: "2010-06-01"
+    highlights:
+      - "Awarded as an Ontario Scholar for achieving a grade average above eighty percent in top six classes."
     
+  - institution: Holy Trinity Catholic High School
+    area: Cisco IT Essentials 
+    studyType: Certification
+    endDate: "2010-06-01"
+    highlights:
+      - "Provided entry-level knowledge of PC technology, networking, and security."
+
 skills:
-  - name: C/C++ Programming
-    keywords: []
-  - name: Web Development 
-    keywords: []
+  - name: Software Development
+    keywords: ["C++", "Mobile Development", "Client/Server Applications"]
+  - name: IT Support & Troubleshooting
+    keywords: ["PC Repairs", "Hardware", "Microsoft Windows", "Microsoft Office"]
   - name: System Administration
-    keywords: []
-  - name: IT Support & Repair 
-    keywords: []
+    keywords: ["Network Security", "Enterprise Software"]
+  - name: Enterprise Software
+    keywords: ["SAP ERP"]
+  - name: Customer Service
+    keywords: ["Technical Support", "Communication", "Service Delivery"]
 
 projects:
   - name: Homescreen Notes

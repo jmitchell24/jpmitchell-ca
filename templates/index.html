@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ resume.basics.name }} | Developer & IT Specialist</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.32/dist/codicon.css">
+
 </head>
 <body>
     <header>
@@ -20,18 +22,18 @@
 
                 <div class="header-text">
                     <h1 class="name">{{ resume.basics.name }}</h1>
-                    <p class="title">Developer & IT Specialist</p>
+                    <p class="title">{{ resume.basics.label }}</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <span>📧</span>
-                            <a href="mailto:mail@jpmitchell.ca">mail@jpmitchell.ca</a>
+                            <span class="codicon codicon-mail"></span>
+                            <a href="mailto:{{ resume.basics.email }}">{{ resume.basics.email }}</a>
                         </div>
                         <div class="contact-item">
-                            <span>📱</span>
-                            <a href="tel:+12269735817">+1-226-973-5817</a>
+                            <span class="codicon codicon-device-mobile"></span>
+                            <a href="tel:{{ resume.basics.phone }}">{{ resume.basics.phone }}</a>
                         </div>
                         <div class="contact-item">
-                            <span>🌎</span>
+                            <span class="codicon codicon-github"></span>
                             <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
                         </div>
                     </div>
@@ -44,97 +46,95 @@
     <main class="main-content">
         <div class="container">
             <section class="section">
-                <h2 class="section-title">About Me</h2>
-                <p>
-                    {{ resume.basics.summary }}
-                </p>
+                <h2 class="section-title">
+                    <span class="codicon codicon-person"></span>
+                    About Me
+                </h2>
+                <p> {{ resume.basics.summary }} </p>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title">
+                    <span class="codicon codicon-tools"></span>
+                    Skills
+                </h2>
                 <div class="skill-list">
                     <div class="skill-list">
                         {% for skill in resume.skills %}
-                            <div class="skill-item">{{ skill.name }}</div>
+                            <div class="skill-item" title="{{ skill.keywords | join(sep=', ') }}">{{ skill.name }}</div>
                         {% endfor %}
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title">
+                    <span class="codicon codicon-book"></span>
+                    Education
+                </h2>
+
+                {% for edu in resume.education %}
                 <div class="education-item">
                     <div class="item-header">
-                        <div class="item-title">Computer Programmer Analyst Diploma</div>
-                        <div class="item-date">Sep. 2012 – Dec. 2015</div>
+                        <div class="item-title">{{ edu.area }} ({{ edu.studyType }})</div>
+                        {% if edu.startDate and edu.endDate %}
+                        <div class="item-date">
+                            {{ edu.startDate | date(format="%b. %Y") }} – {{ edu.endDate | date(format="%b. %Y") }}
+                        </div>
+                        {% elif edu.endDate %}
+                        <div class="item-date">
+                            {{ edu.endDate | date(format="%b. %Y") }}
+                        </div>
+                        {% endif %}
                     </div>
-                    <div class="item-subtitle">Fanshawe College, London ON</div>
+                    <div class="item-subtitle">{{ edu.institution }}</div>
+
+                    {% if edu.highlights %}
                     <div class="item-description">
                         <ul>
-                            <li>Received in-depth training in areas of commercial and corporate software development.</li>
-                            <li>Named to the Dean's Honour Roll with a GPA of 4.09</li>
-                            <li>Courses included: OOP with C++, Mobile Development, Client/Server Application Development</li>
+                            {% for highlight in edu.highlights %}
+                                <li>{{ highlight }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
+                    {% endif %}
                 </div>
-                <div class="education-item">
-                    <div class="item-header">
-                        <div class="item-title">Ontario Secondary School Diploma (O.S.S.D.)</div>
-                        <div class="item-date">Jun. 2010</div>
-                    </div>
-                    <div class="item-subtitle">Holy Trinity Catholic High School, Simcoe ON</div>
-                    <div class="item-description">
-                        <ul>
-                            <li>Awarded as an Ontario Scholar for achieving a grade average above eighty percent in top six classes</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="item-header">
-                        <div class="item-title">Cisco IT Essentials Certification</div>
-                        <div class="item-date">Jun. 2010</div>
-                    </div>
-                    <div class="item-subtitle">Holy Trinity Catholic High School, Simcoe ON</div>
-                    <div class="item-description">
-                        <ul>
-                            <li>Provided entry-level knowledge of PC technology, networking, and security</li>
-                        </ul>
-                    </div>
-                </div>
+                {% endfor %}
             </section>
 
             <section class="section">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title">
+                    <span class="codicon codicon-briefcase"></span>
+                    Experience
+                </h2>
+
+                {% for work in resume.work %}
                 <div class="experience-item">
                     <div class="item-header">
-                        <div class="item-title">IT Services</div>
-                        <div class="item-date">Mar. 2024 – Mar. 2025</div>
+                        <div class="item-title">{{ work.position }}</div>
+                        {% if work.startDate and work.endDate %}
+                        <div class="item-date">
+                            {{ work.startDate | date(format="%b. %Y") }} – {{ work.endDate | date(format="%b. %Y") }}
+                        </div>
+                        {% elif work.endDate %}
+                        <div class="item-date">
+                            {{ work.endDate | date(format="%b. %Y") }}
+                        </div>
+                        {% endif %}
                     </div>
-                    <div class="item-subtitle">ISN Computer Solutions, Garnet ON</div>
+                    <div class="item-subtitle">{{ work.name }}</div>
+                    {% if work.highlights %}
                     <div class="item-description">
                         <ul>
-                            <li>Provide a broad range of PC repair and troubleshooting services in a customer-facing role</li>
-                            <li>Deploying and troubleshooting common PC software: Windows, Office, etc...</li>
-                            <li>Effective communication with customers, with a focus on sales and satisfaction</li>
+                            {% for highlight in work.highlights %}
+                                <li>{{ highlight }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
+                    {% endif %}
                 </div>
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div class="item-title">General Labour</div>
-                        <div class="item-date">Feb. 2016 – Feb. 2021</div>
-                    </div>
-                    <div class="item-subtitle">Good Humor-Breyers, Simcoe ON</div>
-                    <div class="item-description">
-                        <ul>
-                            <li>Work independently in a fast paced environment, managing supplies on production lines</li>
-                            <li>Managed supplies/materials using an SAP software system</li>
-                        </ul>
-                    </div>
-                </div>
+                {% endfor %}
             </section>
-
-
 
             <!-- <section class="section">
                 <h2 class="section-title">Projects</h2>
