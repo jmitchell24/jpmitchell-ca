@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ resume.basics.name }} | Developer & IT Specialist</title>
+    <title>{{ resume.basics.name }} | {{ resume.basics.label }}</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.32/dist/codicon.css">
 
@@ -17,7 +17,7 @@
             <!-- <button class="theme-toggle" id="themeToggle">☀️</button> -->
             <div class="header-content">
                 <div class="header-img">
-                    <img src="edited-500px.jpg">
+                    <img src="{{resume.basics.image}}">
                 </div>
 
                 <div class="header-text">
@@ -137,12 +137,15 @@
             </section>
 
             <!-- <section class="section">
-                <h2 class="section-title">Projects</h2>
+                <h2 class="section-title">
+                    <span class="codicon codicon-code"></span>
+                    Projects
+                </h2>
                 <div class="project-list">
                     <div class="project-item">
                         <div class="project-img">📱</div>
                         <div class="project-content">
-                            <div class="project-title">Homescreen Notes</div>
+                            <div class="project-title">Gwent Clone Exercise</div>
                             <div class="project-description">
                                 A widget-based android app for writing notes directly to the homescreen.
                             </div>

@@ -5,6 +5,7 @@ basics:
   email: mail@jpmitchell.ca
   phone: "+12269735817"
   url: https://jpmitchell.ca
+  image: https://jpmitchell.ca/portrait.jpg
   location: 
     address: "12 Forest Park Drive"
     postalCode: "N0A 1S0"
@@ -78,3 +79,8 @@ skills:
 projects:
   - name: Homescreen Notes
     description: Android Notes App 
+    url: https://github.com/jmitchell24/homescreen-notes
+  
+  - name: Gwent Clone Exercise
+    description: An attempt to clone the Gwent mini-game from Witcher 3. 
+    url: https://github.com/jmitchell24/gwent-clone-exercise
