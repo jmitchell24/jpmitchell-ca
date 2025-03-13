@@ -1,5 +1,8 @@
 # yaml-language-server: $schema=resume-schema.json
-basics:
+
+# gitignore test (remove this)
+
+basics: 
   name: James Peter Mitchell
   label: Developer & IT Specialist
   email: mail@jpmitchell.ca
