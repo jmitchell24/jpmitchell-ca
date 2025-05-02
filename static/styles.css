@@ -8,6 +8,8 @@
     --light-bg: #bfbfbf;
     --card-bg: #e4e4e4;
     --border-color: #c5c5c5;
+    --transition-speed: 0.3s;
+    --border-radius: 0.5rem;
 }
 
 .dark-theme {
@@ -26,65 +28,124 @@
     box-sizing: border-box;
     font-family: "Montserrat", Tahoma, Geneva, sans-serif;
     font-weight: 300;
+
+    transition: all var(--transition-speed) ease;
 }
 
 body {
-    background-color: var(--light-bg);
+    background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
-    transition: all 0.3s ease;
-}
+    
 
-.no-screen {
-    display:none !important;
-}
-
-.no-print {
-    display:block !important;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-rows: 60px 1fr auto;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+    overflow: hidden;
 }
 
 header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: white;
+    align-content: center;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: var(--primary-color);
+    color: white;
+    padding-top: 0;
+    margin-left: 1rem;
+    overflow-y: auto;
+
+}
+
+main {
+    border-radius: var(--border-radius);
+    
+    grid-area: main;
+    padding: 1rem;
+    margin: 0 1rem;
+    
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+article { 
+    min-width: 480px;
+}
+
+footer {
+    grid-area: footer;
     background-color: var(--primary-color);
     color: white;
     padding: 1rem;
-    position: relative;
+    text-align: center;
 }
 
-.theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.header-content {
+/* Navigation Styles */
+nav {
+    background-color: var(--primary-color);
+    color: var(--light-color);
     display: flex;
-    flex-direction: row;
     align-items: center;
-    text-align: left;
     gap: 1rem;
+    padding: 0 1rem;
 }
 
-.header-text {
+
+
+button { 
+    background:none;
+    border:none;
+    cursor:pointer;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    display: block;
+    
+    text-align: center;
+    line-height: 50%;
+}
+
+.nav-title {
+    font-size: 2rem;
+}
+
+
+  
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+  
+.nav-links li {
+    margin-left: 1.5rem;
+}
+  
+.nav-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+  
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.aside-text {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
 }
 
-.header-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 0.25rem;
+.aside-portrait {
+    border-radius: var(--border-radius);
     background-color: var(--secondary-color);
     display: flex;
     align-items: center;
@@ -95,7 +156,7 @@ header {
     flex-shrink: 0;
 }
 
-.header-img img {
+.aside-portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -131,6 +192,57 @@ header {
 .contact-item a:hover {
     text-decoration: underline;
 }
+
+.mobile-only { 
+    height: 0;
+    opacity: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.mobile-portrait {
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 60px;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 180px;
+    border: 1px solid var(--border-color);
+    padding:.25rem;
+}
+
+.mobile-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mobile-contact-info {
+    display: column;
+    justify-content: left;
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.mobile-contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+
 
 .main-content {
     padding: 1rem;
@@ -261,51 +373,3 @@ header {
     color: var(--accent-color);
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-}
-
-footer a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header-text {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        align-items: center;
-    }
-
-    .name {
-        font-size: 2rem;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .item-header {
-        flex-direction: column;
-        gap: 0.2rem;
-    }
-
-    .project-list {
-        grid-template-columns: 1fr;
-    }
-}

@@ -1,6 +1,5 @@
 {% set resume = load_data(path=config.extra.resume_data) %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,60 +7,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ resume.basics.name }} | {{ resume.basics.label }}</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="print.css" media="print">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.32/dist/codicon.css"> -->
+    <link rel="stylesheet" href="styles-mobile.css">
 
 </head>
 <body>
-    <header>
-        <div class="container">
-            <!-- <button class="theme-toggle" id="themeToggle">☀️</button> -->
-            <div class="header-content">
-                <div class="header-img">
-                    <img src="{{resume.basics.image}}">
-                </div>
-
-                <div class="header-text">
-                    <h1 class="name">{{ resume.basics.name }}</h1>
-                    <p class="title">{{ resume.basics.label }}</p>
-                    <div class="contact-info">
-                        <div class="contact-item no-screen">
-                            <span class="codicon codicon-globe"></span>
-                            <a href="{{ resume.basics.url }}" target="_blank">{{ resume.basics.url }}</a>
-                        </div>
-                        <div class="contact-item">
-                            <ion-icon name="mail-outline"></ion-icon>
-                            <a href="mailto:{{ resume.basics.email }}">{{ resume.basics.email }}</a>
-                        </div>
-                        <div class="contact-item">
-                            <ion-icon name="logo-github"></ion-icon>
-                            <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <ion-icon name="logo-twitter"></ion-icon>
-                            <a href="https://x.com/jpmitchell_ca" target="_blank">x.com/jpmitchell_ca</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <ion-icon name="logo-stackoverflow"></ion-icon>
-                            <a href="https://stackoverflow.com/users/1103084" target="_blank">stackoverflow.com</a>
-                        </div>
-
-                    </div>
-                </div>
-
+    <header> 
+        <nav>
+            <div class="nav-buttons-desktop">
+                <button class="nav-button-right" id="nav-button-right" style="display: none;">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>   
+                </button>
+    
+                <button class="nav-button-left" id="nav-button-left"> 
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
             </div>
-        </div>
+            
+            <div class="nav-buttons-mobile" style="display: none;">
+                <button> 
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </button>
+            </div>
+            
+
+            <div class="nav-title">{{ resume.basics.name }}</div>
+
+            <!-- <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Blog</a></li>
+                <li><a href="#services">Projects</a></li>
+                <li><a href="#portfolio">About</a></li>
+                
+            </ul> -->
+        </nav>
     </header>
 
-    <main class="main-content">
-        <div class="container">
-            <section class="section no-print">
+    <aside class="aside-collapse" id="aside-collapse">
+        <div class="aside-portrait">
+            <img src="{{resume.basics.image}}">
+        </div>
+
+        <div class="aside-text">
+            <p class="title">{{ resume.basics.label }}</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:{{ resume.basics.email }}">{{ resume.basics.email }}</a>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="logo-github"></ion-icon>
+                    <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
+                </div>
+
+                <div class="contact-item">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <a href="https://x.com/jpmitchell_ca" target="_blank">x.com/jpmitchell_ca</a>
+                </div>
+
+                <div class="contact-item">
+                    <ion-icon name="logo-stackoverflow"></ion-icon>
+                    <a href="https://stackoverflow.com/users/1103084" target="_blank">stackoverflow.com</a>
+                </div>
+            </div>
+
+            <p>🇨🇦 🇩🇪 🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
+            <p>Site Build Date: {{ now() | date(format="%B %d, %Y") }}</p>
+
+        </div>
+    </aside>
+
+    <main> 
+        <article>
+            <section class="section">
                 <h2 class="section-title">
                     <ion-icon name="person-outline"></ion-icon>
                     About Me
                 </h2>
+
+                <div class="mobile-only">
+
+                    <div class="mobile-portrait">
+                        <img src="{{resume.basics.image}}">
+                    </div>
+
+                    <div class="mobile-contact-info">
+                        <div class="mobile-contact-item">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <a href="mailto:{{ resume.basics.email }}">{{ resume.basics.email }}</a>
+                        </div>
+                        <div class="mobile-contact-item">
+                            <ion-icon name="logo-github"></ion-icon>
+                            <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
+                        </div>
+        
+                        <div class="mobile-contact-item">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                            <a href="https://x.com/jpmitchell_ca" target="_blank">x.com/jpmitchell_ca</a>
+                        </div>
+        
+                        <div class="mobile-contact-item">
+                            <ion-icon name="logo-stackoverflow"></ion-icon>
+                            <a href="https://stackoverflow.com/users/1103084" target="_blank">stackoverflow.com</a>
+                        </div>
+                    
+                        <p>🇨🇦 🇩🇪 🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
+                        <p>Site Build Date: {{ now() | date(format="%B %d, %Y") }}</p>
+                    </div>
+
+                    
+                </div>
+
                 <p> {{ resume.basics.summary }} </p>
             </section>
 
@@ -147,74 +202,115 @@
                 </div>
                 {% endfor %}
             </section>
-
-            <!-- <section class="section">
-                <h2 class="section-title">
-                    <span class="codicon codicon-code"></span>
-                    Projects
-                </h2>
-                <div class="project-list">
-                    <div class="project-item">
-                        <div class="project-img">📱</div>
-                        <div class="project-content">
-                            <div class="project-title">Gwent Clone Exercise</div>
-                            <div class="project-description">
-                                A widget-based android app for writing notes directly to the homescreen.
-                            </div>
-                            <div class="project-tech">
-                                Android Studio/SDK, Joda-Time, Apache Commons, EventBus
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-img">💻</div>
-                        <div class="project-content">
-                            <div class="project-title">More Projects</div>
-                            <div class="project-description">
-                                Check out my GitHub repository for more projects and code samples.
-                            </div>
-                            <div class="project-tech">
-                                <a href="https://github.com/jmitchell24" target="_blank">github.com/jmitchell24</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-        </div>
+        </article>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; {{ now() | date(format="%Y") }} {{ resume.basics.name }}. All rights reserved. </p>
-            <p>Site Build Date: {{ now() | date(format="%B %d, %Y") }}</p>
-            <p>🇨🇦 🇩🇪 🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
-        </div>
+        <p>&copy; {{ now() | date(format="%Y") }} {{ resume.basics.name }}. All rights reserved. </p>
+        
     </footer>
 
 
+    <script>
+        var userWantsAside = true; 
 
-    <!-- <script>
-        const themeToggle = document.getElementById('themeToggle');
-        
-        // Check for saved theme preference
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-theme');
-            themeToggle.textContent = '🌙';
-        }
-        
-        // Theme toggle functionality
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
+        const mq = window.matchMedia("(max-width: 768px)"); 
+
+        const navButtonLeft     = document.getElementById("nav-button-left"); 
+        const navButtonRight    = document.getElementById("nav-button-right");
+
+        const body  = document.getElementsByTagName("body")[0]; 
+        const aside = document.getElementsByTagName("aside")[0]; 
+        const main  = document.getElementsByTagName("main")[0]; 
+
+        const isMobile = window.innerWidth < 768;
+
+        // Desktop aside toggle 
+        const doLeft = function() { 
+            navButtonRight.style.display = "block"; 
+            navButtonLeft.style.display = "none"; 
+
+            body.style.gridTemplateColumns = "0 1fr";
+
+            main.style.borderRadius = "0";
+            main.style.margin = "0"; 
+        }; 
+
+        navButtonLeft.onclick = function() { 
+            doLeft(); userWantsAside = false; 
+        };
+
+        const doRight = function() {
+            navButtonRight.style.display = "none"; 
+            navButtonLeft.style.display = "block"; 
+
+            body.style.gridTemplateColumns = "250px 1fr";
             
-            if (document.body.classList.contains('dark-theme')) {
-                localStorage.setItem('theme', 'dark');
-                themeToggle.textContent = '🌙';
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeToggle.textContent = '☀️';
+            main.style.borderRadius = "var(--border-radius)";
+            main.style.margin = "0 1rem"; 
+        };
+        
+        navButtonRight.onclick = function() {
+            doRight(); userWantsAside = true;
+        };  
+
+        // Media Query Handling
+
+        mq.addEventListener('change', function(e) {
+            if (e.matches) {
+                doLeft();
+            }
+            else if (userWantsAside) {
+                doRight();
             }
         });
-    </script> -->
+
+    </script>
+
+    <!-- <script>
+        // Elements
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+    
+    // Toggle mobile menu
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      // Toggle hamburger icon
+      hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('active');
+          hamburger.textContent = '☰';
+        }
+      });
+    });
+    
+    // Scroll effect for navbar
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('floating');
+      } else {
+        navbar.classList.remove('floating');
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        hamburger.textContent = '☰';
+      }
+    });
+    
+    
+    
+    
+    </script>  -->
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>

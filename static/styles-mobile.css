@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+
+    .nav-buttons-desktop {
+        display: none;
+    }
+
+    .nav-buttons-mobile {
+        display: block !important; 
+    }
+
+    .mobile-only { 
+        height: 180px;
+        opacity: 1; 
+    }
+}
