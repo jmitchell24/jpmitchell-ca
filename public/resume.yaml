@@ -79,9 +79,13 @@ skills:
 
 projects:
   - name: Homescreen Notes
-    description: Android Notes App 
+    description: A minimalist note taking app for Android. First published in 2016, downloaded over 1000 times. 
     url: https://github.com/jmitchell24/homescreen-notes
   
-  - name: Gwent Clone Exercise
-    description: An attempt to clone the Gwent mini-game from Witcher 3. 
-    url: https://github.com/jmitchell24/gwent-clone-exercise
+  - name: Rene
+    description: A tui auto namer 
+    url: https://github.com/jmitchell24/rene
+
+  - name: DeskShop 
+    description: A person database for online classified ads (kijiji, facebook, etc...)
+    url: https://example.com

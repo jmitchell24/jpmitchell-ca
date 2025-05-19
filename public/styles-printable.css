@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+@page {
+    margin: 0; 
+    size: A4 portrait;
+}
+
+@media print {
+  
+}
+
+/* 
+
+base elements 
+
+*/ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", Tahoma, Geneva, sans-serif;
+    font-weight: 400; /* Adjusted to a more readable weight */
+}
+
+body {
+    color: black;
+    background-color: white;
+    padding: .5em 1em;
+
+    gap: 1rem;
+
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main aside";
+    
+    grid-template-columns: 1fr 250px;
+}
+
+header {
+    grid-area: header;
+    border-bottom: .25rem solid black;
+}
+
+main { 
+    grid-area: main;
+}
+
+aside { 
+    grid-area: aside;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: black;
+    border-bottom: .1rem solid black;
+    margin-bottom: 1rem;
+
+    display:flex;
+    gap:1rem;
+    align-items:center;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left:1.5rem;
+}
+
+li {
+    line-height: 1.2;
+}
+
+section {
+    page-break-inside: avoid;
+}
+
+/* 
+
+header 
+
+*/ 
+
+header .name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+header .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 1rem;
+
+    font-size: 1rem;
+    color: black;
+}
+
+
+
+/* 
+
+section-item 
+
+*/ 
+
+.section-item {
+    page-break-inside: avoid;
+}
+
+.section-item .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.section-item .header .title {
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+}
+
+.section-item .sub-header {
+    font-weight: 500;
+    font-style: italic;
+}
+
+.section-item .keyword-list { 
+    display:flex;
+    flex-direction: column;
+    gap: .25rem; 
+}
+
+.section-item .keyword-list .keyword { 
+    background-color: #ddd;
+    border-radius: .4rem; 
+    padding: 0 .4rem;
+    margin-left: 1rem;
+    font-weight:400; 
+    font-size: .8rem;
+    width:fit-content;
+}
+
+.section-item .contact-item {
+    display:flex;
+    gap:.2rem;
+    align-items: center;
+    font-size:1rem;
+}
