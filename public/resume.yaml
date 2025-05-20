@@ -7,12 +7,22 @@ basics:
   phone: "+12269735817"
   url: https://jpmitchell.ca
   image: https://jpmitchell.ca/portrait.jpg
-  location: 
-    address: "12 Forest Park Drive"
-    postalCode: "N0A 1S0"
-    city: "Townsend"
-    countryCode: "CA"
-    region: "Ontario"
+  # location: 
+  #   address: "12 Forest Park Drive"
+  #   postalCode: "N0A 1S0"
+  #   city: "Townsend"
+  #   countryCode: "CA"
+  #   region: "Ontario"
+  profiles:
+    - network: twitter
+      username: jmitchell24 
+      url: x.com/jmitchell24
+    - network: github
+      username: jmitchell24 
+      url: https://github.com/jmitchell24
+    - network: stackoverflow
+      username: james-mitchell
+      url: https://stackoverflow.com/users/1103084/james-mitchell
   summary: |
     I am a Developer & IT Specialist. 
     I have a life-long passion for computing and information technology.
@@ -79,13 +89,13 @@ skills:
 
 projects:
   - name: Homescreen Notes
-    description: A minimalist note taking app for Android. First published in 2016, downloaded over 1000 times. 
-    url: https://github.com/jmitchell24/homescreen-notes
+    description: A minimalist note taking app for Android. First published in 2016, downloaded over 10,000 times. 
+    url: https://tinyurl.com/homescreen-notes
   
   - name: Rene
     description: A tui auto namer 
     url: https://github.com/jmitchell24/rene
 
-  - name: DeskShop 
-    description: A person database for online classified ads (kijiji, facebook, etc...)
-    url: https://example.com
+  # - name: DeskShop 
+  #   description: A person database for online classified ads (kijiji, facebook, etc...)
+  #   url: https://example.com
