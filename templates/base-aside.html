@@ -1,0 +1,32 @@
+
+
+<aside>
+
+    <!-- contains img tag with a base64 encoded jpeg (over 40k) -->
+    {% include "base-portrait.html"  %}
+
+    <socials-ul>
+
+        <socials-li>
+            <a href="mailto:{{resume.basics.email}}">{% include "ionicons/mail-open-outline.html" %}</a>
+        </socials-li>
+
+        {% for it in resume.basics.profiles %}
+            <socials-li>
+                <a href="{{it.url | safe}}" target="_blank">
+                    {% if it.network == "twitter" %}
+                    {% include "ionicons/logo-twitter.html" %}
+                    {% elif it.network == "github" %}
+                    {% include "ionicons/logo-github.html" %}
+                    {% elif it.network == "stackoverflow" %}
+                    {% include "ionicons/logo-stackoverflow.html" %}
+                    {% endif %}
+                </a>
+            </socials-li>
+        {% endfor %}
+    </socials-ul>
+
+    <div class="aside-text">
+        <p class="title">{{ resume.basics.label }}</p>
+    </div>
+</aside>

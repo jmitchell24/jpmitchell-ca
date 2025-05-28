@@ -1,18 +1,68 @@
 # The URL the site will be built for
 base_url = "https://jpmitchell.ca"
+# base_url = "https://jpmitchell-ca.haldi.win"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
+compile_sass = false
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
+# highlight theme
+# options: 
+# 1337
+# agola-dark
+# ascetic-white
+# axar
+# ayu-dark
+# ayu-light
+# ayu-mirage
+# base16-atelierdune-light
+# base16-ocean-dark
+# base16-ocean-light
+# bbedit
+# boron
+# charcoal
+# cheerfully-light
+# classic-modified
+# demain
+# dimmed-fluid
+# dracula
+# gray-matter-dark
+# green
+# gruvbox-dark
+# gruvbox-light
+# idle
+# inspired-github
+# ir-white
+# kronuz
+# material-dark
+# material-light
+# monokai
+# nord
+# nyx-bold
+# one-dark
+# OneHalfDark
+# OneHalfLight
+# railsbase16-green-screen-dark
+# solarized-dark
+# solarized-light
+# subway-madrid
+# subway-moscow
+# Tomorrow
+# two-dark
+# visual-studio-dark
+# zenburn
+highlight_theme = "cheerfully-light"
+
+
 [extra]
 # Put all your custom variables here
 resume_data = "resume.yaml"
+reads_data = "reads/reads.yaml"
 accent_color = "#30616d"

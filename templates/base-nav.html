@@ -1,0 +1,70 @@
+
+{% if section %}
+{% set current_nav = section.path %}
+{% elif page %}
+{% set current_nav = page.path %}
+{% else %}
+{% set current_nav = "" %}
+{% endif %}
+
+
+<nav>           
+    <ul>
+        <li>
+            <a href="/" 
+            
+            {%if current_nav == "/" %}
+            aria-current="page"
+            {% endif %}
+            
+            >
+            {% include "ionicons/home-outline.html" %}
+
+
+            Home
+            </a>
+        </li>
+
+        <li>
+            <a href="/posts"
+            
+            {%if current_nav is starting_with("/posts") %}
+            aria-current="page"
+            {% endif %}
+            
+            >
+
+            
+
+            {% include "ionicons/newspaper-outline.html" %}
+            Posts
+            </a>
+        </li>
+
+        <li>
+            <a href="/reads"
+            
+            {%if current_nav is starting_with("/reads") %}
+            aria-current="page"
+            {% endif %}
+
+            >
+            {% include "ionicons/link-outline.html" %}
+            Reads
+            </a>
+        </li>
+
+        <li>
+            <a href="/about"
+            
+            {%if current_nav is starting_with("/about") %}
+            aria-current="page"
+            {% endif %}
+
+            >
+            {% include "ionicons/person-outline.html" %}
+            About Me
+            </a>
+        </li>
+    </ul>
+</nav>

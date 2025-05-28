@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section> 
+    <h3> 
+        {% include "ionicons/newspaper-outline.html" %}
+        {{ page.title }} 
+    </h3> 
+
+    
+</section>
+{{ page.content | safe }}
+{% endblock %}

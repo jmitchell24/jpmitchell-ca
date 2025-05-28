@@ -1,0 +1,379 @@
+/* 
+
+Base Elements -> Variables 
+
+*/
+
+:root { 
+    --text-h1: 3.05rem; 
+    --text-h2: 2.44rem;
+    --text-h3: 1.95rem; 
+    --text-h4: 1.56rem;
+    --text-h5: 1.25rem;
+    --text-h6: 1.00rem;
+    --text-body: 1.0rem;
+    --text-caption: 1.0rem;
+    --text-small: 1.0rem;
+
+    --line-h1: 1.3rem; 
+    --line-h2: 1.3rem;
+    --line-h3: 1.3rem; 
+    --line-h4: 1.3rem;
+    --line-h5: 1.3rem;
+    --line-h6: 1.3rem;
+    --line-body: 1.5rem;
+    --line-caption: 1.5rem;
+    --line-small: 1.5rem;
+
+    --weight-h1: 600; 
+    --weight-h2: 500;
+    --weight-h3: 400; 
+    --weight-h4: 400;
+    --weight-h5: 400;
+    --weight-h6: 400;
+    --weight-body: 400;
+    --weight-caption: 400;
+    --weight-small: 400;
+}
+
+/* 
+
+Base Elements -> Headings 
+
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+h1 { font-size:var(--text-h1); font-weight: var(--weight-h1); line-height: var(--line-h1);}
+h2 { font-size:var(--text-h2); font-weight: var(--weight-h2); line-height: var(--line-h2);}
+h3 { font-size:var(--text-h3); font-weight: var(--weight-h3); line-height: var(--line-h3);}
+h4 { font-size:var(--text-h4); font-weight: var(--weight-h4); line-height: var(--line-h4);}
+h5 { font-size:var(--text-h5); font-weight: var(--weight-h5); line-height: var(--line-h5);}
+h6 { font-size:var(--text-h6); font-weight: var(--weight-h6); line-height: var(--line-h6);}
+
+h1 > .ionicon { height:var(--text-h1); }
+h2 > .ionicon { height:var(--text-h2); }
+h3 > .ionicon { height:var(--text-h3); }
+h4 > .ionicon { height:var(--text-h4); }
+h5 > .ionicon { height:var(--text-h5); }
+h6 > .ionicon { height:var(--text-h6); }
+
+/* 
+
+Base Elements -> Body 
+
+*/ 
+
+body { 
+    font-size:var(--text-body); 
+    font-weight: var(--weight-body); 
+    line-height: var(--line-body); 
+}
+
+
+/* 
+
+Base Elements -> Paragraphs 
+
+*/
+
+p {
+    margin: 1rem .5rem;
+    padding: 0;
+}
+
+/* 
+
+Base Elements -> Links 
+
+*/
+
+a {
+    color: var(--text-color);
+    background-color: #36363633;
+    
+    padding:.1rem .4rem;
+    text-decoration: none;
+    width: fit-content;
+text-decoration: underline;
+    transition: all var(--transition-speed) ease;
+}
+
+a:hover {
+    color:white;
+    border-radius: .5rem;
+    background-color: var(--accent-color);
+    
+}
+
+/* 
+
+Base Elements -> Lists
+
+*/
+
+ul,
+ol {
+    margin: .5rem 0;
+    padding-left: 2rem;
+    border: none;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    padding-left: 0.25rem;
+}
+
+li > ul,
+li > ol {
+    margin: 0.5rem 0;
+}
+
+/* 
+
+Base Elements -> Nested lists 
+
+*/
+
+ul ul {
+    list-style-type: circle;
+}
+
+ul ul ul {
+    list-style-type: square;
+}
+
+/* 
+
+Base Elements -> Blockquotes 
+
+*/
+
+blockquote {
+    margin: 1rem 2rem;
+    padding: .5rem .75rem;
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--accent-color);
+    
+    
+    font-style: italic;
+    position: relative;
+}
+
+blockquote:hover {
+    box-shadow: 0 .2rem .4rem rgb(0,0,0,.5);
+    border-radius: var(--border-radius);
+    transform: translateY(-.2rem);
+}
+
+blockquote p {
+    margin: 0.5rem 0;
+}
+
+blockquote p:first-child {
+    margin-top: 0;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* 
+
+Base Elements -> Code 
+
+*/
+
+code {
+    padding: 0.2rem 0.4rem;
+    font-family: "Cascadia Mono", monospace;
+    font-size: 0.9rem;   
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+pre {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: "Cascadia Mono", monospace;
+    line-height: 1rem;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+/* 
+
+Base Elements -> Tables 
+
+*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 5%, transparent);
+}
+
+/* 
+
+Base Elements -> Horizontal Rules 
+
+*/
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--border-color);
+    margin: 2rem 0;
+    border-radius: 1px;
+}
+
+/* 
+
+Base Elements -> Images 
+
+*/
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    border: .4rem solid white;
+}
+
+/* 
+
+Base Elements -> Strong and Emphasis 
+
+*/
+
+strong {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+em {
+    font-style: italic;
+    color: color-mix(in srgb, var(--text-color) 80%, var(--accent-color));
+}
+
+/* 
+
+Base Elements -> Task Lists 
+
+*/
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--accent-color);
+}
+
+/* 
+
+Base Elements -> Definition Lists 
+
+*/
+
+dl {
+    margin: 1rem 0;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: 1rem;
+}
+
+dd {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 
+
+Base Elements -> Footnotes 
+
+*/
+
+.footnote-ref {
+    font-size: 0.8rem;
+    vertical-align: super;
+    color: var(--accent-color);
+}
+
+.footnotes {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+/* 
+
+Base Elements -> Mobile Responsive Adjustments 
+
+*/
+
+@media (max-width: 768px) {
+
+    
+    pre {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th,
+    td {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+

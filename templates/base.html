@@ -1,0 +1,32 @@
+{% set resume = load_data(path=config.extra.resume_data) %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{ resume.basics.name }} | {{ resume.basics.label }}</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{ get_url(path='css/styles.css', trailing_slash=false) | safe }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ get_url(path='css/styles-base-elements.css', trailing_slash=false) | safe }}"/>
+    
+</head>
+<body>
+    {% include "base-header.html"  %}
+
+    {% include "base-aside.html" %}
+
+    {% include "base-nav.html" %}
+
+    <main> 
+        <article>
+            {% block content %}
+            {% endblock content %}
+        </article>
+    </main>
+
+    {% include "base-footer.html"  %}
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section> 
+    <h3> 
+        {% include "ionicons/newspaper-outline.html" %}
+        Posts 
+    </h3>   
+
+    {% set posts = get_section(path="posts/_index.md") %}
+    
+    <section-item-list>
+        {% for it in posts.pages | slice(end=3) %}
+        <section-item>
+            <section-item-title>
+                <a href="{{ it.permalink }}">{{ it.title }}</a>
+            </section-item-title>
+            <section-item-aside>
+                {{ it.date }}
+            </section-item-aside>
+        </section-item>
+        {% endfor %}
+    </section-item-list>
+    
+</section>
+
+{% endblock content %}

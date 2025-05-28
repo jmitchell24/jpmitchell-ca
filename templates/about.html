@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<section> 
+    <h3> 
+        {% include "ionicons/person-outline.html" %}
+        About Me 
+    </h3>   
+
+    <p>{{ resume.basics.summary }}</p>
+    
+</section>
+
+<section> 
+    <h3> 
+        {% include "ionicons/briefcase-outline.html" %}
+        Experience 
+    </h3>   
+
+    <section-item-list>
+
+        {% for it in resume.work %}
+
+        <section-item>
+            <section-item-title>
+                {{ it.position }}
+            </section-item-title>
+
+            <section-item-aside>
+                {% if it.startDate and it.endDate %}
+                {{ it.startDate | date(format="%b. %Y") }} – {{ it.endDate | date(format="%b. %Y") }}
+                {% elif it.endDate %}
+                {{ it.endDate | date(format="%b. %Y") }}
+                {% endif %}
+            </section-item-aside>
+
+            {% if it.highlights %}
+            <section-item-content>
+                <ul>
+                    {% for jt in it.highlights %}
+                    <li> {{ jt }} </li>
+                    {% endfor %}
+                </ul>
+            </section-item-content>
+            {% endif %}
+
+        </section-item>
+
+        {% endfor %}
+
+    </section-item-list>
+    
+</section>
+
+<section> 
+    <h3> 
+        {% include "ionicons/school-outline.html" %}
+        Education 
+    </h3>   
+
+    <section-item-list>
+
+        {% for it in resume.education %}
+
+        <section-item>
+            <section-item-title>
+                {{ it.area }}
+            </section-item-title>
+
+            <section-item-aside>
+                {% if it.startDate and it.endDate %}
+                {{ it.startDate | date(format="%b. %Y") }} – {{ it.endDate | date(format="%b. %Y") }}
+                {% elif it.endDate %}
+                {{ it.endDate | date(format="%b. %Y") }}
+                {% endif %}
+            </section-item-aside>
+
+            {% if it.highlights %}
+            <section-item-content>
+                <ul>
+                    {% for jt in it.highlights %}
+                    <li> {{ jt }} </li>
+                    {% endfor %}
+                </ul>
+            </section-item-content>
+            {% endif %}
+
+        </section-item>
+
+        {% endfor %}
+
+    </section-item-list>
+    
+</section>
+
+
+
+{% endblock %}
