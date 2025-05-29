@@ -9,62 +9,49 @@
 
 
 <nav>           
-    <ul>
-        <li>
+    <nav-ul>
+        <nav-li>
             <a href="/" 
-            
             {%if current_nav == "/" %}
             aria-current="page"
             {% endif %}
-            
             >
             {% include "ionicons/home-outline.html" %}
-
-
             Home
             </a>
-        </li>
+        </nav-li>
 
-        <li>
+        <nav-li>
             <a href="/posts"
-            
             {%if current_nav is starting_with("/posts") %}
             aria-current="page"
             {% endif %}
-            
             >
-
-            
-
             {% include "ionicons/newspaper-outline.html" %}
             Posts
             </a>
-        </li>
+        </nav-li>
 
-        <li>
+        <nav-li>
             <a href="/reads"
-            
             {%if current_nav is starting_with("/reads") %}
             aria-current="page"
             {% endif %}
-
             >
             {% include "ionicons/link-outline.html" %}
             Reads
             </a>
-        </li>
+        </nav-li>
 
-        <li>
+        <nav-li>
             <a href="/about"
-            
             {%if current_nav is starting_with("/about") %}
             aria-current="page"
             {% endif %}
-
             >
             {% include "ionicons/person-outline.html" %}
             About Me
             </a>
-        </li>
-    </ul>
+        </nav-li>
+    </nav-ul>
 </nav>

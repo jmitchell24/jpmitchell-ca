@@ -58,7 +58,7 @@ highlight_code = true
 # two-dark
 # visual-studio-dark
 # zenburn
-highlight_theme = "cheerfully-light"
+highlight_theme = "charcoal"
 
 
 [extra]

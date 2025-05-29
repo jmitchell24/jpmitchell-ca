@@ -2,17 +2,19 @@
 
 <aside>
 
+    <aside-portrait>
     <!-- contains img tag with a base64 encoded jpeg (over 40k) -->
-    {% include "base-portrait.html"  %}
+    {% include "base-portrait.html"  %}    
+    </aside-portrait>
+    
 
-    <socials-ul>
-
-        <socials-li>
+    <aside-ul>
+        <aside-li>
             <a href="mailto:{{resume.basics.email}}">{% include "ionicons/mail-open-outline.html" %}</a>
-        </socials-li>
+        </aside-li>
 
         {% for it in resume.basics.profiles %}
-            <socials-li>
+            <aside-li>
                 <a href="{{it.url | safe}}" target="_blank">
                     {% if it.network == "twitter" %}
                     {% include "ionicons/logo-twitter.html" %}
@@ -22,11 +24,11 @@
                     {% include "ionicons/logo-stackoverflow.html" %}
                     {% endif %}
                 </a>
-            </socials-li>
+            </aside-li>
         {% endfor %}
-    </socials-ul>
+    </aside-ul>
 
-    <div class="aside-text">
-        <p class="title">{{ resume.basics.label }}</p>
-    </div>
+    <aside-subtitle>
+        {{ resume.basics.label }}
+    </aside-subtitle>
 </aside>

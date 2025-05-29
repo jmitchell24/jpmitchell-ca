@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h3>
+        {% include "ionicons/cube-outline.html" %}
+        Homescreen Notes 
+    </h3>
+</section> 
+
+{{ section.content | safe }}
+
+
+{% endblock %}

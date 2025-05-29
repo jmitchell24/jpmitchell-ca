@@ -1,6 +1,6 @@
 ---
 title: "James Peter Mitchell"
-template: "about.html"
+template: "page-about.html"
 extra:
     resume_data: "resume.yaml"
 
