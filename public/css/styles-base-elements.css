@@ -367,7 +367,7 @@ code {
 
     height: fit-content;
     width: fit-content;
-    padding: var(--space-1) var(--space-2);
+    padding: var(--space-1);
 
     font-family: "Cascadia Mono", monospace;
     font-size: var(--text-small);   

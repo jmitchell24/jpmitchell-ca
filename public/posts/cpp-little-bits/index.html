@@ -113,8 +113,8 @@
             
             >
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
-            <!-- About Me -->
-             LLander
+            About Me
+             <!-- LLander -->
             </a>
         </nav-li>
     </nav-ul>
@@ -140,7 +140,7 @@
     </section-subtitle>
 
     <section-aside>
-        3 minutes 
+        2 minutes 
     </section-aside>
 
     <section-separator></section-separator>
@@ -162,8 +162,8 @@
 </span></code></pre>
 <h3 id="misconceptions-about-emplace-back-and-push-back">Misconceptions about <code>emplace_back</code> and <code>push_back</code></h3>
 <p><code>emplace_back()</code> does <em>not</em> move the object that is passed to it. <sup class="footnote-reference"><a href="#2">2</a></sup></p>
-<p>It simply <em>forwards</em> the argument to the constructor of the new object. If it is given an <em>l-value</em> then that is what the constructor for the new object will see and the underlying resource will need to be copied. </p>
-<p>The <em>l-value</em> must be explicitly converted to an <em>r-value</em> with <code>std::move()</code> to invoke the correct constructor and avoid a copy. </p>
+<p>It simply <em>forwards</em> the argument to the constructor of the new object. If it is given an <em>l-value</em> then that is what the constructor for the new object will see and the underlying resource will need to be copied.</p>
+<p>The <em>l-value</em> must be explicitly converted to an <em>r-value</em> with <code>std::move()</code> to invoke the correct constructor and avoid a copy.</p>
 <p>Since C++11 <code>push_back()</code> has an overload which accepts an <em>r-value</em> and thus it can be be used to avoid the copy just the same as <code>emplace_back()</code></p>
 <pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">void </span><span style="color:#6699cc;">example</span><span style="color:#5fb3b3;">() 
 </span><span style="color:#5fb3b3;">{
@@ -177,7 +177,7 @@
 </span><span style="color:#5fb3b3;">}
 </span></code></pre>
 <h3 id="same-name-different-compilation-unit">Same name, different compilation unit</h3>
-<p>Having structs with the <em>same name</em> in separate compilation units can cause undefined behavior. I was getting <code>std::bad_alloc</code> exceptions from code that looked like this: </p>
+<p>Having structs with the <em>same name</em> in separate compilation units can cause undefined behavior. I was getting <code>std::bad_alloc</code> exceptions from code that looked like this:</p>
 <pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#5f6364;">// Mesh.cpp
 </span><span style="color:#c594c5;">struct </span><span>vertex_t
 </span><span style="color:#5fb3b3;">{
@@ -191,9 +191,9 @@
 </span><span>    GLfloat position</span><span style="color:#5fb3b3;">[</span><span style="color:#f99157;">3</span><span style="color:#5fb3b3;">];
 </span><span style="color:#5fb3b3;">};
 </span></code></pre>
-<p>To the best of my knowledge this shouldn't cause undefined behavior, but regardless I was able to narrow down the problem to being the names of these two structs. </p>
+<p>To the best of my knowledge this shouldn't cause undefined behavior, but regardless I was able to narrow down the problem to being the names of these two structs.</p>
 <h3 id="a-thread-safe-singleton-for-c-11-or-newer">A thread-safe singleton for C++11 or newer</h3>
-<p>A change made to the standard for C++11 makes possible a very simple thread-safe singleton pattern. </p>
+<p>A change made to the standard for C++11 makes possible a very simple thread-safe singleton pattern.</p>
 <blockquote>
 <p>§6.7 [stmt.dcl] p4</p>
 <p>If control enters the declaration concurrently while the variable is being initialized, the concurrent execution shall wait for completion of the initialization.</p>
@@ -249,9 +249,13 @@
 </span><span style="color:#c594c5;">delete</span><span> p</span><span style="color:#5fb3b3;">;
 </span></code></pre>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p><a href="https://stackoverflow.com/a/22027287">stackoverflow</a>
-<sup class="footnote-reference"><a href="#2">2</a></sup>: <a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">quuxplusone.github.io</a>
-<sup class="footnote-reference"><a href="#3">3</a></sup>: <a href="https://stackoverflow.com/a/461224/1103084">stackoverflow</a></p>
+<p><a href="https://stackoverflow.com/a/22027287">stackoverflow</a></p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">quuxplusone.github.io</a></p>
+</div>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">3</sup>
+<p><a href="https://stackoverflow.com/a/461224/1103084">stackoverflow</a></p>
 </div>
 
     </section-content>

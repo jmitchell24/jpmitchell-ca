@@ -6,15 +6,12 @@ Section Styles
 
 section { 
     display: grid;
-    gap: var(--space-2); 
     grid-template-areas: 
         "title aside"
         "subtitle subtitle"
         "separator separator"
         "content content";
     grid-template-columns: 1fr auto;
-
-
 }
 
 section-title { 
@@ -41,6 +38,7 @@ section-subtitle {
     grid-area: subtitle;
 
     color: var(--color-gray);
+    margin-top: var(--space-2); 
 }
 
 section-separator { 
@@ -51,6 +49,7 @@ section-separator {
 
 section-content { 
     grid-area: content;
+    margin-top: var(--space-3); 
 
 }
 
@@ -130,8 +129,8 @@ section-item > section-item-content {
     section { 
         grid-template-areas: 
             "title"
-            "aside"
             "subtitle"
+            "aside"
             "separator"
             "content";
         grid-template-columns: 100%;
@@ -141,8 +140,8 @@ section-item > section-item-content {
         
         grid-template-areas: 
             "title"
-            "aside"
             "subtitle"
+            "aside"
             "content";
         grid-template-columns: 100%;
     }
