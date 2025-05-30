@@ -19,6 +19,14 @@
         <loc>https://jpmitchell.ca/posts/</loc>
     </url>
     <url>
+        <loc>https://jpmitchell.ca/posts/byte-units/</loc>
+        <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+        <loc>https://jpmitchell.ca/posts/cpp-little-bits/</loc>
+        <lastmod>2025-03-27</lastmod>
+    </url>
+    <url>
         <loc>https://jpmitchell.ca/posts/markdown-test/</loc>
         <lastmod>2025-05-26</lastmod>
     </url>
@@ -50,5 +58,8 @@
     <url>
         <loc>https://jpmitchell.ca/reads/reads-0005/</loc>
         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+        <loc>https://jpmitchell.ca/toy/</loc>
     </url>
 </urlset>

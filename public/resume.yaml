@@ -88,13 +88,19 @@ skills:
     keywords: ["Technical Support", "Communication", "Service Delivery"]
 
 projects:
+  - name: jpmitchell.ca
+    description: My personal (professional) site. 
+    url: https://github.com/jmitchell24/jpmitchell-ca
+
   - name: Homescreen Notes
     description: A minimalist note taking app for Android. First published in 2016, downloaded over 10,000 times. 
     url: https://tinyurl.com/homescreen-notes
   
   - name: Rene
-    description: A tui auto namer 
+    description: A tui auto namer. 
     url: https://github.com/jmitchell24/rene
+
+
 
   # - name: DeskShop 
   #   description: A person database for online classified ads (kijiji, facebook, etc...)

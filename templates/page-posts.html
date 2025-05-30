@@ -3,12 +3,24 @@
 {% block content %}
 
 <section> 
-    <h3> 
+    <section-title> 
         {% include "ionicons/newspaper-outline.html" %}
         {{ page.title }} 
-    </h3> 
+    </section-title> 
 
-    
+    <section-subtitle>
+        Published on {{ page.date | date(format="%A %B %d, %Y") }} 
+    </section-subtitle>
+
+    <section-aside>
+        {{ page.reading_time }} minutes 
+    </section-aside>
+
+    <section-separator></section-separator>
+
+    <section-content>
+        {{ page.content | safe }}
+    </section-content>
 </section>
-{{ page.content | safe }}
+
 {% endblock %}

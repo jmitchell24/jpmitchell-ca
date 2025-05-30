@@ -3,30 +3,32 @@
 {% block content %}
 
 <section> 
-    <h3> 
+    <section-title> 
         {% include "ionicons/link-outline.html" %}
         Good Reads 
-    </h3>   
+    </section-title>   
 
     {% set reads = get_section(path="reads/_index.md") %}
-    
-    <section-item-list>
-        {% for it in reads.pages | slice(end=3) %}
-        <section-item>
-            <section-item-title>
-                <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
-            </section-item-title>
-            
-            <section-item-subtitle>
-                {{ it.extra.url }}
-            </section-item-subtitle>
 
-            <section-item-aside>
-                {{ it.date | date(format="%a %b. %d, %Y") }}
-            </section-item-aside>
-        </section-item>
-        {% endfor %}
-    </section-item-list> 
+    <section-content>    
+        <section-item-list>
+            {% for it in reads.pages | slice(end=3) %}
+            <section-item>
+                <section-item-title>
+                    <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
+                </section-item-title>
+                
+                <section-item-subtitle>
+                    {{ it.extra.url }}
+                </section-item-subtitle>
+
+                <section-item-aside>
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
+                </section-item-aside>
+            </section-item>
+            {% endfor %}
+        </section-item-list> 
+    </section-content>
     
 </section>
 

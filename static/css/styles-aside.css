@@ -1,13 +1,15 @@
 
 
 aside-portrait {
+    background-color: var(--color-lighter);
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     max-width: 300px;
 
-    background-color: white;
+    
     border-radius: var(--border-radius);
     padding: var(--space-1);
 }
@@ -36,9 +38,8 @@ aside-ul .ionicon {
 }
 
 aside-li a { 
-    
-    background-color: var(--bg-secondary);
-    color: var(--text-white);
+    background-color: var(--color-dark);
+    color: var(--color-lighter);
     
     font-size: var(--text-h5);
     text-decoration: none;
@@ -50,17 +51,16 @@ aside-li a {
     width: auto;  
 
     display: flex;
-    gap: .5rem;
+    gap: var(--space-2);
     align-items: center;
 }
 
 aside-li a:hover { 
-    background-color: var(--bg-primary);
-    color: var(--text-dark); 
+    background-color: var(--color-primary);
+    color: var(--color-darker); 
 }
 
 aside-subtitle {
-    color: var(--text-muted);
     font-size: var(--text-h5);
     line-height: var(--line-h5);
 
@@ -83,5 +83,9 @@ aside-subtitle {
 
     aside-ul { 
         gap: var(--space-3); 
+    }
+
+    aside-portrait { 
+        max-width: 200px;
     }
 }

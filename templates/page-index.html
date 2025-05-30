@@ -5,78 +5,83 @@
 {{ section.content | safe }}
 
 <section>
-    <h3>
+    <section-title>
         {% include "ionicons/cube-outline.html" %}
         Projects 
-    </h3>
+    </section-title>
 
-    <section-item-list>
-    {% for it in resume.projects %}
-    <section-item>
-        <section-item-title>
-            <a href={{ it.url }} target="_blank">{{ it.name }}</a>
-        </section-item-title>
+    <section-content>
+        <section-item-list>
+        {% for it in resume.projects %}
+        <section-item>
+            <section-item-title>
+                <a href={{ it.url }} target="_blank">{{ it.name }}</a>
+            </section-item-title>
 
-        <section-item-content>
-            {{ it.description }}
-        </section-item-content>
+            <section-item-content>
+                {{ it.description }}
+            </section-item-content>
 
-        <section-item-subtitle>
-            {{ it.url }}
-        </section-item-subtitle>        
-    </section-item>
-    {% endfor %}
-    </section-item-list>
+            <section-item-subtitle>
+                {{ it.url }}
+            </section-item-subtitle>        
+        </section-item>
+        {% endfor %}
+        </section-item-list>
+    </section-content>
 </section> 
 
 <section> 
-    <h3> 
+    <section-title> 
         {% include "ionicons/newspaper-outline.html" %}
         Latest Posts 
-    </h3>   
+    </section-title>   
 
     {% set posts = get_section(path="posts/_index.md") %}
     
-    <section-item-list>
-        {% for it in posts.pages | slice(end=3) %}
-        <section-item>
-            <section-item-title>
-                <a href="{{ it.permalink }}">{{ it.title }}</a>
-            </section-item-title>
-            <section-item-aside>
-                {{ it.date | date(format="%a %b. %d, %Y") }}
-            </section-item-aside>
-        </section-item>
-        {% endfor %}
-    </section-item-list>
-    
+    <section-content>
+        <section-item-list>
+            {% for it in posts.pages | slice(end=3) %}
+            <section-item>
+                <section-item-title>
+                    <a href="{{ it.permalink }}">{{ it.title }}</a>
+                </section-item-title>
+                <section-item-aside>
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
+                </section-item-aside>
+            </section-item>
+            {% endfor %}
+        </section-item-list>
+    </section-content>
 </section>
 
 <section> 
-    <h3> 
+    <section-title> 
         {% include "ionicons/link-outline.html" %}
         Good Reads 
-    </h3>  
+    </section-title>  
     
     {% set reads = get_section(path="reads/_index.md") %}
     
-    <section-item-list>
-        {% for it in reads.pages | slice(end=3) %}
-        <section-item>
-            <section-item-title>
-                <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
-            </section-item-title>
-            
-            <section-item-subtitle>
-                {{ it.extra.url }}
-            </section-item-subtitle>
+    <section-content>
+        <section-item-list>
+            {% for it in reads.pages | slice(end=3) %}
+            <section-item>
+                <section-item-title>
+                    <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
+                </section-item-title>
+                
+                <section-item-subtitle>
+                    {{ it.extra.url }}
+                </section-item-subtitle>
 
-            <section-item-aside>
-                {{ it.date | date(format="%a %b. %d, %Y") }}
-            </section-item-aside>
-        </section-item>
-        {% endfor %}
-    </section-item-list> 
+                <section-item-aside>
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
+                </section-item-aside>
+            </section-item>
+            {% endfor %}
+        </section-item-list> 
+    </section-content>
 </section> 
 
 

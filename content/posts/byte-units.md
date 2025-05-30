@@ -1,12 +1,12 @@
 ---
 title: "Standard Byte Units"
 tags: [guide]
-draft: true 
+draft: false
 date: 2025-03-26
 updated: 2025-03-26
 ---
 
-# Decimal Units 
+### Decimal Units 
 
 | Name      | Unit | Total Bytes               |
 | --------- | ---- | ------------------------- |
@@ -17,7 +17,7 @@ updated: 2025-03-26
 | Megabytes | MB   | 1,000,000                 |
 | Kilobytes | KB   | 1,000                     | 
 
-# Binary Units
+### Binary Units
 
 | Name | Unit | Magnitude | Total Bytes               |
 | ---- | ---- | --------- | ------------------------- |
@@ -29,7 +29,7 @@ updated: 2025-03-26
 | ...  | KiB  | 2^10      | 1,024                     |
 
 
-# Generating Bytes String 
+### Generating Bytes String 
 ``` c++
 inline static std::string createBytesString(size_t bytes)
 {

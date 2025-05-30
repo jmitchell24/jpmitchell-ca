@@ -86,6 +86,8 @@
         <nav-li>
             <a href="/posts"
             
+            aria-current="page"
+            
             >
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
     <path d="M368 415.86V72a24.07 24.07 0 00-24-24H72a24.07 24.07 0 00-24 24v352a40.12 40.12 0 0040 40h328" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/>
@@ -99,8 +101,6 @@
 
         <nav-li>
             <a href="/reads"
-            
-            aria-current="page"
             
             >
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36"/></svg>
@@ -124,7 +124,71 @@
         <article>
             
 
+<section> 
+    <section-title> 
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+    <path d="M368 415.86V72a24.07 24.07 0 00-24-24H72a24.07 24.07 0 00-24 24v352a40.12 40.12 0 0040 40h328" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/>
+    <path d="M416 464h0a48 48 0 01-48-48V128h72a24 24 0 0124 24v264a48 48 0 01-48 48z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/>
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M240 128h64M240 192h64M112 256h192M112 320h192M112 384h192"/>
+    <path fill="currentColor" d="M176 208h-64a16 16 0 01-16-16v-64a16 16 0 0116-16h64a16 16 0 0116 16v64a16 16 0 01-16 16z"/>
+</svg>
+        Standard Byte Units 
+    </section-title> 
 
+    <section-subtitle>
+        Published on Wednesday March 26, 2025 
+    </section-subtitle>
+
+    <section-aside>
+        1 minutes 
+    </section-aside>
+
+    <section-separator></section-separator>
+
+    <section-content>
+        <h3 id="decimal-units">Decimal Units</h3>
+<table><thead><tr><th>Name</th><th>Unit</th><th>Total Bytes</th></tr></thead><tbody>
+<tr><td>Exabytes</td><td>EB</td><td>1,000,000,000,000,000,000</td></tr>
+<tr><td>Petabytes</td><td>PB</td><td>1,000,000,000,000,000</td></tr>
+<tr><td>Terabytes</td><td>TB</td><td>1,000,000,000,000</td></tr>
+<tr><td>Gigabytes</td><td>GB</td><td>1,000,000,000</td></tr>
+<tr><td>Megabytes</td><td>MB</td><td>1,000,000</td></tr>
+<tr><td>Kilobytes</td><td>KB</td><td>1,000</td></tr>
+</tbody></table>
+<h3 id="binary-units">Binary Units</h3>
+<table><thead><tr><th>Name</th><th>Unit</th><th>Magnitude</th><th>Total Bytes</th></tr></thead><tbody>
+<tr><td>...</td><td>EiB</td><td>2^60</td><td>1,152,921,504,606,846,976</td></tr>
+<tr><td>...</td><td>PiB</td><td>2^50</td><td>1,125,899,906,842,624</td></tr>
+<tr><td>...</td><td>TiB</td><td>2^40</td><td>1,099,511,627,776</td></tr>
+<tr><td>...</td><td>GiB</td><td>2^30</td><td>1,073,741,824</td></tr>
+<tr><td>...</td><td>MiB</td><td>2^20</td><td>1,048,576</td></tr>
+<tr><td>...</td><td>KiB</td><td>2^10</td><td>1,024</td></tr>
+</tbody></table>
+<h3 id="generating-bytes-string">Generating Bytes String</h3>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">inline static</span><span> std</span><span style="color:#5fb3b3;">::</span><span>string </span><span style="color:#6699cc;">createBytesString</span><span style="color:#5fb3b3;">(</span><span style="color:#fac863;">size_t </span><span style="color:#f99157;">bytes</span><span style="color:#5fb3b3;">)
+</span><span style="color:#5fb3b3;">{
+</span><span>
+</span><span>    </span><span style="color:#fac863;">size_t </span><span style="color:#c594c5;">constexpr</span><span> b10 </span><span style="color:#5fb3b3;">= </span><span style="color:#fac863;">size_t</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">) &lt;&lt; </span><span style="color:#f99157;">10</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#fac863;">size_t </span><span style="color:#c594c5;">constexpr</span><span> b20 </span><span style="color:#5fb3b3;">= </span><span style="color:#fac863;">size_t</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">) &lt;&lt; </span><span style="color:#f99157;">20</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#fac863;">size_t </span><span style="color:#c594c5;">constexpr</span><span> b30 </span><span style="color:#5fb3b3;">= </span><span style="color:#fac863;">size_t</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">) &lt;&lt; </span><span style="color:#f99157;">30</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#fac863;">size_t </span><span style="color:#c594c5;">constexpr</span><span> b40 </span><span style="color:#5fb3b3;">= </span><span style="color:#fac863;">size_t</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">) &lt;&lt; </span><span style="color:#f99157;">40</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#fac863;">size_t </span><span style="color:#c594c5;">constexpr</span><span> b50 </span><span style="color:#5fb3b3;">= </span><span style="color:#fac863;">size_t</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">) &lt;&lt; </span><span style="color:#f99157;">50</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#fac863;">size_t </span><span style="color:#c594c5;">constexpr</span><span> b60 </span><span style="color:#5fb3b3;">= </span><span style="color:#fac863;">size_t</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">) &lt;&lt; </span><span style="color:#f99157;">60</span><span style="color:#5fb3b3;">;
+</span><span>
+</span><span>  
+</span><span>
+</span><span>    </span><span style="color:#c594c5;">if </span><span style="color:#5fb3b3;">(</span><span>bytes </span><span style="color:#5fb3b3;">&lt;</span><span> b10</span><span style="color:#5fb3b3;">) </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> bytes</span><span style="color:#5fb3b3;">&quot;;
+</span><span>    </span><span style="color:#c594c5;">else if </span><span style="color:#5fb3b3;">(</span><span>bytes </span><span style="color:#5fb3b3;">&lt;</span><span> b20</span><span style="color:#5fb3b3;">) </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes </span><span style="color:#5fb3b3;">/</span><span style="color:#6699cc;"> b10</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> KiB</span><span style="color:#5fb3b3;">&quot;;
+</span><span>    </span><span style="color:#c594c5;">else if </span><span style="color:#5fb3b3;">(</span><span>bytes </span><span style="color:#5fb3b3;">&lt;</span><span> b30</span><span style="color:#5fb3b3;">) </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes </span><span style="color:#5fb3b3;">/</span><span style="color:#6699cc;"> b20</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> MiB</span><span style="color:#5fb3b3;">&quot;;
+</span><span>    </span><span style="color:#c594c5;">else if </span><span style="color:#5fb3b3;">(</span><span>bytes </span><span style="color:#5fb3b3;">&lt;</span><span> b40</span><span style="color:#5fb3b3;">) </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes </span><span style="color:#5fb3b3;">/</span><span style="color:#6699cc;"> b30</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> GiB</span><span style="color:#5fb3b3;">&quot;;
+</span><span>    </span><span style="color:#c594c5;">else if </span><span style="color:#5fb3b3;">(</span><span>bytes </span><span style="color:#5fb3b3;">&lt;</span><span> b50</span><span style="color:#5fb3b3;">) </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes </span><span style="color:#5fb3b3;">/</span><span style="color:#6699cc;"> b40</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> TiB</span><span style="color:#5fb3b3;">&quot;;
+</span><span>    </span><span style="color:#c594c5;">else if </span><span style="color:#5fb3b3;">(</span><span>bytes </span><span style="color:#5fb3b3;">&lt;</span><span> b60</span><span style="color:#5fb3b3;">) </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes </span><span style="color:#5fb3b3;">/</span><span style="color:#6699cc;"> b50</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> PiB</span><span style="color:#5fb3b3;">&quot;;
+</span><span>    </span><span style="color:#c594c5;">return </span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">to_string</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">bytes </span><span style="color:#5fb3b3;">/</span><span style="color:#6699cc;"> b60</span><span style="color:#5fb3b3;">) + &quot;</span><span style="color:#99c794;"> EiB</span><span style="color:#5fb3b3;">&quot;;
+</span><span style="color:#5fb3b3;">}
+</span></code></pre>
+
+    </section-content>
+</section>
 
 
         </article>

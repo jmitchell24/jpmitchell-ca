@@ -86,6 +86,8 @@
         <nav-li>
             <a href="/posts"
             
+            aria-current="page"
+            
             >
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
     <path d="M368 415.86V72a24.07 24.07 0 00-24-24H72a24.07 24.07 0 00-24 24v352a40.12 40.12 0 0040 40h328" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/>
@@ -99,8 +101,6 @@
 
         <nav-li>
             <a href="/reads"
-            
-            aria-current="page"
             
             >
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36"/></svg>
@@ -124,7 +124,138 @@
         <article>
             
 
+<section> 
+    <section-title> 
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+    <path d="M368 415.86V72a24.07 24.07 0 00-24-24H72a24.07 24.07 0 00-24 24v352a40.12 40.12 0 0040 40h328" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/>
+    <path d="M416 464h0a48 48 0 01-48-48V128h72a24 24 0 0124 24v264a48 48 0 01-48 48z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/>
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M240 128h64M240 192h64M112 256h192M112 320h192M112 384h192"/>
+    <path fill="currentColor" d="M176 208h-64a16 16 0 01-16-16v-64a16 16 0 0116-16h64a16 16 0 0116 16v64a16 16 0 01-16 16z"/>
+</svg>
+        Little bits of C++ 
+    </section-title> 
 
+    <section-subtitle>
+        Published on Thursday March 27, 2025 
+    </section-subtitle>
+
+    <section-aside>
+        3 minutes 
+    </section-aside>
+
+    <section-separator></section-separator>
+
+    <section-content>
+        <h3 id="get-the-nth-byte-of-an-integer">Get the nth byte of an integer</h3>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span>
+</span><span style="color:#c594c5;">int </span><span style="color:#6699cc;">getByte</span><span style="color:#5fb3b3;">(</span><span style="color:#c594c5;">int </span><span style="color:#f99157;">num</span><span style="color:#5fb3b3;">, </span><span style="color:#c594c5;">unsigned </span><span style="color:#f99157;">byteno</span><span style="color:#5fb3b3;">)
+</span><span style="color:#5fb3b3;">{
+</span><span>    </span><span style="color:#5f6364;">// Mask and return the required byte
+</span><span>    </span><span style="color:#c594c5;">return </span><span style="color:#5fb3b3;">(</span><span>num </span><span style="color:#5fb3b3;">&gt;&gt; (</span><span>byteno </span><span style="color:#5fb3b3;">* </span><span style="color:#f99157;">8</span><span style="color:#5fb3b3;">)) &amp; 0x</span><span style="color:#f99157;">FF</span><span style="color:#5fb3b3;">;    
+</span><span style="color:#5fb3b3;">}
+</span><span>
+</span></code></pre>
+<h3 id="reserved-macro-identifiers">Reserved macro identifiers</h3>
+<p>Best practice is to avoid using preceding underscores in macro identifiers. <sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">#define </span><span style="color:#6699cc;">foo</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">x__</span><span style="color:#5fb3b3;">)</span><span> x__        </span><span style="color:#5f6364;">// prefer this... 
+</span><span style="color:#c594c5;">#define </span><span style="color:#6699cc;">foo</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">__x__</span><span style="color:#5fb3b3;">)</span><span> __x__    </span><span style="color:#5f6364;">// to this (might produce a warning)
+</span></code></pre>
+<h3 id="misconceptions-about-emplace-back-and-push-back">Misconceptions about <code>emplace_back</code> and <code>push_back</code></h3>
+<p><code>emplace_back()</code> does <em>not</em> move the object that is passed to it. <sup class="footnote-reference"><a href="#2">2</a></sup></p>
+<p>It simply <em>forwards</em> the argument to the constructor of the new object. If it is given an <em>l-value</em> then that is what the constructor for the new object will see and the underlying resource will need to be copied. </p>
+<p>The <em>l-value</em> must be explicitly converted to an <em>r-value</em> with <code>std::move()</code> to invoke the correct constructor and avoid a copy. </p>
+<p>Since C++11 <code>push_back()</code> has an overload which accepts an <em>r-value</em> and thus it can be be used to avoid the copy just the same as <code>emplace_back()</code></p>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">void </span><span style="color:#6699cc;">example</span><span style="color:#5fb3b3;">() 
+</span><span style="color:#5fb3b3;">{
+</span><span>    </span><span style="color:#c594c5;">auto</span><span> w </span><span style="color:#5fb3b3;">= </span><span style="color:#6699cc;">Widget</span><span style="color:#5fb3b3;">(</span><span style="color:#f99157;">1</span><span style="color:#5fb3b3;">,</span><span style="color:#f99157;">2</span><span style="color:#5fb3b3;">,</span><span style="color:#f99157;">3</span><span style="color:#5fb3b3;">);
+</span><span>
+</span><span>    vec</span><span style="color:#5fb3b3;">.</span><span style="color:#6699cc;">push_back</span><span style="color:#5fb3b3;">(</span><span>w</span><span style="color:#5fb3b3;">);     </span><span style="color:#5f6364;">// creates an unneccessary copy
+</span><span>    vec</span><span style="color:#5fb3b3;">.</span><span style="color:#6699cc;">emplace_back</span><span style="color:#5fb3b3;">(</span><span>w</span><span style="color:#5fb3b3;">);  </span><span style="color:#5f6364;">// also creates an unneccessary copy
+</span><span>
+</span><span>    vec</span><span style="color:#5fb3b3;">.</span><span style="color:#6699cc;">push_back</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">move</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">w</span><span style="color:#5fb3b3;">));    </span><span style="color:#5f6364;">// invokes r-value ctor, no copy
+</span><span>    vec</span><span style="color:#5fb3b3;">.</span><span style="color:#6699cc;">emplace_back</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">std</span><span style="color:#5fb3b3;">::</span><span style="color:#6699cc;">move</span><span style="color:#5fb3b3;">(</span><span style="color:#6699cc;">w</span><span style="color:#5fb3b3;">)); </span><span style="color:#5f6364;">// same thing
+</span><span style="color:#5fb3b3;">}
+</span></code></pre>
+<h3 id="same-name-different-compilation-unit">Same name, different compilation unit</h3>
+<p>Having structs with the <em>same name</em> in separate compilation units can cause undefined behavior. I was getting <code>std::bad_alloc</code> exceptions from code that looked like this: </p>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#5f6364;">// Mesh.cpp
+</span><span style="color:#c594c5;">struct </span><span>vertex_t
+</span><span style="color:#5fb3b3;">{
+</span><span>     GLfloat position</span><span style="color:#5fb3b3;">[</span><span style="color:#f99157;">3</span><span style="color:#5fb3b3;">];
+</span><span>     GLfloat normal</span><span style="color:#5fb3b3;">[</span><span style="color:#f99157;">3</span><span style="color:#5fb3b3;">];
+</span><span style="color:#5fb3b3;">};
+</span><span>
+</span><span style="color:#5f6364;">// Font3D.cpp
+</span><span style="color:#c594c5;">struct </span><span>vertex_t
+</span><span style="color:#5fb3b3;">{
+</span><span>    GLfloat position</span><span style="color:#5fb3b3;">[</span><span style="color:#f99157;">3</span><span style="color:#5fb3b3;">];
+</span><span style="color:#5fb3b3;">};
+</span></code></pre>
+<p>To the best of my knowledge this shouldn't cause undefined behavior, but regardless I was able to narrow down the problem to being the names of these two structs. </p>
+<h3 id="a-thread-safe-singleton-for-c-11-or-newer">A thread-safe singleton for C++11 or newer</h3>
+<p>A change made to the standard for C++11 makes possible a very simple thread-safe singleton pattern. </p>
+<blockquote>
+<p>§6.7 [stmt.dcl] p4</p>
+<p>If control enters the declaration concurrently while the variable is being initialized, the concurrent execution shall wait for completion of the initialization.</p>
+</blockquote>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">class </span><span style="color:#fac863;">Singleton
+</span><span style="color:#5fb3b3;">{
+</span><span style="color:#c594c5;">public</span><span style="color:#5fb3b3;">:
+</span><span>    </span><span style="color:#c594c5;">static</span><span> Singleton</span><span style="color:#5fb3b3;">&amp; </span><span style="color:#6699cc;">instance</span><span style="color:#5fb3b3;">()
+</span><span>    </span><span style="color:#5fb3b3;">{
+</span><span>        </span><span style="color:#c594c5;">static</span><span> Singleton s</span><span style="color:#5fb3b3;">;
+</span><span>        </span><span style="color:#c594c5;">return</span><span> s</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#5fb3b3;">}
+</span><span style="color:#c594c5;">private</span><span style="color:#5fb3b3;">:
+</span><span>      
+</span><span style="color:#5fb3b3;">};
+</span></code></pre>
+<h3 id="the-minutia-of-pointers-to-union-members">The Minutia of pointers to union members</h3>
+<p>Pointers to union members are guaranteed to be equivalent</p>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">union </span><span>Foo
+</span><span style="color:#5fb3b3;">{
+</span><span>    </span><span style="color:#c594c5;">char</span><span>    c</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#c594c5;">short</span><span>   s</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#c594c5;">int</span><span>     i</span><span style="color:#5fb3b3;">;
+</span><span>    </span><span style="color:#c594c5;">long</span><span>    l</span><span style="color:#5fb3b3;">;
+</span><span style="color:#5fb3b3;">}</span><span> f</span><span style="color:#5fb3b3;">;
+</span><span>
+</span><span style="color:#6699cc;">assert</span><span style="color:#5fb3b3;">((</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f </span><span style="color:#5fb3b3;">== (</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f</span><span style="color:#5fb3b3;">.</span><span>c</span><span style="color:#5fb3b3;">);
+</span><span style="color:#6699cc;">assert</span><span style="color:#5fb3b3;">((</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f </span><span style="color:#5fb3b3;">== (</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f</span><span style="color:#5fb3b3;">.</span><span>s</span><span style="color:#5fb3b3;">);
+</span><span style="color:#6699cc;">assert</span><span style="color:#5fb3b3;">((</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f </span><span style="color:#5fb3b3;">== (</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f</span><span style="color:#5fb3b3;">.</span><span>i</span><span style="color:#5fb3b3;">);
+</span><span style="color:#6699cc;">assert</span><span style="color:#5fb3b3;">((</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f </span><span style="color:#5fb3b3;">== (</span><span style="color:#c594c5;">void</span><span style="color:#5fb3b3;">*)&amp;</span><span style="color:#6699cc;">f</span><span style="color:#5fb3b3;">.</span><span>l</span><span style="color:#5fb3b3;">);
+</span></code></pre>
+<p>From <em>C standard (N1570, 6.7.2.1 Structure and union specifiers)</em>:</p>
+<blockquote>
+<p>16 The size of a union is sufficient to contain the largest of its members. The value of at most one of the members can be stored in a union object at any time. <strong>A pointer to a union object, suitably converted, points to each of its members</strong> (or if a member is a bit- field, then to the unit in which it resides), and vice versa.</p>
+</blockquote>
+<h3 id="virtual-destructors-when-why-how">Virtual Destructors (when, why, how)</h3>
+<p>Needed when you want to delete an object with just a pointer to the base class. <sup class="footnote-reference"><a href="#3">3</a></sup></p>
+<pre data-lang="c++" style="background-color:#2b2c2f;color:#cccece;" class="language-c++ "><code class="language-c++" data-lang="c++"><span style="color:#c594c5;">class </span><span style="color:#fac863;">Base
+</span><span style="color:#5fb3b3;">{
+</span><span>    </span><span style="color:#5fb3b3;">~</span><span style="color:#c594c5;">virtual </span><span style="color:#6699cc;">Base</span><span style="color:#5fb3b3;">() {} 
+</span><span style="color:#5fb3b3;">};
+</span><span>
+</span><span style="color:#c594c5;">class </span><span style="color:#fac863;">Derived </span><span style="color:#5fb3b3;">: </span><span style="color:#c594c5;">public </span><span style="color:#99c794;">Base 
+</span><span style="color:#5fb3b3;">{
+</span><span>
+</span><span style="color:#5fb3b3;">};
+</span><span>
+</span><span style="color:#5f6364;">// ... 
+</span><span>
+</span><span>Base</span><span style="color:#5fb3b3;">*</span><span> p </span><span style="color:#5fb3b3;">= </span><span style="color:#c594c5;">new </span><span style="color:#6699cc;">Derived</span><span style="color:#5fb3b3;">();
+</span><span>
+</span><span style="color:#5f6364;">// virtual destructor needs to be defined (even an empty one) or else this causes undefined behavior
+</span><span style="color:#c594c5;">delete</span><span> p</span><span style="color:#5fb3b3;">;
+</span></code></pre>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://stackoverflow.com/a/22027287">stackoverflow</a>
+<sup class="footnote-reference"><a href="#2">2</a></sup>: <a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">quuxplusone.github.io</a>
+<sup class="footnote-reference"><a href="#3">3</a></sup>: <a href="https://stackoverflow.com/a/461224/1103084">stackoverflow</a></p>
+</div>
+
+    </section-content>
+</section>
 
 
         </article>

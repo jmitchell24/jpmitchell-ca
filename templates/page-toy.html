@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<section> 
+    <h3> 
+        {% include "ionicons/hammer-outline.html" %}
+        Toy 
+    </h3>   
+
+    
+    <canvas class="zdog-canvas" width="400" height="400"></canvas>
+</section>
+
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.js">
+
+</script>
+
+<script>
+
+    var style = window.getComputedStyle(document.body);
+    let bg_primary = ( style.getPropertyValue('--bg-primary') ); // #336699
+    let bg_dark = ( style.getPropertyValue('--bg-dark') ); // calc(2px*2)
+
+    // Made with Zdog
+
+    let isSpinning = true;
+
+    let illo = new Zdog.Illustration({
+    element: '.zdog-canvas',
+    dragRotate: true,
+    // stop spinning when drag starts
+    onDragStart: function() {
+        isSpinning = false;
+    },
+    });
+
+    // circle
+    new Zdog.Ellipse({
+        addTo: illo,
+        diameter: 200,
+        translate: { z: 100 },
+        stroke: 20,
+        color: bg_primary,
+    });
+
+    // square
+    new Zdog.Rect({
+        addTo: illo,
+        width: 200,
+        height: 200,
+        translate: { z: -100 },
+        stroke: 40,
+        color: bg_dark,
+        fill: true,
+    });
+
+    function animate() {
+        illo.rotate.y += isSpinning ? 0.01 : 0;
+        illo.updateRenderGraph();
+        requestAnimationFrame( animate );
+    }
+
+    animate();
+
+
+</script>
+
+{% endblock %}
+

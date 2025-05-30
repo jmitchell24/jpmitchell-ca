@@ -1,13 +1,15 @@
 ---
 title: "Little bits of C++"
 author: "James Mitchell"
-draft: true 
+draft: false 
 tags: [guide, code, c++]
 date: 2025-03-27
 updated: 2025-03-27
 ---
 
-# Get the nth byte of an integer 
+
+### Get the nth byte of an integer 
+
 ```c++
 
 int getByte(int num, unsigned byteno)
@@ -18,7 +20,7 @@ int getByte(int num, unsigned byteno)
 
 ```
 
-# Reserved macro identifiers 
+### Reserved macro identifiers 
 Best practice is to avoid using preceding underscores in macro identifiers. [^1]
 
 ```c++
@@ -26,7 +28,7 @@ Best practice is to avoid using preceding underscores in macro identifiers. [^1]
 #define foo(__x__) __x__    // to this (might produce a warning)
 ``` 
 
-# Misconceptions about `emplace_back` and `push_back`
+### Misconceptions about `emplace_back` and `push_back`
 
 `emplace_back()` does *not* move the object that is passed to it. [^2]
 
@@ -49,7 +51,7 @@ void example()
 }
 ```
 
-# Same name, different compilation unit
+### Same name, different compilation unit
 Having structs with the _same name_ in separate compilation units can cause undefined behavior. I was getting `std::bad_alloc` exceptions from code that looked like this: 
 
 ```c++
@@ -69,12 +71,12 @@ struct vertex_t
 
 To the best of my knowledge this shouldn't cause undefined behavior, but regardless I was able to narrow down the problem to being the names of these two structs. 
 
-# A thread-safe singleton for C++11 or newer
+### A thread-safe singleton for C++11 or newer
 
 A change made to the standard for C++11 makes possible a very simple thread-safe singleton pattern. 
 
-`§6.7 [stmt.dcl] p4`
-
+> §6.7 [stmt.dcl] p4
+> 
 > If control enters the declaration concurrently while the variable is being initialized, the concurrent execution shall wait for completion of the initialization.
 
 ```c++
@@ -91,7 +93,7 @@ private:
 };
 ```
 
-# The Minutia of pointers to union members
+### The Minutia of pointers to union members
 Pointers to union members are guaranteed to be equivalent
 ```c++
 union Foo
@@ -109,12 +111,10 @@ assert((void*)&f == (void*)&f.l);
 ```
 
 From _C standard (N1570, 6.7.2.1 Structure and union specifiers)_:
->16 The size of a union is sufficient to contain the largest of its members. The value of at most one of the members can be stored in a union object at any time. **A pointer to a union object, suitably converted, points to each of its members** (or if a member is a bit- field, then to the unit in which it resides), and vice versa.
-
-[^1]: https://stackoverflow.com/a/24010265/1103084
+> 16 The size of a union is sufficient to contain the largest of its members. The value of at most one of the members can be stored in a union object at any time. **A pointer to a union object, suitably converted, points to each of its members** (or if a member is a bit- field, then to the unit in which it resides), and vice versa.
 
 
-# Virtual Destructors (when, why, how)
+### Virtual Destructors (when, why, how)
 Needed when you want to delete an object with just a pointer to the base class. [^3]
 
 ```c++
@@ -136,6 +136,8 @@ Base* p = new Derived();
 delete p;
 ```
 
-[^1]: https://stackoverflow.com/a/22027287
-[^2]: https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/
-[^3]: https://stackoverflow.com/a/461224/1103084
+
+
+[^1]: [stackoverflow](https://stackoverflow.com/a/22027287)
+[^2]: [quuxplusone.github.io](https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/)
+[^3]: [stackoverflow](https://stackoverflow.com/a/461224/1103084)

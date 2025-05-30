@@ -4,18 +4,16 @@
 
     /* color palette */ 
 
-    --primary-color: #252525;
+    /* --primary-color: #252525;
     --secondary-color: #465A65;
     --accent-color: #366472;
     --text-color: #333;
     --light-bg: #bfbfbf;
     --card-bg: #e4e4e4;
-    --border-color: #c5c5c5;
+    --border-color: #c5c5c5; */
 
 
-    /* #region Colors */
-
-    --text-primary: red;
+    /* --text-primary: #fac863;
     --text-secondary: red;
     --text-success: red;
     --text-danger: red;
@@ -24,16 +22,30 @@
     --text-light: #cccece;
     --text-dark: #2b2c2f;
     --text-white: white;
-    --text-muted: #5f6364;
+    --text-muted: #5f6364; */
     
-    --bg-primary: #fac863;
+    /* --bg-primary: #fac863;
     --bg-secondary: #44454a;
     --bg-success: red;
-    --bg-danger: red;
     --bg-warning: red;
-    --bg-info: red;
+    --bg-alert: red;
+    --bg-white: rgb(255 0 0);
     --bg-light: #ececec;
-    --bg-dark: #2b2c2f; 
+    --bg-dark: #2b2c2f;  */
+
+    /* #region Colors */
+
+    --color-primary: #fac863;
+    --color-secondary: gray;
+    --color-success: lightgreen;
+    --color-warning: orange;
+    --color-alert: orangered;
+
+    --color-darker: #2b2c2f;
+    --color-dark: #38393c;
+    --color-gray: #88898d;
+    --color-light: #e7e8ed;
+    --color-lighter: #feffff;
     
     /* #endregion Colors */
 
@@ -61,7 +73,7 @@
     --text-h6: 1.00rem;
     --text-body: 1.0rem;
     --text-caption: 1.0rem;
-    --text-small: 1.0rem;
+    --text-small: .8rem;
 
     --line-h1: 3.05rem; 
     --line-h2: 1.3rem;
