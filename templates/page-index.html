@@ -20,11 +20,7 @@
 
             <section-item-content>
                 {{ it.description }}
-            </section-item-content>
-
-            <section-item-subtitle>
-                {{ it.url }}
-            </section-item-subtitle>        
+            </section-item-content>       
         </section-item>
         {% endfor %}
         </section-item-list>
@@ -70,10 +66,6 @@
                 <section-item-title>
                     <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
                 </section-item-title>
-                
-                <section-item-subtitle>
-                    {{ it.extra.url }}
-                </section-item-subtitle>
 
                 <section-item-aside>
                     {{ it.date | date(format="%a %b. %d, %Y") }}

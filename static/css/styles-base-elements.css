@@ -402,11 +402,10 @@ table {
     background-color: var(--color-dark);
     color: var(--color-lighter); 
     
-    width: 100%;
     border-collapse: collapse;
     border-radius: var(--border-radius);
     
-    overflow: hidden;
+    overflow: scroll;
 }
 
 th,

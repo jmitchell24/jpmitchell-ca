@@ -1,6 +1,27 @@
 
 
+footer { 
+    display: flex;
+    flex-direction: column;
+}
 
+footer-text { 
+
+}
+
+footer-flags { 
+
+}
+
+footer-flags a { 
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: .15rem solid transparent;
+}
+
+footer-flags a:hover { 
+
+}
 
 
 
