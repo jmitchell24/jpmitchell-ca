@@ -1,0 +1,154 @@
+<canvas width="200" height="200" id="aside-portrait-toy"></canvas>
+
+<script>
+    function lazyJS(src, onload) { 
+        const script = document.createElement('script'); 
+        script.onload = onload; 
+        script.src = src; 
+        document.head.appendChild(script); 
+    }
+
+    function startToy() { 
+        lazyJS("https://unpkg.com/zdog@1/dist/zdog.dist.min.js", function() { 
+            lazyJS("https://cdn.jsdelivr.net/npm/zfont/dist/zfont.min.js", function() {
+                // Initialize Zfont
+                Zfont.init(Zdog);
+
+                // Create a Zdog illustration
+                let illo = new Zdog.Illustration({
+                    element: '#aside-portrait-toy',
+                });
+
+                // Set up a font to use
+                let myFont = new Zdog.Font({
+                    src: "{{ get_url(path='font.ttf', trailing_slash=false) }}"
+                });
+
+                // Create a text object
+                // This is just a Zdog.Shape object with a couple of extra parameters!
+                new Zdog.Text({
+                    addTo: illo,
+                    font: myFont,
+                    value: 'J',
+                    fontSize: 100,
+                    color: '#000', 
+                    fill: true, 
+                    stroke: 5, 
+                    translate: { x: -20, y: 35, z:50 }, 
+                    rotate: { x: 0, y: 0, z: 0 },
+                });
+
+                new Zdog.Text({
+                    addTo: illo,
+                    font: myFont,
+                    value: 'P',
+                    fontSize: 100,
+                    color: '#000', 
+                    fill: true, 
+                    stroke: 5, 
+                    translate: { x: 35, y: -50, z:40 }, 
+                    rotate: { x: Zdog.TAU/4, y: 0, z: -Zdog.TAU/4 }, 
+                });
+
+                new Zdog.Text({
+                    addTo: illo,
+                    font: myFont,
+                    value: 'M',
+                    fontSize: 100,
+                    color: '#000', 
+                    fill: true, 
+                    stroke: 5, 
+                    translate: { x: 50, y: 35, z:-50 }, 
+                    rotate: { x: 0, y: Zdog.TAU/4, z: 0 },
+                });
+
+                
+                let rect = new Zdog.Rect({
+                    addTo: illo,
+                    width: 100,
+                    height: 100,
+                    stroke: 5,
+                    color: '#000',
+                    rotate: { x:0, y:0, z:0 }, 
+                    translate: { x:0, y:0, z:50, }, 
+                });
+
+                rect.copy({
+                    rotate: { x:Zdog.TAU/4, y:0, z:0 }, 
+                    translate: { x:0, y:-50, z:0, }, 
+                });
+
+                rect.copy({
+                    rotate: { x:0, y:Zdog.TAU/4, z:0 }, 
+                    translate: { x:50, y:0, z:0, }, 
+                });
+
+                // Animation variables
+                
+                let cycleCount = 300;
+                let easingPower = 5;
+
+                const rots = [ 
+                    { x:0, y:0, z:0 }, // view J
+                    { x:-Zdog.TAU/4, y:Zdog.TAU/4, z:0 }, // view P
+                    { x:0, y:Zdog.TAU/4, z:0 }, // view M
+                    { x:-Zdog.TAU/8, y:Zdog.TAU/8, z:0 }, // view All 
+                ];
+                
+                function animate() {
+
+                    const numRotations = rots.length;
+                
+                    // Calculate progress through the entire cycle (0 to numRotations)
+                    const totalProgress = (toyTicker / cycleCount) % numRotations;
+                    
+                    // Find which segment we're in
+                    const segmentIndex = Math.floor(totalProgress);
+                    const segmentProgress = totalProgress - segmentIndex;
+                    
+                    // Get current and next rotation indices (with wraparound)
+
+                    // Apply easing to the segment progress
+                    const tween = Zdog.easeInOut(segmentProgress, easingPower);
+
+                    const animIndex = segmentIndex;
+                    const nextIndex = (segmentIndex + 1) % numRotations;
+                    
+                    // Interpolate between current and next rotation
+                    illo.rotate.x = rots[animIndex].x + (rots[nextIndex].x - rots[animIndex].x) * tween;
+                    illo.rotate.y = rots[animIndex].y + (rots[nextIndex].y - rots[animIndex].y) * tween;
+                    illo.rotate.z = rots[animIndex].z + (rots[nextIndex].z - rots[animIndex].z) * tween;
+
+                    toyTicker++;
+                    
+                    illo.updateRenderGraph();
+                    requestAnimationFrame(animate);
+                }; 
+
+                animate(); 
+            });
+        }); 
+    }
+</script>
+
+<script>
+    let toyInit = true; 
+    let toyToggle = false; 
+    let toyElement = document.getElementById("aside-portrait-toy"); 
+    let toyTicker = 0; 
+
+    toyElement.onclick = function() { 
+        toyToggle = !toyToggle;         
+        toyElement.style.opacity = toyToggle ? 1 : 0; 
+        document.getElementById("aside-portrait").style.opacity = toyToggle ? 0 : 1; 
+
+        if (toyToggle) {
+            toyTicker = 0;
+        }
+    
+        if (toyInit) {
+            startToy(); 
+            toyInit = false; 
+        }
+    };
+</script>

@@ -1,13 +1,11 @@
 
 
 <aside>
-
-    <aside-portrait>
     <!-- contains img tag with a base64 encoded jpeg (over 40k) -->
-    {% include "base-portrait.html"  %}    
-    </aside-portrait>
-    
+    {% include "base-aside-portrait.html" %}
 
+    {% include "base-aside-toy.html" %}
+    
     <aside-ul>
         <aside-li>
             <a href="mailto:{{resume.basics.email}}">{% include "ionicons/mail-open-outline.html" %}</a>

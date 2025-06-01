@@ -148,8 +148,6 @@ h6 > summary {
         height: auto;
     }
 
-
-
     header { 
         margin: 0rem 1rem;
     }
@@ -166,7 +164,6 @@ h6 > summary {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content:center;
 
         gap: var(--space-3); 
     }

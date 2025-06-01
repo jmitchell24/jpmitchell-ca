@@ -1,5 +1,15 @@
 
 
+#aside-portrait-toy { 
+    width: 200px;
+    height: 200px;
+    position:absolute;
+    background: var(--color-lighter); 
+    border-radius: var(--border-radius);
+    cursor: grab;
+    opacity: 0;
+}
+
 aside-portrait {
     background-color: var(--color-lighter);
 
@@ -7,7 +17,8 @@ aside-portrait {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    max-width: 300px;
+    width: 200px;
+    height: 200px;
 
     
     border-radius: var(--border-radius);
@@ -86,7 +97,4 @@ aside-subtitle {
         gap: var(--space-3); 
     }
 
-    aside-portrait { 
-        max-width: 200px;
-    }
 }
