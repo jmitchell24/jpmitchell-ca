@@ -6,7 +6,7 @@
 
 <style>
     #toy-canvas { 
-        background: var(--color-primary); 
+        background: var(--color-lighter); 
         border: var(--space-1) solid var(--color-darker); 
         border-radius: var(--border-radius);
     }
@@ -86,7 +86,7 @@
         addTo: illo,
         width: 100,
         height: 100,
-        stroke: 5,
+        stroke: 5.5,
         color: '#000',
         rotate: { x:0, y:0, z:0 }, 
         translate: { x:0, y:0, z:50, }, 
@@ -113,7 +113,13 @@
         { x:0, y:Zdog.TAU/4, z:0 }, // view M
         { x:-Zdog.TAU/8, y:Zdog.TAU/8, z:0 }, // view All 
     ];
-    
+
+    illo.rotate.x = rots[3].x;
+    illo.rotate.y = rots[3].y;
+    illo.rotate.z = rots[3].z;
+
+    illo.updateRenderGraph();
+
     function animate() {
 
         const numRotations = rots.length;
@@ -144,7 +150,7 @@
         requestAnimationFrame(animate);
     }; 
 
-    animate(); 
+    //animate(); 
 
 
 
