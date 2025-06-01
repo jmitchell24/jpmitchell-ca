@@ -8,6 +8,7 @@ updated: 2025-03-26
 
 ### Decimal Units 
 
+{% table() %}
 | Name      | Unit | Total Bytes               |
 | --------- | ---- | ------------------------- |
 | Exabytes  | EB   | 1,000,000,000,000,000,000 |
@@ -16,9 +17,11 @@ updated: 2025-03-26
 | Gigabytes | GB   | 1,000,000,000             |
 | Megabytes | MB   | 1,000,000                 |
 | Kilobytes | KB   | 1,000                     | 
+{% end %}
 
 ### Binary Units
 
+{% table() %}
 | Name | Unit | Magnitude | Total Bytes               |
 | ---- | ---- | --------- | ------------------------- |
 | ...  | EiB  | 2^60      | 1,152,921,504,606,846,976 |
@@ -27,7 +30,7 @@ updated: 2025-03-26
 | ...  | GiB  | 2^30      | 1,073,741,824             |
 | ...  | MiB  | 2^20      | 1,048,576                 |
 | ...  | KiB  | 2^10      | 1,024                     |
-
+{% end %}
 
 ### Generating Bytes String 
 ``` c++

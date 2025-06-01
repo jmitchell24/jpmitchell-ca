@@ -395,14 +395,22 @@ Base Elements -> Tables
 
 */
 
+table-wrapper {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+}
+
+table-wrapper table {
+  min-width: 100%;
+  width: auto;
+}
+
 table {
     background-color: var(--color-dark);
     color: var(--color-lighter); 
-    
     border-collapse: collapse;
-    border-radius: var(--border-radius);
-    
-    overflow: scroll;
 }
 
 th,
