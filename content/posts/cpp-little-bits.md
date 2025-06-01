@@ -136,8 +136,10 @@ Base* p = new Derived();
 delete p;
 ```
 
-
+### References 
 
 [^1]: [stackoverflow](https://stackoverflow.com/a/22027287)
+
 [^2]: [quuxplusone.github.io](https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/)
+
 [^3]: [stackoverflow](https://stackoverflow.com/a/461224/1103084)

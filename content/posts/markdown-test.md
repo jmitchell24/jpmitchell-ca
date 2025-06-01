@@ -99,19 +99,23 @@ console.log(foo(5))
 
 ### Tables
 
+{% table() %}
 | Heading1 | Heading2                   |
 | -------- | -------------------------- |
 | row1     | Lorem ipsum dolor sit amet |
 | row2     | Lorem ipsum dolor sit amet |
 | row3     | Lorem ipsum dolor sit amet |
+{% end %}
 
 Right aligned columns
 
+{% table() %}
 | Heading1 |                   Heading2 |
 | -------: | -------------------------: |
 |     row1 | Lorem ipsum dolor sit amet |
 |     row2 | Lorem ipsum dolor sit amet |
 |     row3 | Lorem ipsum dolor sit amet |
+{% end %}
 
 ### HTML
 

@@ -51,6 +51,13 @@ section-content {
     grid-area: content;
     margin-top: var(--space-3); 
 
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+section-content > * {
+    /* border: 1px rebeccapurple solid; */
 }
 
 section-item-list { 
@@ -120,7 +127,6 @@ section-item > section-item-subtitle {
 
 section-item > section-item-content { 
     grid-area: content;
-    margin-left: var(--space-3);
 }
 
 

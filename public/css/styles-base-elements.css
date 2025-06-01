@@ -203,9 +203,9 @@ Base Elements -> Headings
     align-items: center;
 } */
 
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
     margin: var(--space-3) 0; 
-}
+} */
 
 h1 { font-size:var(--text-h1); font-weight: var(--weight-h1); line-height: var(--line-h1);}
 h2 { font-size:var(--text-h2); font-weight: var(--weight-h2); line-height: var(--line-h2);}
@@ -242,8 +242,8 @@ Base Elements -> Paragraphs
 */
 
 p {
-    margin: 1rem .5rem;
-    padding: 0;
+    /* margin: 1rem .5rem; */
+    /* padding: 0; */
 }
 
 /* 
@@ -278,28 +278,26 @@ Base Elements -> Lists
 
 */
 
-ul,
-ol {
-    margin: .5rem 0;
-    padding-left: 2rem;
-    border: none;
+ul, ol {
+    padding-left: 4ch;
 }
 
 ul {
-    list-style-type: disc;
+    list-style-type: circle;
 }
 
 ol {
     list-style-type: decimal;
+    padding-left: 4ch;
 }
 
 li {
-    padding-left: 0.25rem;
+    /* padding-left: 0.25rem; */
 }
 
 li > ul,
 li > ol {
-    margin: 0.5rem 0;
+    /* margin: 0.5rem 0; */
 }
 
 /* 
@@ -309,7 +307,7 @@ Base Elements -> Nested lists
 */
 
 ul ul {
-    list-style-type: circle;
+    list-style-type:disc
 }
 
 ul ul ul {
@@ -441,11 +439,8 @@ Base Elements -> Horizontal Rules
 */
 
 hr {
-    border: none;
-    height: 2px;
+    height: .15rem;
     background-color: var(--color-darker);
-    margin: 2rem 0;
-    border-radius: 1px;
 }
 
 /* 
@@ -510,8 +505,10 @@ Base Elements -> Footnotes
 
 */
 
-.footnote-definition-label { 
-
+.footnote-definition { 
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2); 
 }
 
 .footnote-ref {
