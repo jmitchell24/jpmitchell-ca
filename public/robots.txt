@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://jpmitchell.ca/sitemap.xml
+Sitemap: https://www.jpmitchell.ca/sitemap.xml

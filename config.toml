@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://jpmitchell.ca"
+base_url = "https://www.jpmitchell.ca"
 # base_url = "https://jpmitchell-ca.haldi.win"
 
 # Whether to automatically compile all Sass files in the sass directory
