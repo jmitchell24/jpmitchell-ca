@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap'); */ 
+
+/* @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap'); */
+@import url('fonts/Montserrat-Regular.ttf');
+@import url('fonts/UbuntuMono-Regular.ttf');
 
 
 
@@ -364,7 +367,7 @@ code {
     width: fit-content;
     padding: var(--space-1);
 
-    font-family: "Cascadia Mono", monospace;
+    font-family: "Ubuntu Mono", monospace;
     font-size: var(--text-small);   
     
     vertical-align: middle;
@@ -374,7 +377,7 @@ pre {
     padding: var(--space-3);
     
     overflow-x: auto;
-    font-family: "Cascadia Mono", monospace;
+    font-family: "Ubuntu Mono", monospace;
     line-height: 1.1rem;
     border-radius: var(--border-radius);
 }

@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<section> 
+    <section-title> 
+        {% include "ionicons/globe-outline.html" %}
+        Test Form
+    </section-title>   
+
+    <section-content>
+
+        <form id="testForm">
+            <h3>Text Inputs</h3>
+            
+            <label for="text">Text Input:</label>
+            <input type="text" id="text" name="text" placeholder="Enter text">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email">
+            
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" placeholder="Enter URL">
+            
+            <label for="tel">Telephone:</label>
+            <input type="tel" id="tel" name="tel" placeholder="Enter phone number">
+            
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search...">
+            
+            <h3>Number Inputs</h3>
+            
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" min="0" max="100" step="1">
+            
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="0" max="100" value="50">
+            
+            <h3>Date & Time Inputs</h3>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+            
+            <label for="datetime-local">DateTime Local:</label>
+            <input type="datetime-local" id="datetime-local" name="datetime-local">
+            
+            <label for="month">Month:</label>
+            <input type="month" id="month" name="month">
+            
+            <label for="week">Week:</label>
+            <input type="week" id="week" name="week">
+            
+            <h3>Selection Inputs</h3>
+            
+            <label for="select">Select Dropdown:</label>
+            <select id="select" name="select">
+                <option value="">Choose an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+            
+            <label for="multiple">Multiple Select:</label>
+            <select id="multiple" name="multiple" multiple>
+                <option value="item1">Item 1</option>
+                <option value="item2">Item 2</option>
+                <option value="item3">Item 3</option>
+                <option value="item4">Item 4</option>
+            </select>
+            
+            <label>Radio Buttons:</label>
+            <input type="radio" id="radio1" name="radio" value="radio1">
+            <label for="radio1">Radio 1</label>
+            
+            <input type="radio" id="radio2" name="radio" value="radio2">
+            <label for="radio2">Radio 2</label>
+            
+            <input type="radio" id="radio3" name="radio" value="radio3">
+            <label for="radio3">Radio 3</label>
+            
+            <h3>Checkboxes</h3>
+            
+            <input type="checkbox" id="checkbox1" name="checkbox1" value="check1">
+            <label for="checkbox1">Checkbox 1</label>
+            
+            <input type="checkbox" id="checkbox2" name="checkbox2" value="check2">
+            <label for="checkbox2">Checkbox 2</label>
+            
+            <input type="checkbox" id="checkbox3" name="checkbox3" value="check3">
+            <label for="checkbox3">Checkbox 3</label>
+            
+            <h3>File & Color</h3>
+            
+            <label for="file">File Upload:</label>
+            <input type="file" id="file" name="file">
+            
+            <label for="file-multiple">Multiple Files:</label>
+            <input type="file" id="file-multiple" name="file-multiple" multiple>
+            
+            <label for="color">Color Picker:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+            
+            <h3>Text Areas</h3>
+            
+            <label for="textarea">Textarea:</label>
+            <textarea id="textarea" name="textarea" rows="4" cols="50" placeholder="Enter multiple lines of text"></textarea>
+            
+            <h3>Hidden & Other</h3>
+            
+            <input type="hidden" id="hidden" name="hidden" value="hidden-value">
+            
+            <label for="readonly">Readonly Input:</label>
+            <input type="text" id="readonly" name="readonly" value="This is readonly" readonly>
+            
+            <label for="disabled">Disabled Input:</label>
+            <input type="text" id="disabled" name="disabled" value="This is disabled" disabled>
+            
+            <h3>Form Controls</h3>
+            
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="displayFormData()">Display Form Data</button>
+        </form>
+        
+        <h2>Form Data Output</h2>
+        <div id="output"></div>
+        
+        <script>
+            function displayFormData() {
+                const form = document.getElementById('testForm');
+                const formData = new FormData(form);
+                const output = document.getElementById('output');
+                
+                let html = '<h3>Form Data:</h3><ul>';
+                
+                for (let [key, value] of formData.entries()) {
+                    html += `<li><strong>${key}:</strong> ${value}</li>`;
+                }
+                
+                // Handle checkboxes that aren't checked
+                const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    if (!checkbox.checked) {
+                        html += `<li><strong>${checkbox.name}:</strong> (unchecked)</li>`;
+                    }
+                });
+                
+                html += '</ul>';
+                output.innerHTML = html;
+            }
+            
+            // Prevent actual form submission for testing
+            document.getElementById('testForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                displayFormData();
+            });
+        </script>
+    </section-content>
+    
+</section>
+
+
+
+
+
+{% endblock %}

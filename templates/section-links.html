@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section> 
+    <section-title> 
+        {% include "ionicons/link-outline.html" %}
+        Links ( From around the
+        {% include "ionicons/globe-outline.html" %}
+        )
+    </section-title>   
+
+    {% set links = get_section(path="links/_index.md") %}
+
+    <section-content>    
+        <section-item-list>
+            {% for it in links.pages %}
+            <section-item>
+                <section-item-title>
+                    <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
+                </section-item-title>
+
+                <section-item-aside>
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
+                </section-item-aside>
+
+                <section-item-content>
+                    {{ it.content | safe }}
+                </section-item-content>
+            </section-item>
+            {% endfor %}
+        </section-item-list> 
+    </section-content>
+    
+</section>
+
+{% endblock content %}

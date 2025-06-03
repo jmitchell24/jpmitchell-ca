@@ -54,14 +54,14 @@
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
-        Good Reads 
+        Latest Links 
     </section-title>  
     
-    {% set reads = get_section(path="reads/_index.md") %}
+    {% set links = get_section(path="links/_index.md") %}
     
     <section-content>
         <section-item-list>
-            {% for it in reads.pages | slice(end=3) %}
+            {% for it in links.pages | slice(end=3) %}
             <section-item>
                 <section-item-title>
                     <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>

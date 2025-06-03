@@ -20,10 +20,12 @@ section-title {
     gap: var(--space-3); 
     align-items: center;
     font-size: var(--text-h3);
+    line-height: var(--line-h3);
 }
 
 section-title .ionicon { 
     height:var(--text-h3); 
+    
 }
 
 section-aside {

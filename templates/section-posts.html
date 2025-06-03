@@ -12,13 +12,13 @@
     
     <section-content>
         <section-item-list>
-            {% for it in posts.pages | slice(end=3) %}
+            {% for it in posts.pages %}
             <section-item>
                 <section-item-title>
                     <a href="{{ it.permalink }}">{{ it.title }}</a>
                 </section-item-title>
                 <section-item-aside>
-                    {{ it.date }}
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
                 </section-item-aside>
             </section-item>
             {% endfor %}
