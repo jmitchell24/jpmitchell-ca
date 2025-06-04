@@ -14,8 +14,8 @@
         {% for it in resume.basics.profiles %}
             <aside-li>
                 <a href="{{it.url | safe}}" target="_blank">
-                    {% if it.network == "twitter" %}
-                    {% include "ionicons/logo-twitter.html" %}
+                    {% if it.network == "linkedin" %}
+                    {% include "ionicons/logo-linkedin.html" %}
                     {% elif it.network == "github" %}
                     {% include "ionicons/logo-github.html" %}
                     {% elif it.network == "stackoverflow" %}

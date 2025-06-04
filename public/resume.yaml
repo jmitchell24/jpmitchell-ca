@@ -14,15 +14,16 @@ basics:
   #   countryCode: "CA"
   #   region: "Ontario"
   profiles:
-    - network: twitter
-      username: jmitchell24 
-      url: https://x.com/jmitchell24
+    - network: linkedin
+      username: james-mitchell-1427838a
+      url: https://www.linkedin.com/in/james-mitchell-1427838a
     - network: github
       username: jmitchell24 
       url: https://github.com/jmitchell24
     - network: stackoverflow
       username: james-mitchell
       url: https://stackoverflow.com/users/1103084/james-mitchell
+    
   summary: |
     I am a Developer & IT Specialist. 
     I have a life-long passion for computing and information technology.

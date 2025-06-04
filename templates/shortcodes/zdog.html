@@ -1,0 +1,40 @@
+<zdog-frame>
+    <canvas 
+        id="{{ id }}" 
+        width="{{ width | default(value=200) }}"
+        height="{{ height | default(value=200) }}"
+        >
+    </canvas>
+
+    <details>
+        
+        {{ "```javascript
+" ~ body ~ "
+```" | markdown | safe }}
+
+    </details>
+
+    <script>
+        {
+        // create illo
+        let illo = new Zdog.Illustration({
+        // set canvas with selector
+        element: '#{{id}}',
+        });
+
+        {{ body | safe }}
+
+
+        function animate() {
+            // rotate illo each frame
+            illo.rotate.y += 0.03;
+            illo.updateRenderGraph();
+            // animate next frame
+            requestAnimationFrame( animate );
+        }
+            // start animation
+        animate();
+        }
+
+    </script>
+</zdog-frame>
