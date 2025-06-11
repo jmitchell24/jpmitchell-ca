@@ -1,0 +1,26 @@
+
+
+button.copy-btn {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    border: var(--border-size) solid var(--color-darker); 
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: 0;
+
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    font-size: var(--text-small);
+    z-index: 1;
+}
+
+button.copy-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-darker);
+}

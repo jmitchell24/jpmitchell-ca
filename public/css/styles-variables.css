@@ -2,37 +2,6 @@
 
 :root {
 
-    /* color palette */ 
-
-    /* --primary-color: #252525;
-    --secondary-color: #465A65;
-    --accent-color: #366472;
-    --text-color: #333;
-    --light-bg: #bfbfbf;
-    --card-bg: #e4e4e4;
-    --border-color: #c5c5c5; */
-
-
-    /* --text-primary: #fac863;
-    --text-secondary: red;
-    --text-success: red;
-    --text-danger: red;
-    --text-warning: red;
-    --text-info: red;
-    --text-light: #cccece;
-    --text-dark: #2b2c2f;
-    --text-white: white;
-    --text-muted: #5f6364; */
-    
-    /* --bg-primary: #fac863;
-    --bg-secondary: #44454a;
-    --bg-success: red;
-    --bg-warning: red;
-    --bg-alert: red;
-    --bg-white: rgb(255 0 0);
-    --bg-light: #ececec;
-    --bg-dark: #2b2c2f;  */
-
     /* #region Colors */
 
     --color-primary: #fac863;

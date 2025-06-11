@@ -1,6 +1,6 @@
 ---
 title: The Intelligence Curse
-date: 2025-6-09
+date: 2025-06-09
 updated: 2025-06-09
 extra: 
     url: https://intelligence-curse.ai/
