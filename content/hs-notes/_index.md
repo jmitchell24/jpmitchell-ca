@@ -1,6 +1,6 @@
 ---
 title: "James Peter Mitchell"
-template: "page-homescreen-notes.html"
+template: "section-hs-notes.html"
 ---
 
 ---
@@ -11,6 +11,6 @@ Homescreen Notes is a minimalist note taking app for Android. Originally publish
 
 [Play Store Link](https://play.google.com/store/apps/details?id=com.james_mitchell.homescreen_notes_v2)
 
-[Privacy Policy](@privacy.md) 
+[Privacy Policy](@/hs-notes/privacy.md) 
 
-[Terms and Conditions](@terms.md)
+[Terms and Conditions](@/hs-notes/terms.md)

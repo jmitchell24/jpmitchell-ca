@@ -11,7 +11,7 @@ I really like [keyd](https://github.com/rvaiya/keyd). It's a key remapping progr
 
 The effect it has had on how I interface with my PC has been profound. It has enabled me to build a system of macros that enables me to navigate through my apps at a pace that I've never been able to before. 
 
-Here I'll explain how I use keyd, but my reccomendation to you is to learn how to configuration works, then start experimenting, and create a system of macros that best suits your needs and preferences. 
+Here I'll explain how I use keyd, but my reccomendation to you is to learn how the configuration works, then start experimenting, and create a system of macros that best suits your needs and preferences. 
 
 ### How to get and install Keyd 
 

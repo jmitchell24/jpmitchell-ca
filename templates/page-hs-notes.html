@@ -3,13 +3,13 @@
 {% block content %}
 
 <section>
-    <h3>
+    <section-title>
         {% include "ionicons/cube-outline.html" %}
-        Homescreen Notes 
-    </h3>
+        {{ page.title | safe }}
+    </section-title>
 </section> 
 
-{{ section.content | safe }}
+{{ page.content | safe }}
 
 
 {% endblock %}
