@@ -11,13 +11,11 @@ theme-switcher-button {
     
     font-size: var(--text-h4);
     text-decoration: none;
-    
 
     border-radius: .5rem;
     border: 0;
     border-left: var(--space-3) solid var(--color-primary); 
     
-
     padding: var(--space-2);
     width: auto;
 
@@ -42,5 +40,4 @@ theme-switcher-button.theme-active {
     theme-switcher { 
         width: auto;
     }
-
 }
