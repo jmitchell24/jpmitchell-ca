@@ -32,6 +32,7 @@
 
     {% include "base-footer.html"  %}
 
+    <!-- Copy Buttons -->
 
     <script>
         // Function to add copy buttons to all pre elements
@@ -91,6 +92,32 @@
         } else {
             addCopyButtons();
         }
+    </script>
+
+    <!-- Theme Controls -->
+
+    <script>
+        const THEME_KEY = "selected-theme"; 
+
+        let current_theme = localStorage.getItem(THEME_KEY) || "alt9"; 
+         
+        function setTheme(theme) { 
+            document.body.setAttribute("data-theme", theme); 
+
+            document.querySelectorAll("theme-switcher-button").forEach(btn => { 
+                const btn_theme = btn.getAttribute("data-theme"); 
+                if (btn_theme == theme) 
+                    btn.classList.add("theme-active"); 
+                else 
+                    btn.classList.remove("theme-active"); 
+            });
+
+            localStorage.setItem(THEME_KEY, theme); 
+            current_theme = theme; 
+        }
+
+        setTheme(current_theme);
+
     </script>
 
 </body>

@@ -4,4 +4,4 @@ This repository contains all source code and assets needed to build my [personal
 
 Built with [Zola](https://getzola.org).
 
- Copyright 2025, James Peter Mitchell. All rights reserved. 
+Copyright 2025, James Peter Mitchell. All rights reserved. 

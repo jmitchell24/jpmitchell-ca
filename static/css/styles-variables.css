@@ -67,3 +67,14 @@
     
     /* #endregion Typography */ 
 }
+
+[data-theme="alt0"] { --color-primary: #fa6363; }
+[data-theme="alt1"] { --color-primary: #fa63a8; }
+[data-theme="alt2"] { --color-primary: #c863fa; }
+[data-theme="alt3"] { --color-primary: #8363fa; }
+[data-theme="alt4"] { --color-primary: #63a8fa; }
+[data-theme="alt5"] { --color-primary: #63fac8; }
+[data-theme="alt6"] { --color-primary: #63fa83; }
+[data-theme="alt7"] { --color-primary: #83fa63; }
+[data-theme="alt8"] { --color-primary: #c8fa63; }
+[data-theme="alt9"] { --color-primary: #fac863; }

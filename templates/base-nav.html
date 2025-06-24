@@ -44,6 +44,17 @@
         </nav-li>
 
         <nav-li>
+            <a href="/extra"
+            {%if current_nav is starting_with("/extra") %}
+            aria-current="page"
+            {% endif %}
+            >
+            {% include "ionicons/settings-outline.html" %}
+            Extras
+            </a>
+        </nav-li>
+
+        <nav-li>
             <a href="/about"
             {%if current_nav is starting_with("/about") %}
             aria-current="page"
@@ -51,7 +62,6 @@
             >
             {% include "ionicons/person-outline.html" %}
             About Me
-             <!-- LLander -->
             </a>
         </nav-li>
     </nav-ul>
