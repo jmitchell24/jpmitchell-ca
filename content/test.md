@@ -1,6 +1,6 @@
 ---
 title: "James Peter Mitchell"
-template: "page-form-test.html"
+template: "page-test.html"
 draft: true 
 
 ---

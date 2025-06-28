@@ -4,7 +4,7 @@ author: "James Mitchell"
 draft: false 
 tags: []
 date: 2025-06-24
-updated: 2025-06-24
+updated: 2025-06-28
 ---
 
 I just finished adding a theme switcher to my site. 
@@ -39,15 +39,37 @@ This is the html for the theme selector. I prefer to use custom tags instead of 
 </theme-switcher>
 ```
 
-Full disclosure, I used Anthropic's [Claude](https://claude.ai) 🤖 to help decide the color names.  
-
 ### CSS 
 
 Nothing particularily interesting here.
 
+All accents across the site use the `--color-primary` variable. I created a separate selector for all potential values of the `data-theme` attribute. 
+
 The relevant detail is just that the theme color is being displayed prominantly on the button (through the `:hover` and `.theme-active` selector). 
 
 ```css
+
+:root {
+    --color-primary: #fac863;
+
+    --color-darker: #2b2c2f;
+    --color-dark: #38393c;
+    --color-gray: #88898d;
+    --color-light: #e7e8ed;
+    --color-lighter: #feffff;
+}
+
+[data-theme="alt0"] { --color-primary: #fa6363; }
+[data-theme="alt1"] { --color-primary: #fa63a8; }
+[data-theme="alt2"] { --color-primary: #c863fa; }
+[data-theme="alt3"] { --color-primary: #8363fa; }
+[data-theme="alt4"] { --color-primary: #63a8fa; }
+[data-theme="alt5"] { --color-primary: #63fac8; }
+[data-theme="alt6"] { --color-primary: #63fa83; }
+[data-theme="alt7"] { --color-primary: #83fa63; }
+[data-theme="alt8"] { --color-primary: #c8fa63; }
+[data-theme="alt9"] { --color-primary: #fac863; }
+
 theme-switcher { 
     display: flex;
     flex-direction: column;
@@ -88,17 +110,42 @@ theme-switcher-button.theme-active {
 ### Javascript
 
 This is the important part. 
+First, I get the inital value for the selected theme. I pull a previously selected theme from `localStorage` if it exists, otherwise I set a default. 
 
-First decide the inital theme to set. Either a previously selected theme, or a default value.
+```javascript 
+const THEME_KEY = "selected-theme"; 
+let current_theme = localStorage.getItem(THEME_KEY) || "alt9"; 
+```
 
-The `setTheme` function does the following: 
-- Sets the correct `data-theme` attribute for the `body` element. This is what applies the theme to the entire page. 
-- Update all the `theme-switcher-button` elements. Add or remove the `theme-active` tag to reflect the currently selected theme.
-- Save selection to `localStorage`, and the `current_theme` variable. 
+Next I setup a function to perform the switch. 
+
+```javascript
+function setTheme(theme) { 
+    document.body.setAttribute("data-theme", theme); 
+    document.querySelectorAll("theme-switcher-button").forEach(btn => { 
+        const btn_theme = btn.getAttribute("data-theme"); 
+        if (btn_theme == theme) 
+            btn.classList.add("theme-active"); 
+        else 
+            btn.classList.remove("theme-active"); 
+    });
+
+    localStorage.setItem(THEME_KEY, theme); 
+    current_theme = theme; 
+}
+```
+
+It does the following: 
+- Set the `data-theme` attribute on the `body` element. This is what applies the new color to the entire page. 
+- Find all theme switcher buttons on the page (if any)
+- Set the state of the buttons based on the selected theme. 
+- Save the newly selected theme to `localStorage`
+- Set a variable `current_theme` for future reference while the the page is loaded in the browser. 
+
+Here's the complete code (feel free to copy/paste 😉)  
 
 ```javascript
 const THEME_KEY = "selected-theme"; 
-
 let current_theme = localStorage.getItem(THEME_KEY) || "alt9"; 
     
 function setTheme(theme) { 
@@ -120,3 +167,4 @@ setTheme(current_theme);
 
 ```
 
+And that is all there is to it! 
