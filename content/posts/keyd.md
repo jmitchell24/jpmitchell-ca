@@ -1,17 +1,21 @@
 ---
-title: "Feeling like a wizard on my Desktop (keyd guide)"
+title: "asdf"
 author: "James Mitchell"
-draft: true 
+draft: true
 tags: []
-date: 2025-06-06
-updated: 2025-06-06
+date: 2025-07-13
+updated: 2025-07-13
 ---
 
-I really like [keyd](https://github.com/rvaiya/keyd). It's a key remapping program for linux that is easy to to setup and very powerful. 
+[keyd](https://github.com/rvaiya/keyd) is amazing. 
 
-The effect it has had on how I interface with my PC has been profound. It has enabled me to build a system of macros that enables me to navigate through my apps at a pace that I've never been able to before. 
+Here's why. 
 
-Here I'll explain how I use keyd, but my reccomendation to you is to learn how the configuration works, then start experimenting, and create a system of macros that best suits your needs and preferences. 
+If you (like me) spend most of your day on a linux desktop, then you navigate through your apps with a combination of your keyboard and mouse. You're probably pretty nimble, your mousing is precise and you've memorized a bunch of common keyboard shortcuts. You have the skill you need get the job done. 
+
+But what if you could go faster? Navigate large documents without taking your hands off the home row? Kill, launch or move your apps using only your keyboard. You can do this with keyd, and so much more. 
+
+Here I'll explain how I use keyd, but I strongly recommend that you learn the configuration syntax, then start experimenting, and create a system of macros and shortucts that best suits your needs and preferences. 
 
 ### How to get and install Keyd 
 
