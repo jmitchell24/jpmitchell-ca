@@ -1,7 +1,7 @@
 ---
-title: "asdf"
+title: "Why I love keyd"
 author: "James Mitchell"
-draft: true
+draft: false
 tags: []
 date: 2025-07-13
 updated: 2025-07-13
@@ -29,7 +29,6 @@ sudo systemctl enable --now keyd
 ```
 
 To get started, you will need to create a configuration file at `/etc/keyd/default.conf`.
-
 
 This is my entire configuration file, I'll break down and explain each section in detail: 
 
