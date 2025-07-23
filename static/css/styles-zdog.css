@@ -1,7 +1,0 @@
-zdog-frame > canvas { 
-    background-color: var(--color-primary);
-    
-
-    border: var(--space-1) solid var(--color-darker);
-    border-radius: var(--border-radius);
-}
