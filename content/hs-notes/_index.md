@@ -7,11 +7,28 @@ template: "section-hs-notes.html"
 
 ### Overview 
 
-Homescreen Notes is a minimalist note taking app for Android. Originally published in 2016. 
+<gallery>
+<gallery-item> <img src="img/old-hs-notes_1.png"> </gallery-item>
+<gallery-item> <img src="img/old-hs-notes_2.png"> </gallery-item>
+<gallery-item> <img src="img/old-hs-notes_3.png"> </gallery-item>
+<gallery-item> <img src="img/old-hs-notes_4.png"> </gallery-item>
+</gallery>
+
+
+
+Homescreen Notes is the first android app I created after graduating my program at Fanshawe College. 
+
+Its a very simple note-taking app, made with a focus on minimalism and very 'low friction' use. 
+
+A stand-out feature was the ability to write notes directly onto the app widget, saving the user from an additional context switch. 
+
+Originally published in 2016, it has high user ratings and has been downloaded over <strong>10,000</strong> times. 
+
+As of Summer 2025, I am currently working on a new, modernized version called "Hs Notes". 
 
 [Play Store Link](https://play.google.com/store/apps/details?id=com.james_mitchell.homescreen_notes_v2)
 
-[Play Store Link (Preview)](https://play.google.com/store/apps/details?id=ca.jpmitchell.homescreen_notes_preview)
+[Play Store Link (Hs Notes)](https://play.google.com/store/apps/details?id=ca.jpmitchell.homescreen_notes_preview)
 
 [Privacy Policy](@/hs-notes/privacy.md) 
 

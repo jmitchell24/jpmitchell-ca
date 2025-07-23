@@ -1,0 +1,25 @@
+gallery { 
+   display: flex;
+   flex-direction: row; 
+   gap: var(--space-3); 
+}
+
+gallery-item { 
+    max-width: 150px;
+    
+    border: var(--space-1) solid var(--color-darker);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* This clips the image to the container's rounded border */
+    padding: var(--space-1)
+}
+
+gallery-item:hover { 
+    background-color: var(--color-primary);
+}
+
+gallery-item img { 
+    width: 100%; /* Changed from auto to fill the container */
+    height: auto;
+    border-radius: var(--border-radius); /* Match the container's border radius */
+    display: block; /* Removes any default spacing below the image */
+}

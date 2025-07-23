@@ -95,7 +95,7 @@ projects:
 
   - name: Homescreen Notes
     description: A minimalist note taking app for Android. First published in 2016, downloaded over 10,000 times. 
-    url: https://www.jpmitchell.ca/p/hs-notes
+    url: https://www.jpmitchell.ca/hs-notes
   
   - name: René
     description: A tui auto namer. 
