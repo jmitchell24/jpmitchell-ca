@@ -8,10 +8,10 @@ template: "section-hs-notes.html"
 ### Overview 
 
 <gallery>
-<gallery-item> <img src="img/old-hs-notes_1.png"> </gallery-item>
-<gallery-item> <img src="img/old-hs-notes_2.png"> </gallery-item>
-<gallery-item> <img src="img/old-hs-notes_3.png"> </gallery-item>
-<gallery-item> <img src="img/old-hs-notes_4.png"> </gallery-item>
+<gallery-item> <img src="/img/old-hs-notes_1.png"> </gallery-item>
+<gallery-item> <img src="/img/old-hs-notes_2.png"> </gallery-item>
+<gallery-item> <img src="/img/old-hs-notes_3.png"> </gallery-item>
+<gallery-item> <img src="/img/old-hs-notes_4.png"> </gallery-item>
 </gallery>
 
 
