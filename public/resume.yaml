@@ -90,7 +90,7 @@ skills:
 
 projects:
   - name: gbtwo 
-    description: My Gameboy Emulator 
+    description: A gameboy emulator, written in C++ using GLFW + IMGUI. 
     url: https://www.jpmitchell.ca/gbtwo
 
   - name: jpmitchell.ca
