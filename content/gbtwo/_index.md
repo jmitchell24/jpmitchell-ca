@@ -11,7 +11,7 @@ GBTWO is my second gameboy emulator. I tried to make one many years ago but neve
 
 GBTWO is a study of the Gameboy hardware, moreso than an useable emulator like [Gambatte](https://emulation.gametechwiki.com/index.php/Gambatte) or [BGB](https://emulation.gametechwiki.com/index.php/BGB).
 
-[INSERT SCREENSHOT] 
+<img src="/img/gbtwo.png">
 
-[Launch App](/gbtwo/app)
+Demo Coming Soon...
 
