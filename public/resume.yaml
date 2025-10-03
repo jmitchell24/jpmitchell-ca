@@ -89,6 +89,10 @@ skills:
     keywords: ["Technical Support", "Communication", "Service Delivery"]
 
 projects:
+  - name: gbtwo 
+    description: My Gameboy Emulator 
+    url: https://www.jpmitchell.ca/gbtwo
+
   - name: jpmitchell.ca
     description: My personal (professional) site. 
     url: https://www.jpmitchell.ca/p/site

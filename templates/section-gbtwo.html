@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <section-title>
+        {% include "ionicons/cube-outline.html" %}
+        GBTWO
+    </section-title>
+</section> 
+
+{{ section.content | safe }}
+
+
+{% endblock %}

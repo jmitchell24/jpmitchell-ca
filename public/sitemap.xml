@@ -10,6 +10,12 @@
         <loc>https://www.jpmitchell.ca/extra/</loc>
     </url>
     <url>
+        <loc>https://www.jpmitchell.ca/gbtwo/</loc>
+    </url>
+    <url>
+        <loc>https://www.jpmitchell.ca/gbtwo/app/</loc>
+    </url>
+    <url>
         <loc>https://www.jpmitchell.ca/hs-notes/</loc>
     </url>
     <url>
@@ -77,6 +83,9 @@
     <url>
         <loc>https://www.jpmitchell.ca/posts/theme-switcher/</loc>
         <lastmod>2025-06-28</lastmod>
+    </url>
+    <url>
+        <loc>https://www.jpmitchell.ca/test/</loc>
     </url>
     <url>
         <loc>https://www.jpmitchell.ca/toy/</loc>
