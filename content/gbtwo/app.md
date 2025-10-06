@@ -1,4 +1,4 @@
 ---
 title: "GBTWO"
-template: "page-gbtwo3.html"
+template: "page-gbtwo4.html"
 ---
