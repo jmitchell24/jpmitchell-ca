@@ -13,4 +13,4 @@ I also love Halloween, and to celebrate the day and also this amazing time of ye
 
 See if you can type Edgar Allen Poe's poem "The Raven" before you meet your grisly end!
 
-[Launch Typo Mortis](@/tk/app.md)
+[Launch Typo Mortis](/halloween-2025-game.html)

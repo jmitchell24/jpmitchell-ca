@@ -96,12 +96,12 @@
         <loc>https://www.jpmitchell.ca/test/</loc>
     </url>
     <url>
-        <loc>https://www.jpmitchell.ca/tk/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/tk/app/</loc>
-    </url>
-    <url>
         <loc>https://www.jpmitchell.ca/toy/</loc>
+    </url>
+    <url>
+        <loc>https://www.jpmitchell.ca/typo_mortis/</loc>
+    </url>
+    <url>
+        <loc>https://www.jpmitchell.ca/typo_mortis/app/</loc>
     </url>
 </urlset>

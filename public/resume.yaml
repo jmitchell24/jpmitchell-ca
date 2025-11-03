@@ -89,21 +89,17 @@ skills:
     keywords: ["Technical Support", "Communication", "Service Delivery"]
 
 projects:
+  - name: Typo Mortis 
+    description: A sinister little typing game, written in C++, using RayLib. 
+    url: https://www.jpmitchell.ca/typo_mortis
+
   - name: gbtwo 
     description: A gameboy emulator, written in C++ using GLFW + IMGUI. 
     url: https://www.jpmitchell.ca/gbtwo
 
-  - name: jpmitchell.ca
-    description: My personal (professional) site. 
-    url: https://www.jpmitchell.ca/p/site
-
   - name: Homescreen Notes
     description: A minimalist note taking app for Android. First published in 2016, downloaded over 10,000 times. 
     url: https://www.jpmitchell.ca/hs-notes
-  
-  - name: René
-    description: A tui auto namer. 
-    url: https://www.jpmitchell.ca/p/rene
 
 
 
