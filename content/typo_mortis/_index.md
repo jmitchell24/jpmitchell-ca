@@ -13,14 +13,13 @@ Typo Mortis a sinister little typing game. The idea came to me a few days before
 
 [Halloween 2025 Post](@/posts/halloween-2025.md)
 
-Now I want to take it further. I think idea is a good one, and I intend to flesh it out into a complete game. 
+Now I want to take it further. I think the idea is a good one, and I intend to flesh it out into a complete game. 
 
 ### Development
 
 I'm currently refactoring the spaghetti code I wrote to get the first version finished, and will begin expanding scope and features soon. 
 
-I'm writing in C++, with Raylib. I have no intention to release source code, but I am exploring options for publication / distribution. For now, I will be regularily posting updates here, on my site. You can try the latest build now by clicking the link below.
-
+I'm writing in C++, with [Raylib](https://www.raylib.com/). I have no intention to release source code, but I am exploring options for publication / distribution. For now, I will be regularily posting updates here, on my site. You can try the latest build now by clicking the link below.
 
 [Launch Typo Mortis](@/typo_mortis/app.md)
 
