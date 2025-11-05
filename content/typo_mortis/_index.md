@@ -24,6 +24,10 @@ I'm writing in C++, with [Raylib](https://www.raylib.com/). I have no intention 
 [Launch Typo Mortis](@/typo_mortis/app.md)
 
 
+### Support
 
+If you enjoyed playing Typo Mortis, I would very much appreciate your help in funding its continued development.
 
+[Donate via Ko-Fi](https://ko-fi.com/jpmitchellca)
 
+[Donate via Paypal](https://www.paypal.com/donate/?hosted_button_id=3RUDZR9MCLX8W)
