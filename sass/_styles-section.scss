@@ -16,16 +16,16 @@ section {
 
 section-title { 
     grid-area: title;
-    display: flex;
-    gap: var(--space-3); 
-    align-items: center;
     font-size: var(--text-h3);
     line-height: var(--line-h3);
+    display: inline-block;
+    
 }
 
 section-title .ionicon { 
-    height:var(--text-h3); 
-    
+    width:var(--text-h3) !important; 
+    height: auto;
+    vertical-align:  top;
 }
 
 section-aside {
