@@ -389,8 +389,7 @@ Base Elements -> Paragraphs
 */
 
 p {
-    /* margin: 1rem .5rem; */
-    /* padding: 0; */
+    padding: var(--space-2) 0;
 }
 
 /* 
@@ -401,9 +400,9 @@ Base Elements -> Links
 
 a {
     background-color: var(--color-lighter);
-    color: var(--color-darker);
-    border: .15rem var(--color-darker) solid; 
-    
+    color: var(--color-darker);;
+    border: .1rem var(--color-primary) solid; 
+    border-radius: var(--border-radius);
     
     padding: 0 var(--space-1); 
     
@@ -415,7 +414,8 @@ a {
 a:hover {
     background-color: var(--color-primary);
     color: var(--color-darker);
-    border: .15rem var(--color-darker) solid; 
+    border: .1rem var(--color-primary) solid; 
+    border-radius: var(--border-radius);
     text-decoration: none;
 }
 
@@ -515,6 +515,7 @@ code {
     font-size: var(--text-small);   
     
     vertical-align: middle;
+    border-radius: var(--border-radius);
 }
 
 pre {
