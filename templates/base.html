@@ -34,6 +34,23 @@
         })();
     </script>
     <!-- End Matomo Code -->
+
+    <!-- External Links Fix -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get all links
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+            // Check if link is external
+            if (link.hostname && link.hostname !== window.location.hostname) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    });
+    </script>
+    <!-- End External Links Fix -->
 </head>
 <body>
     {% include "base-header.html"  %}
