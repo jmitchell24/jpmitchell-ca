@@ -401,7 +401,7 @@ Base Elements -> Links
 a {
     background-color: var(--color-lighter);
     color: var(--color-darker);;
-    border: .1rem var(--color-primary) solid; 
+    border: .15rem var(--color-primary) solid; 
     border-radius: var(--border-radius);
     
     padding: 0 var(--space-1); 
@@ -414,7 +414,7 @@ a {
 a:hover {
     background-color: var(--color-primary);
     color: var(--color-darker);
-    border: .1rem var(--color-primary) solid; 
+    border: .15rem var(--color-primary) solid; 
     border-radius: var(--border-radius);
     text-decoration: none;
 }
@@ -506,10 +506,11 @@ Base Elements -> Code
 code {
     background-color: var(--color-darker);
     color: var(--color-lighter); 
+    border: .15rem var(--color-darker) solid; 
 
     height: fit-content;
     width: fit-content;
-    padding: var(--space-1);
+    padding: 0 var(--space-1); 
 
     font-family: "Ubuntu Mono", monospace;
     font-size: var(--text-small);   

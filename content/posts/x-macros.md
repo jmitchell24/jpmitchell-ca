@@ -4,7 +4,7 @@ author: "James Mitchell"
 draft: false
 tags: [guide, code, c++]
 date: 2025-11-20
-updated: 2025-11-22
+updated: 2025-11-25
 ---
 
 I really like [x-macros](https://en.wikipedia.org/wiki/X_macro), and over the past few years I've been using them more and more in my code. 
@@ -76,7 +76,7 @@ int main()
 
 Pay attention to the pre-processor macro `EXPAND_ENUM_DOGS`, that's the important part. It has an input parameter. That parameter is itself ANOTHER pre-processor macro with its own input parameters. 
 
-It doesn't define anything on it's own, but can be used by its input (`DOG`, in this example) to do something useful. You can think this macro as an encoding of your repeating data elements, but in the form of raw source code text, as opposed something more 'structured' like variables.  
+It doesn't define anything on it's own, but can be used by its input (`DOG`, in this example) to do something useful. This is a form of [Metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming). Your pre-defined data elements are encoded within the macro, which becomes the source of truth any code you may want to generate. 
 
 To demonstrate, look closely at the `to_string` function:
 ```c++
@@ -122,6 +122,6 @@ if (str == "boxer") return Dog::DOG_BOXER;
 
 The key idea is to repeat against the execution of a pre-processor macro. This ability can then be leveraged to eliminate large repeating patterns in your code, as well as guarantee correctness. 
 
-Ever since I learned this technique, I have used it extensively in my own code. It makes working with enums in C++ much more functional than the base language allows. I have also used it to implement a light-weight form of polymorphism. 
+Ever since I learned this technique, I have used it extensively in my own code. It makes working with enums in C++ much more functional than the base language allows. I have also used it to implement a light-weight form of polymorphism. The performance benefits are also pretty clear, this dog breed example could have been written with a lookup table, which would have incurred an additional memory and runtime cost.  
 
 If you want more practical examples of this trick, see my code library [ut](https://github.com/jmitchell24/ut), which I actively maintain on github and uses x-macros throughout (hint: look specifically at [color.hpp](https://github.com/jmitchell24/ut/blob/master/include/ut/color.hpp).

@@ -4,24 +4,19 @@ author: "James Mitchell"
 draft: false 
 tags: []
 date: 2025-06-24
-updated: 2025-06-28
+updated: 2025-11-25
 ---
 
 I just finished adding a theme switcher to my site. 
 It's now available on the [Extra](/extra) page. 
-
 This was fairly straight-forward, and I managed to complete it start-to-finish in an hour or two. 
-
 For the sake of posterity, and to help anyone who might stumble 👢 onto this page, 
-
 here's how I did it. 
 
 ### HTML
 
 This is the html for the theme selector. I prefer to use custom tags instead of ids or classes. 
-
 `onclick` is set to call the js function that will perform the switch. 
-
 `data-theme` declares the theme assigned to the button. 
 
 ```html
@@ -42,9 +37,7 @@ This is the html for the theme selector. I prefer to use custom tags instead of 
 ### CSS 
 
 Nothing particularily interesting here.
-
 All accents across the site use the `--color-primary` variable. I created a separate selector for all potential values of the `data-theme` attribute. 
-
 The relevant detail is just that the theme color is being displayed prominantly on the button (through the `:hover` and `.theme-active` selector). 
 
 ```css
