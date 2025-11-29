@@ -22,6 +22,17 @@
         </nav-li>
 
         <nav-li>
+            <a href="/projects"
+            {%if current_nav is starting_with("/projects") %}
+            aria-current="page"
+            {% endif %}
+            >
+            {% include "ionicons/cube-outline.html" %}
+            Projects
+            </a>
+        </nav-li>
+
+        <nav-li>
             <a href="/posts"
             {%if current_nav is starting_with("/posts") %}
             aria-current="page"
@@ -43,7 +54,7 @@
             </a>
         </nav-li>
 
-        <nav-li>
+        <!-- <nav-li>
             <a href="/extra"
             {%if current_nav is starting_with("/extra") %}
             aria-current="page"
@@ -52,9 +63,9 @@
             {% include "ionicons/settings-outline.html" %}
             Extras
             </a>
-        </nav-li>
+        </nav-li> -->
 
-        <nav-li>
+        <!-- <nav-li>
             <a href="/about"
             {%if current_nav is starting_with("/about") %}
             aria-current="page"
@@ -63,6 +74,6 @@
             {% include "ionicons/person-outline.html" %}
             About Me
             </a>
-        </nav-li>
+        </nav-li> -->
     </nav-ul>
 </nav>

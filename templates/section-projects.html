@@ -2,6 +2,70 @@
 
 {% block content %}
 
-{{ page.content | safe }}
+<section> 
+    <section-title> 
+        {% include "ionicons/cube-outline.html" %}
+        Projects
+    </section-title>   
+
+    {% set projects = get_section(path="projects/_index.md") %}
+    
+    <section-content>
+        <project-list>
+            {% for it in projects.pages %}
+
+            
+            <project-item data-href="{{ it.permalink }}">
+                <project-item-logo>
+                    {% if it.extra.logo %}
+                    <img width=128 height=128 src="{{it.extra.logo}}">
+                    {% else %}
+                    <img width=128 height=128 src="img/project-placeholder.png">
+                    {% endif %}
+                </project-item-logo>
+
+                <project-item-content>
+                    <project-item-title>
+                        {{ it.title }}
+                    </project-item-title>
+
+                    {% if it.extra.summary %}
+                    {{it.extra.summary}}
+                    {% else %}
+                    No Summary
+                    {% endif %}
+                </project-item-content>
+                
+                <project-item-status>
+                    Start Date: XXX
+                    End Date: XXX
+                </project-item-status>
+            </project-item>
+            
+            {% endfor %}
+        </project-list>
+    </section-content>
+    
+</section>
+
+<script>
+    document.querySelectorAll('project-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            const url = item.getAttribute('data-href');
+            if (url) { window.location.href = url; }
+        });
+
+        // Make it keyboard accessible
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'link');
+
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
+    });
+</script>
 
 {% endblock content %}
