@@ -8,6 +8,13 @@
         Projects
     </section-title>   
 
+    <section-aside>
+        <a href="/">
+            {% include "ionicons/arrow-undo-outline.html" %}
+            Home
+        </a>
+    </section-aside>
+
     {% set projects = get_section(path="projects/_index.md") %}
     
     <section-content>
@@ -15,7 +22,7 @@
             {% for it in projects.pages %}
 
             
-            <project-item data-href="{{ it.permalink }}">
+            <project-item data-href="{{ it.path }}">
                 <project-item-logo>
                     {% if it.extra.logo %}
                     <img width=128 height=128 src="{{it.extra.logo}}">
@@ -37,8 +44,8 @@
                 </project-item-content>
                 
                 <project-item-status>
-                    Start Date: XXX
-                    End Date: XXX
+                    {% include "ionicons/shapes-outline.html" %}
+                    {{ it.extra.type | default(value="Project") }}
                 </project-item-status>
             </project-item>
             
@@ -50,10 +57,18 @@
 
 <script>
     document.querySelectorAll('project-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            const url = item.getAttribute('data-href');
-            if (url) { window.location.href = url; }
-        });
+        const url = item.getAttribute('data-href');
+        if (url) { 
+            
+            item.setAttribute('title', url);
+
+            item.addEventListener('click', (e) => {
+                window.location.href = url; 
+            });
+        }
+
+        
+
 
         // Make it keyboard accessible
         item.setAttribute('tabindex', '0');

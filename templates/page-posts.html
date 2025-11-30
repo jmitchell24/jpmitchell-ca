@@ -9,14 +9,21 @@
     </section-title> 
 
     <section-subtitle>
-        Published on {{ page.date | date(format="%A %B %d, %Y") }} 
+        {% include "ionicons/time-outline.html" %}
+        {{ page.date | date(format="%A %B %d, %Y") }} 
+        <br>
+
+        {% include "ionicons/time-outline.html" %}
+        {{ page.reading_time }} minutes 
+        <br>
     </section-subtitle>
 
     <section-aside>
-        {{ page.reading_time }} minutes 
+        {% include "ionicons/arrow-undo-outline.html" %}
+        <a href="/posts">
+             Posts
+        </a>
     </section-aside>
-
-    <section-separator></section-separator>
 
     <section-content>
 

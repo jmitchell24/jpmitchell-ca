@@ -4,19 +4,47 @@
 
 <section> 
     <section-title> 
-        {% include "ionicons/newspaper-outline.html" %}
+        {% include "ionicons/cube-outline.html" %}
         {{ page.title }} 
     </section-title> 
 
-    <section-subtitle>
-        Published on {{ page.date | date(format="%A %B %d, %Y") }} 
-    </section-subtitle>
+    
+ 
+    <section-subtitle> 
+        {% include "ionicons/shapes-outline.html" %}
+        {{ page.extra.type | default(value="Project") }}
+        <br>
 
+        {% if page.extra.platforms %}
+        {% include "ionicons/layers-outline.html" %}
+        {% for it in page.extra.platforms %}
+        {{it}}
+        {% endfor %}
+        <br>
+        {% endif %}
+
+        {% include "ionicons/time-outline.html" %}
+        {{ page.date | date(format="%A %B %d, %Y") }} 
+        <br>
+
+        <!-- {% include "ionicons/calendar-outline.html" %}
+        <span data-updated="{{ page.updated | date(format='%Y-%m-%d') }}">
+            Updated {{ page.date | date(format="%A %B %d, %Y") }} 
+        </span>
+        <br> -->
+        
+        
+
+    </section-subtitle>
+        
     <section-aside>
-        {{ page.reading_time }} minutes 
+        <a href="/projects">
+             {% include "ionicons/arrow-undo-outline.html" %} 
+             Projects
+        </a>
     </section-aside>
 
-    <section-separator></section-separator>
+    
 
     <section-content>
 
@@ -47,5 +75,19 @@
         {{ page.content | safe }}
     </section-content>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const span = document.querySelector('[data-updated]');
+        const updatedDate = new Date(span.dataset.updated);
+        const now = new Date();
+        const totalDays = Math.floor((now - updatedDate) / (1000 * 60 * 60 * 24));
+        
+        const years = Math.floor(totalDays / 365);
+        const days = totalDays % 365;
+        
+        span.textContent = `${span.textContent} ${years} years, ${days} days ago`;
+    });
+</script>
 
 {% endblock %}
