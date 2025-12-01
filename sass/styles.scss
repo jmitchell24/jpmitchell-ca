@@ -3,7 +3,7 @@
 
 @use "_styles-variables";
 @use "_styles-base-elements";
-@use "_styles-section";
+
 @use "_styles-nav";
 @use "_styles-aside";
 @use "_styles-header";
@@ -13,6 +13,12 @@
 @use "_styles-code";
 @use "_styles-extra";
 @use "_styles-gallery"; 
-@use "_styles-project"; 
+
+@use "_styles-page"; 
+@use "_styles-section";
+
+@use "_styles-project-list";
+@use "_styles-post-list"; 
+@use "_styles-tinypost-list"; 
 
 /* #endregion Imports */ 

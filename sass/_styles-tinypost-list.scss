@@ -1,0 +1,79 @@
+
+
+tinypost-list { 
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+tinypost-item {
+    display: grid;
+    grid-template-areas:  
+        "title status"
+        "content status";
+    grid-template-columns: 1fr auto;
+    border: var(--border-size) var(--color-darker) solid; 
+    border-radius: var(--border-radius);
+    
+    cursor: pointer;
+}
+
+tinypost-item:hover { 
+    border-color: var(--color-primary);
+}
+
+tinypost-item:hover tinypost-item-status{ 
+    color: var(--color-darker); 
+    background-color: var(--color-primary);
+}
+
+tinypost-item-title {    
+    grid-area: title; 
+    font-size: var(--text-h4);
+    line-height: var(--line-h4);
+    display: inline-block;
+
+    padding: var(--space-1); 
+}
+
+tinypost-item-content { 
+    grid-area: content;
+    padding: var(--space-1); 
+}
+
+tinypost-item-status { 
+    grid-area: status;
+    background-color: var(--color-darker);
+    color: var(--color-light);
+    min-width: 22ch;
+
+    // border: var(--border-size) solid var(--color-darker); 
+    border: 0;
+
+    padding: var(--space-1) var(--space-2);   
+}
+
+tinypost-item-status .ionicon { 
+    width:var(--text-h5) !important; 
+    height: auto;
+    vertical-align:text-bottom;
+}
+
+@media (max-width: 768px) {
+
+    tinypost-item { 
+        grid-template-areas:  
+        "title"
+        "content"
+        "status";
+        grid-template-columns: auto;
+    }
+
+    
+}
+
+
+@media (max-width: 390px) {
+    
+    
+}

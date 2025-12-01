@@ -5,89 +5,70 @@
 <section> 
     <section-title> 
         {% include "ionicons/cube-outline.html" %}
-        {{ page.title }} 
+        {{ page.title }}
     </section-title> 
-
-    
- 
-    <section-subtitle> 
-        {% include "ionicons/shapes-outline.html" %}
-        {{ page.extra.type | default(value="Project") }}
-        <br>
-
-        {% if page.extra.platforms %}
-        {% include "ionicons/layers-outline.html" %}
-        {% for it in page.extra.platforms %}
-        {{it}}
-        {% endfor %}
-        <br>
-        {% endif %}
-
-        {% include "ionicons/time-outline.html" %}
-        {{ page.date | date(format="%A %B %d, %Y") }} 
-        <br>
-
-        <!-- {% include "ionicons/calendar-outline.html" %}
-        <span data-updated="{{ page.updated | date(format='%Y-%m-%d') }}">
-            Updated {{ page.date | date(format="%A %B %d, %Y") }} 
-        </span>
-        <br> -->
         
-        
-
-    </section-subtitle>
-        
-    <section-aside>
+    <section-nav>
         <a href="/projects">
              {% include "ionicons/arrow-undo-outline.html" %} 
              Projects
         </a>
-    </section-aside>
+    </section-nav>
 
     
 
     <section-content>
 
-    {% if page.toc %}
+        <post> 
+            <post-header> 
+                <post-header-item> 
+                    {% include "ionicons/shapes-outline.html" %}
+                    {{ page.extra.type | default(value="Project") }}
+                </post-header-item>
 
-    <!-- 
-    <h3> Table of Contents </h3>
-    <ul>
-    {% for h1 in page.toc %}
-            <li>
-                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                {% if h1.children %}
-                    <ul>
-                        {% for h2 in h1.children %}
-                            <li>
-                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                {% if page.extra.platforms %}
+                <post-header-item> 
+                    {% include "ionicons/layers-outline.html" %}
+                    {% for it in page.extra.platforms %} {{it}} {% endfor %}
+                </post-header-item>
                 {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-    -->
+   
+                <post-header-item> 
+                    {% include "ionicons/time-outline.html" %}
+                    {{ page.date | date(format="%A %B %d, %Y") }} 
+                </post-header-item>
+            </post-header>
 
-    {% endif %} 
+            <post-content>
+                {{ page.content | safe }}
+            </post-content>
+        </post>
 
-        {{ page.content | safe }}
+        
     </section-content>
 </section>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const span = document.querySelector('[data-updated]');
-        const updatedDate = new Date(span.dataset.updated);
-        const now = new Date();
-        const totalDays = Math.floor((now - updatedDate) / (1000 * 60 * 60 * 24));
+        // const span = document.querySelector('[data-updated]');
+        // const updatedDate = new Date(span.dataset.updated);
+        // const now = new Date();
+        // const totalDays = Math.floor((now - updatedDate) / (1000 * 60 * 60 * 24));
         
-        const years = Math.floor(totalDays / 365);
-        const days = totalDays % 365;
+        // const years = Math.floor(totalDays / 365);
+        // const days = totalDays % 365;
         
-        span.textContent = `${span.textContent} ${years} years, ${days} days ago`;
+        // span.textContent = `${span.textContent} ${years} years, ${days} days ago`;
+
+        // add permalink copy button
+        // const element = document.querySelector('section-subtitle');
+        // addCopyButtonToElement(element, 
+        //     "Copy Permalink", "Permalink Copied!", 
+        //     () => '{{page.permalink | safe}}'
+        // );
     });
+
+
 </script>
 
 {% endblock %}

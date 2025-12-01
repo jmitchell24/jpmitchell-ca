@@ -1,0 +1,31 @@
+post { 
+
+}
+
+post > post-header { 
+    background-color: var(--color-darker);
+    color: var(--color-light);
+
+    padding:var(--space-2); 
+
+    border: var(--border-size) solid black;
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+post-header .ionicon { 
+    width:var(--text-h4) !important; 
+    height: auto;
+    vertical-align: top;
+}
+
+post > post-header > post-header-item { 
+    
+}
+
+post > post-content { 
+
+}

@@ -8,30 +8,55 @@
         Posts 
     </section-title>   
 
-    <section-aside>
-        {% include "ionicons/arrow-undo-outline.html" %}
+    <section-nav>
         <a href="/">
+            {% include "ionicons/arrow-undo-outline.html" %}
              Home
         </a>
-    </section-aside>
+    </section-nav>
 
     {% set posts = get_section(path="posts/_index.md") %}
     
     <section-content>
-        <section-item-list>
+        <post-list>
             {% for it in posts.pages %}
-            <section-item>
-                <section-item-title>
-                    <a href="{{ it.permalink }}">{{ it.title }}</a>
-                </section-item-title>
-                <section-item-aside>
-                    {{ it.date | date(format="%a %b. %d, %Y") }}
-                </section-item-aside>
-            </section-item>
+            <post-item data-internal-href="{{it.path}}">
+                <post-item-title> 
+                    {{ it.title }}
+                </post-item-title>
+
+                <post-item-status>
+                    {% include "ionicons/time-outline.html" %}
+                    {{ it.date | date(format="%a %b. %d, %Y") }} 
+                </post-item-status>
+            </post-item>
             {% endfor %}
-        </section-item-list>
+        </post-list>
     </section-content>
-    
 </section>
+
+
+<script>
+    document.querySelectorAll('*').forEach(item => {
+        const url = item.getAttribute('data-internal-href');
+        if (url) { 
+            item.setAttribute('title', url);
+            item.addEventListener('click', (e) => {
+                window.location.href = url; 
+            });
+        }
+
+        // Make it keyboard accessible
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'link');
+
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
+    });
+</script>
 
 {% endblock content %}

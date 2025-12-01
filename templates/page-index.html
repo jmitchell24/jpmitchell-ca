@@ -29,75 +29,149 @@
 <section>
     <section-title>
         {% include "ionicons/cube-outline.html" %}
-        Projects 
+        Project Updates
     </section-title>
 
-    <section-content>
-        <section-item-list>
-        {% for it in resume.projects %}
-        <section-item>
-            <section-item-title>
-                <a href={{ it.url }}>{{ it.name }}</a>
-            </section-item-title>
+    <section-nav>
+        <a href="/projects">
+             {% include "ionicons/arrow-redo-outline.html" %} 
+            All Projects 
+        </a>
+    </section-nav>
 
-            <section-item-content>
-                {{ it.description }}
-            </section-item-content>       
-        </section-item>
+    {% set projects = get_section(path="projects/_index.md") %}
+
+    <section-content>
+        <tinypost-list>
+        {% for it in projects.pages | slice(end=3) %}
+            <tinypost-item data-internal-href="{{it.path}}">
+                <tinypost-item-title>
+                    {{ it.title }}
+                </tinypost-item-title>
+
+                <tinypost-item-content>
+                    {{ it.extra.summary }}
+                </tinypost-item-content>
+
+                <tinypost-item-status>
+                    {% include "ionicons/time-outline.html" %} 
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
+                </tinypost-item-status>
+            </tinypost-item>
         {% endfor %}
-        </section-item-list>
+        </tinypost-list>
     </section-content>
 </section> 
 
 <section> 
     <section-title> 
         {% include "ionicons/newspaper-outline.html" %}
-        Latest Posts 
-    </section-title>   
+        Recent Posts 
+    </section-title>  
+    
+    <section-nav>
+        <a href="/posts">
+             {% include "ionicons/arrow-redo-outline.html" %} 
+             All Posts 
+        </a>
+    </section-nav>
 
     {% set posts = get_section(path="posts/_index.md") %}
     
     <section-content>
-        <section-item-list>
+        <tinypost-list>
             {% for it in posts.pages | slice(end=3) %}
-            <section-item>
-                <section-item-title>
-                    <a href="{{ it.permalink }}">{{ it.title }}</a>
-                </section-item-title>
-                <section-item-aside>
+            <tinypost-item data-internal-href="{{it.path}}">
+                <tinypost-item-title>
+                    {{ it.title }}
+                </tinypost-item-title>
+
+                <tinypost-item-status>
+                    {% include "ionicons/time-outline.html" %} 
                     {{ it.date | date(format="%a %b. %d, %Y") }}
-                </section-item-aside>
-            </section-item>
+                </tinypost-item-status>
+            </tinypost-item>
             {% endfor %}
-        </section-item-list>
+        </tinypost-list>
     </section-content>
 </section>
 
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
-        From around the Web
+        Recent Reading 
     </section-title>  
+
+    <section-nav>
+        <a href="/links">
+             {% include "ionicons/arrow-redo-outline.html" %} 
+             All Links 
+        </a>
+    </section-nav>
     
     {% set links = get_section(path="links/_index.md") %}
     
     <section-content>
-        <section-item-list>
+        <tinypost-list>
             {% for it in links.pages | slice(end=3) %}
-            <section-item>
-                <section-item-title>
-                    <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
-                </section-item-title>
+            <tinypost-item>
+                <tinypost-item-title data-external-href="{{it.path}}">
+                    {{ it.title }}
+                </tinypost-item-title>
 
-                <section-item-aside>
+                <tinypost-item-status>
+                    {% include "ionicons/time-outline.html" %} 
                     {{ it.date | date(format="%a %b. %d, %Y") }}
-                </section-item-aside>
-            </section-item>
+                </tinypost-item-status>
+            </tinypost-item>
             {% endfor %}
-        </section-item-list> 
+        </tinypost-list> 
     </section-content>
 </section> 
 
+<script>
+    document.querySelectorAll('*').forEach(item => {
+        const url = item.getAttribute('data-internal-href');
+        if (url) { 
+            item.setAttribute('title', url);
+            item.addEventListener('click', (e) => {
+                window.location.href = url; 
+            });
+        }
 
+        // Make it keyboard accessible
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'link');
+
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll('*').forEach(item => {
+        const url = item.getAttribute('data-external-href');
+        if (url) { 
+            item.setAttribute('title', url);
+            item.addEventListener('click', (e) => {
+                window.open(url, '_blank');
+            });
+            
+            // Make it keyboard accessible
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'link');
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        }
+    });
+</script>
 
 {% endblock content %}

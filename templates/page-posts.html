@@ -5,53 +5,38 @@
 <section> 
     <section-title> 
         {% include "ionicons/newspaper-outline.html" %}
-        {{ page.title }} 
+        {{ page.title }}
     </section-title> 
 
-    <section-subtitle>
-        {% include "ionicons/time-outline.html" %}
-        {{ page.date | date(format="%A %B %d, %Y") }} 
-        <br>
-
-        {% include "ionicons/time-outline.html" %}
-        {{ page.reading_time }} minutes 
-        <br>
-    </section-subtitle>
-
-    <section-aside>
-        {% include "ionicons/arrow-undo-outline.html" %}
+    <section-nav>
         <a href="/posts">
+            {% include "ionicons/arrow-undo-outline.html" %}
              Posts
         </a>
-    </section-aside>
+    </section-nav>
 
     <section-content>
 
-    {% if page.toc %}
+        <post>
+            <post-header>
+                <post-header-item>
+                    {% include "ionicons/time-outline.html" %}
+                    {{ page.date | date(format="%A %B %d, %Y") }} 
+                </post-header-item>
 
-    <!-- 
-    <h3> Table of Contents </h3>
-    <ul>
-    {% for h1 in page.toc %}
-            <li>
-                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                {% if h1.children %}
-                    <ul>
-                        {% for h2 in h1.children %}
-                            <li>
-                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-    -->
+                <post-header-item>
+                    {% include "ionicons/time-outline.html" %}
+                    {{ page.reading_time }} minutes 
+                </post-header-item>
+            </post-header>
 
-    {% endif %} 
+            <post-content>
+                {{ page.content | safe }}
+            </post-content>
+        </post>
 
-        {{ page.content | safe }}
+
+    
     </section-content>
 </section>
 

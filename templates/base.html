@@ -71,40 +71,35 @@
     <!-- Copy Buttons -->
 
     <script>
-        // Function to add copy buttons to all pre elements
-        function addCopyButtons() {
-            const preElements = document.querySelectorAll('pre');
-            
-            preElements.forEach((pre, index) => {
+        function addCopyButtonToElement(element, btnText, btnClickText, getClipText) {
                 // Skip if button already exists
-                if (pre.querySelector('.copy-btn')) 
+                if (element.querySelector('.copy-btn')) 
                     return;
                 
                 // Create wrapper div for positioning
-                const wrapper = document.createElement('pre-wrapper');
+                const wrapper = document.createElement('element-wrapper');
                 wrapper.style.position = 'relative';
                 wrapper.style.display = 'inline-block';
                 wrapper.style.width = '100%';
                 
                 // Insert wrapper before pre element
-                pre.parentNode.insertBefore(wrapper, pre);
-                wrapper.appendChild(pre);
+                element.parentNode.insertBefore(wrapper, element);
+                wrapper.appendChild(element);
                 
                 // Create copy button
                 const copyBtn = document.createElement('button');
                 copyBtn.className = 'copy-btn';
-                copyBtn.innerHTML = 'Copy';
+                copyBtn.innerHTML = btnText;
                 copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
                 
                 // Copy functionality
                 copyBtn.addEventListener('click', async () => {
                     try {
-                        const text = pre.textContent || pre.innerText;
-                        await navigator.clipboard.writeText(text);
+                        await navigator.clipboard.writeText(getClipText());
                         
                         // Visual feedback
                         const originalText = copyBtn.innerHTML;
-                        copyBtn.innerHTML = 'Copied';
+                        copyBtn.innerHTML = btnClickText;
                         
                         //Reset after 2 seconds
                         setTimeout(() => {
@@ -119,7 +114,63 @@
                 
                 // Add button to wrapper
                 wrapper.appendChild(copyBtn);
+        }
+        
+        // Function to add copy buttons to all pre elements
+        function addCopyButtons() {
+            const preElements = document.querySelectorAll('pre');
+            
+            preElements.forEach((pre, index) => { 
+                addCopyButtonToElement(pre, 
+                    "Copy Code", "Code Copied!", 
+                    () => pre.textContent || pre.innerText);
             });
+
+            // preElements.forEach((pre, index) => {
+            //     // Skip if button already exists
+            //     if (pre.querySelector('.copy-btn')) 
+            //         return;
+                
+            //     // Create wrapper div for positioning
+            //     const wrapper = document.createElement('pre-wrapper');
+            //     wrapper.style.position = 'relative';
+            //     wrapper.style.display = 'inline-block';
+            //     wrapper.style.width = '100%';
+                
+            //     // Insert wrapper before pre element
+            //     pre.parentNode.insertBefore(wrapper, pre);
+            //     wrapper.appendChild(pre);
+                
+            //     // Create copy button
+            //     const copyBtn = document.createElement('button');
+            //     copyBtn.className = 'copy-btn';
+            //     copyBtn.innerHTML = 'Copy Code';
+            //     copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
+                
+            //     // Copy functionality
+            //     copyBtn.addEventListener('click', async () => {
+            //         try {
+            //             const text = pre.textContent || pre.innerText;
+            //             await navigator.clipboard.writeText(text);
+                        
+            //             // Visual feedback
+            //             const originalText = copyBtn.innerHTML;
+            //             copyBtn.innerHTML = 'Code Copied!';
+                        
+            //             //Reset after 2 seconds
+            //             setTimeout(() => {
+            //                 copyBtn.innerHTML = originalText;
+            //             }, 1500);
+                        
+            //         } catch (err) {
+            //             // Fallback for older browsers
+            //             // ...
+            //         }
+            //     });
+                
+            //     // Add button to wrapper
+            //     wrapper.appendChild(copyBtn);
+            // });
         }
 
         // Run when DOM is loaded

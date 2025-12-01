@@ -8,12 +8,12 @@
         Projects
     </section-title>   
 
-    <section-aside>
+    <section-nav>
         <a href="/">
             {% include "ionicons/arrow-undo-outline.html" %}
             Home
         </a>
-    </section-aside>
+    </section-nav>
 
     {% set projects = get_section(path="projects/_index.md") %}
     
@@ -22,7 +22,7 @@
             {% for it in projects.pages %}
 
             
-            <project-item data-href="{{ it.path }}">
+            <project-item data-internal-href="{{ it.path }}">
                 <project-item-logo>
                     {% if it.extra.logo %}
                     <img width=128 height=128 src="{{it.extra.logo}}">
@@ -56,19 +56,14 @@
 </section>
 
 <script>
-    document.querySelectorAll('project-item').forEach(item => {
-        const url = item.getAttribute('data-href');
+    document.querySelectorAll('*').forEach(item => {
+        const url = item.getAttribute('data-internal-href');
         if (url) { 
-            
             item.setAttribute('title', url);
-
             item.addEventListener('click', (e) => {
                 window.location.href = url; 
             });
         }
-
-        
-
 
         // Make it keyboard accessible
         item.setAttribute('tabindex', '0');

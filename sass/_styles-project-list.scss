@@ -44,12 +44,12 @@ project-item-content {
     padding:var(--space-2);
 }
 
-project-item:hover project-item-content {
-
+project-item:hover { 
+    border-color: var(--color-primary);
+}
+project-item:hover project-item-status {
     background-color: var(--color-primary);
-    border-radius: var(--border-radius);
-    
-    
+    color: var(--color-darker);
 }
 
 project-item-status { 

@@ -2,41 +2,66 @@
 
 {% block content %}
 
+{% set links = get_section(path="links/_index.md") %}
+
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
         My favorite articles and posts 
     </section-title>   
 
-    <section-aside>
-        {% include "ionicons/arrow-undo-outline.html" %}
+    <section-nav>
         <a href="/">
+            {% include "ionicons/arrow-undo-outline.html" %}
              Home
         </a>
-    </section-aside>
+    </section-nav>
 
-    {% set links = get_section(path="links/_index.md") %}
+    
 
     <section-content>    
-        <section-item-list>
+        <post-list>
             {% for it in links.pages %}
-            <section-item>
-                <section-item-title>
-                    <a href="{{ it.extra.url }}" target="_blank">{{ it.title }}</a>
-                </section-item-title>
+            <post-item data-external-href="{{ it.extra.url }}">
+                <post-item-title>
+                    {{ it.title }}
+                </post-item-title>
 
-                <section-item-aside>
+                <post-item-content>
+                    {{ it.extra.summary }}
+                </post-item-content>
+
+                <post-item-status>
+                    {% include "ionicons/time-outline.html" %}
                     {{ it.date | date(format="%a %b. %d, %Y") }}
-                </section-item-aside>
-
-                <section-item-content>
-                    {{ it.content | safe }}
-                </section-item-content>
-            </section-item>
+                </post-item-status>
+            </post-item>
             {% endfor %}
-        </section-item-list> 
+        </post-list> 
     </section-content>
     
 </section>
+
+<script>
+    document.querySelectorAll('*').forEach(item => {
+        const url = item.getAttribute('data-external-href');
+        if (url) { 
+            item.setAttribute('title', url);
+            item.addEventListener('click', (e) => {
+                window.open(url, '_blank');
+            });
+            
+            // Make it keyboard accessible
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'link');
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        }
+    });
+</script>
 
 {% endblock content %}
