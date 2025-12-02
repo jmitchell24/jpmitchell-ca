@@ -524,6 +524,7 @@ pre {
     
     overflow-x: auto;
     font-family: "Ubuntu Mono", monospace;
+    font-size: var(--text-caption); 
     line-height: 1.1rem;
     border-radius: var(--border-radius);
 }
@@ -532,7 +533,7 @@ pre code {
     background: none;
     padding: 0;
     border: none;
-    font-size: var(--text-body);
+    font-size: var(--text-caption); 
     font-weight: 300;
 }
 

@@ -45,7 +45,10 @@ tinypost-item-status {
     grid-area: status;
     background-color: var(--color-darker);
     color: var(--color-light);
-    min-width: 22ch;
+    width: var(--aside-width); 
+
+    font-size: var(--text-caption);
+    line-height: var(--line-caption);
 
     // border: var(--border-size) solid var(--color-darker); 
     border: 0;
@@ -69,7 +72,9 @@ tinypost-item-status .ionicon {
         grid-template-columns: auto;
     }
 
-    
+    tinypost-item-status { 
+        width:auto; 
+    }
 }
 
 

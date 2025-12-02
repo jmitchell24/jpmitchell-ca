@@ -50,6 +50,8 @@ section-nav {
     grid-area: nav;
     font-size: var(--text-h4);
     display: inline-block;
+
+    width: var(--aside-width); 
 }
 
 section-nav > a { 
@@ -172,6 +174,10 @@ section-content {
             "title"
             "content";
         grid-template-columns: 100%;
+    }
+
+    section-nav { 
+        width:auto; 
     }
 
     // section-item { 

@@ -22,7 +22,7 @@ post-item:hover {
     border-color: var(--color-primary);
 }
 
-post-item:hover post-item-status{ 
+post-item:hover post-item-status { 
     color: var(--color-darker); 
     background-color: var(--color-primary);
 }
@@ -45,7 +45,10 @@ post-item-status {
     grid-area: status;
     background-color: var(--color-darker);
     color: var(--color-light);
-    min-width: 22ch;
+    width: var(--aside-width); 
+
+        font-size: var(--text-caption);
+    line-height: var(--line-caption);
 
     // border: var(--border-size) solid var(--color-darker); 
     border: 0;
@@ -69,7 +72,9 @@ post-item-status .ionicon {
         grid-template-columns: auto;
     }
 
-    
+    post-item-status { 
+        width: auto; 
+    }
 }
 
 
