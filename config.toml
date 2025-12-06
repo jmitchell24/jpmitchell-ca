@@ -12,12 +12,16 @@ minify_html = true
 build_search_index = false
 
 [markdown]
+# Whether footnotes are rendered in the GitHub-style (at the bottom, with back references) or plain (in the place, where they are defined)
+bottom_footnotes = true
+
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-
-# Whether footnotes are rendered in the GitHub-style (at the bottom, with back references) or plain (in the place, where they are defined)
-bottom_footnotes = true
+highlight_theme = "css"
+highlight_themes_css = [
+    { theme = "ascetic-white", filename = "code-highlight.css" }
+]
 
 # highlight theme
 # options: 
@@ -64,7 +68,7 @@ bottom_footnotes = true
 # two-dark
 # visual-studio-dark
 # zenburn
-highlight_theme = "charcoal"
+# highlight_theme = "two-dark"
 
 
 [extra]

@@ -15,11 +15,14 @@ tinypost-item {
     border: var(--border-size) var(--color-darker) solid; 
     border-radius: var(--border-radius);
     
+    background-color: var(--color-light); 
+
     cursor: pointer;
 }
 
 tinypost-item:hover { 
     border-color: var(--color-primary);
+    background-color: var(--color-primary); 
 }
 
 tinypost-item:hover tinypost-item-status{ 
@@ -43,7 +46,7 @@ tinypost-item-content {
 
 tinypost-item-status { 
     grid-area: status;
-    background-color: var(--color-darker);
+    background-color: var(--color-dark);
     color: var(--color-light);
     width: var(--aside-width); 
 

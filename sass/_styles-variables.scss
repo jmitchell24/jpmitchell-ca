@@ -4,7 +4,14 @@
 
     /* #region Colors */
 
-    --color-primary: #fac863;
+
+/* https://colorpicker.dev/#474134 */
+
+    --color-primary: #fac863; /* hsl(40 93.8% 68.4%) */ 
+    --color-primary-dark: hsl(40 73.8% 58%); /* hsl(40 73.8% 58%) */
+    --color-primary-darker: hsl(40 7.8% 26.7%); /* hsl(40 13% 25%) */ 
+
+
     --color-secondary: gray;
     --color-success: lightgreen;
     --color-warning: orange;
@@ -13,7 +20,7 @@
     --color-darker: #2b2c2f;
     --color-dark: #38393c;
     --color-gray: #88898d;
-    --color-light: #e7e8ed;
+    --color-light: #d6d6d6;
     --color-lighter: #feffff;
     
     /* #endregion Colors */

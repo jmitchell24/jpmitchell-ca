@@ -3,12 +3,11 @@ post {
 }
 
 post > post-header { 
-    background-color: var(--color-darker);
-    color: var(--color-light);
+    background-color: var(--color-light);
 
     padding:var(--space-2); 
 
-    border-left: var(--space-2) solid var(--color-primary);
+    border: var(--border-size) var(--color-darker) solid; 
     border-radius: var(--border-radius);
 
     display: flex;

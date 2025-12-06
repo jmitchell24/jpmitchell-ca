@@ -16,6 +16,7 @@ project-item {
     grid-template-rows: 1fr 1fr auto;
     border: var(--border-size) var(--color-darker) solid; 
     border-radius: var(--border-radius);
+    background-color: var(--color-light); 
 
     cursor: pointer;
 }
@@ -34,7 +35,10 @@ project-item-title {
 project-item-logo {
     grid-area: logo; 
     justify-self: center;
-
+    
+    background-color: var(--color-lighter);
+    border: var(--border-size) var(--color-darker) solid; 
+    border-radius: var(--border-radius);
 }
 project-item-content {
     grid-area: content;

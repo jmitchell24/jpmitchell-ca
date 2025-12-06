@@ -399,24 +399,23 @@ Base Elements -> Links
 */
 
 a {
-    background-color: var(--color-lighter);
-    color: var(--color-darker);;
-    border: .15rem var(--color-primary) solid; 
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
     border-radius: var(--border-radius);
     
-    padding: 0 var(--space-1); 
+    padding: var(--border-size) var(--space-2); 
     
     width: fit-content;
-    text-decoration: none;
-    transition: all var(--transition-speed) ease;
+    text-decoration: underline;
+    
+    font-size: var(--text-caption);
 }
 
 a:hover {
     background-color: var(--color-primary);
     color: var(--color-darker);
-    border: .15rem var(--color-primary) solid; 
-    border-radius: var(--border-radius);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* 
@@ -504,9 +503,9 @@ Base Elements -> Code
 */
 
 code {
-    background-color: var(--color-darker);
-    color: var(--color-lighter); 
-    border: .15rem var(--color-darker) solid; 
+    background-color: var(--color-light); 
+
+    border: var(--border-size) var(--color-darker) solid; 
 
     height: fit-content;
     width: fit-content;
@@ -522,6 +521,7 @@ code {
 pre {
     padding: var(--space-3);
     
+    
     overflow-x: auto;
     font-family: "Ubuntu Mono", monospace;
     font-size: var(--text-caption); 
@@ -531,6 +531,7 @@ pre {
 
 pre code {
     background: none;
+
     padding: 0;
     border: none;
     font-size: var(--text-caption); 
