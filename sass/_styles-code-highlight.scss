@@ -3,10 +3,9 @@
  */
 
 .z-code {
-    color: #202020;
-    background-color: var(--color-light); 
+    color: var(--color-darker);
 
-    border: var(--border-size) var(--color-darker) solid; 
+    background-color: var(--color-light); 
 }
 
 .z-comment {
