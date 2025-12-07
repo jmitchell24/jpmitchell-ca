@@ -9,22 +9,29 @@ post-list {
 post-item {
     display: grid;
     grid-template-areas:  
-        "title status"
-        "content status";
-    grid-template-columns: 1fr auto;
+        "status title "
+        "status content ";
+    grid-template-columns:  auto 1fr;
+
     border: var(--border-size) var(--color-darker) solid; 
     border-radius: var(--border-radius);
+    background-color: var(--color-light); 
     
+    
+
     cursor: pointer;
 }
 
 post-item:hover { 
     border-color: var(--color-primary);
+    background-color: var(--color-primary); 
 }
 
 post-item:hover post-item-status { 
     color: var(--color-darker); 
     background-color: var(--color-primary);
+
+    
 }
 
 post-item-title {    
@@ -43,15 +50,15 @@ post-item-content {
 
 post-item-status { 
     grid-area: status;
+
     background-color: var(--color-darker);
     color: var(--color-light);
     width: var(--aside-width); 
 
-        font-size: var(--text-caption);
+    font-size: var(--text-caption);
     line-height: var(--line-caption);
 
-    // border: var(--border-size) solid var(--color-darker); 
-    border: 0;
+    
 
     padding: var(--space-1) var(--space-2);   
 }

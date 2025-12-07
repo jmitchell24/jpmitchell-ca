@@ -9,13 +9,14 @@ tinypost-list {
 tinypost-item {
     display: grid;
     grid-template-areas:  
-        "title status"
-        "content status";
-    grid-template-columns: 1fr auto;
+        "status title "
+        "status content ";
+    grid-template-columns: auto 1fr ;
     border: var(--border-size) var(--color-darker) solid; 
     border-radius: var(--border-radius);
     
     background-color: var(--color-light); 
+    
 
     cursor: pointer;
 }
@@ -36,12 +37,12 @@ tinypost-item-title {
     line-height: var(--line-h4);
     display: inline-block;
 
-    padding: var(--space-1); 
+    padding: var(--space-2); 
 }
 
 tinypost-item-content { 
     grid-area: content;
-    padding: var(--space-1); 
+    padding: var(--space-2); 
 }
 
 tinypost-item-status { 

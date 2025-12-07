@@ -399,23 +399,25 @@ Base Elements -> Links
 */
 
 a {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+    background-color: var(--color-light);
+    color: var(--color-darker);
 
     border-radius: var(--border-radius);
+    border: var(--border-size) var(--color-gray) solid; 
     
-    padding: var(--border-size) var(--space-2); 
+    padding: 0 var(--space-2); 
     
     width: fit-content;
-    text-decoration: underline;
+    text-decoration: none;
     
     font-size: var(--text-caption);
 }
 
 a:hover {
     background-color: var(--color-primary);
+    border: var(--border-size) var(--color-primary) solid; 
     color: var(--color-darker);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* 
@@ -467,12 +469,11 @@ Base Elements -> Blockquotes
 */
 
 blockquote {
-    background-color: var(--color-darker);
-    color: var(--color-light); 
+    background-color: var(--color-light); 
+    color: var(--color-dark); 
 
     padding: var(--space-3);
     
-    border-left: var(--space-2) solid var(--color-primary);
     border-radius: var(--border-radius);
     
     
@@ -504,12 +505,11 @@ Base Elements -> Code
 
 code {
     background-color: var(--color-light); 
-
-    border: var(--border-size) var(--color-darker) solid; 
+    border: var(--border-size) var(--color-light) solid; 
 
     height: fit-content;
     width: fit-content;
-    padding: 0 var(--space-1); 
+    padding: 0 var(--space-2); 
 
     font-family: "Ubuntu Mono", monospace;
     font-size: var(--text-small);   

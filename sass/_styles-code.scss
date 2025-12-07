@@ -1,8 +1,8 @@
 
 
 button.copy-btn {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+    background-color: var(--color-light);
+    color: var(--color-gray);
 
     min-width: 10ch;
     
@@ -10,7 +10,7 @@ button.copy-btn {
     top: 0;
     right: 0;
     
-    border: var(--border-size) solid var(--color-darker); 
+    border: var(--border-size) var(--color-gray) solid; 
     border-top-left-radius: 0;
     border-top-right-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
@@ -24,5 +24,6 @@ button.copy-btn {
 
 button.copy-btn:hover {
     background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: var(--color-darker);
 }

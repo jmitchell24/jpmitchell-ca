@@ -16,7 +16,7 @@ project-item {
     grid-template-rows: 1fr 1fr auto;
     border: var(--border-size) var(--color-darker) solid; 
     border-radius: var(--border-radius);
-    background-color: var(--color-light); 
+    background-color: var(--color-darker); 
 
     cursor: pointer;
 }
@@ -36,16 +36,22 @@ project-item-logo {
     grid-area: logo; 
     justify-self: center;
     
-    background-color: var(--color-lighter);
+
     border: var(--border-size) var(--color-darker) solid; 
-    border-radius: var(--border-radius);
+    
 }
 project-item-content {
     grid-area: content;
     display: flex;
     flex-direction: column;
-    margin: var(--space-2);
+
     padding:var(--space-2);
+
+    border-radius: var(--border-radius);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    background-color: var(--color-light);
 }
 
 project-item:hover { 
@@ -58,7 +64,6 @@ project-item:hover project-item-status {
 
 project-item-status { 
     grid-area: status;
-    background-color: var(--color-darker);
     color: var(--color-light);
 
     // border: var(--border-size) solid var(--color-darker); 
@@ -88,6 +93,12 @@ project-item-status .ionicon {
             "content logo"
             "content logo"
             "status  status";
+
+        // background-color: var(--color-darker);
+    }
+
+    project-item-content { 
+        // background-color: var(--color-light);
     }
 
     project-item-status { 

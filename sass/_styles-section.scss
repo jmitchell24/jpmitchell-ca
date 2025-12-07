@@ -10,6 +10,7 @@ section {
         "title nav"
         "content content";
     grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
     gap: var(--space-3);
 }
 
@@ -51,12 +52,13 @@ section-nav {
     font-size: var(--text-h4);
     display: inline-block;
 
-    width: var(--aside-width); 
+    // width: var(--aside-width); 
+    
 }
 
 section-nav > a { 
     background-color: var(--color-light);
-    color: var(--color-darker);
+    color: var(--color-dark);
     
     font-size: var(--text-h4);
     text-decoration: none;

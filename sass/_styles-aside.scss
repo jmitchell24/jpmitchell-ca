@@ -11,7 +11,7 @@
 }
 
 aside-portrait {
-    background-color: var(--color-lighter);
+    background-color: var(--color-light);
 
     display: flex;
     align-items: center;
@@ -49,14 +49,14 @@ aside-ul .ionicon {
 }
 
 aside-li a { 
-    background-color: var(--color-dark);
-    color: var(--color-lighter);
+    background-color: var(--color-darker);
+    color: var(--color-light);
     
     font-size: var(--text-h5);
     text-decoration: none;
 
-    border-radius: .5rem;
-    border: 0; 
+    border-radius: var(--border-radius);
+    border: var(--border-size) var(--color-dark) solid;
     
     padding: var(--space-2);
     width: auto;  
@@ -68,8 +68,9 @@ aside-li a {
 
 aside-li a:hover { 
     background-color: var(--color-primary);
-    color: var(--color-darker); 
-    border: 0; 
+    color: var(--color-darker);
+
+    border: var(--border-size) var(--color-primary) solid; 
 }
 
 aside-subtitle {
