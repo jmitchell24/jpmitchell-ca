@@ -8,10 +8,10 @@
     
     <aside-ul>
         <aside-li>
-            <a href="mailto:{{resume.basics.email}}">{% include "ionicons/mail-open-outline.html" %}</a>
+            <a href="mailto:{{config.extra.email}}">{% include "ionicons/mail-open-outline.html" %}</a>
         </aside-li>
 
-        {% for it in resume.basics.profiles %}
+        {% for it in config.extra.profiles %}
             <aside-li>
                 <a href="{{it.url | safe}}" target="_blank">
                     {% if it.network == "linkedin" %}
@@ -42,6 +42,6 @@
     </aside-ul>
 
     <aside-subtitle>
-        {{ resume.basics.label }}
+        {{ config.extra.tagline }}
     </aside-subtitle>
 </aside>

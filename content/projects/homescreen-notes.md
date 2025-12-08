@@ -3,7 +3,7 @@ title: Homescreen Notes
 date: 2024-06-20
 updated: 2024-11-15
 extra: 
-    summary: "A minimalist note taking app for Android. First published in 2016, downloaded over 10,000 times."
+    summary: "A minimalist note taking app for Android."
     type: "Mobile App"
     platforms: ["Android"]
 ---
@@ -28,5 +28,5 @@ The original release was in 2016, and the app has had over <strong>10,000</stron
 ### Links 
 
 [Play Store Link](https://play.google.com/store/apps/details?id=com.james_mitchell.homescreen_notes_v2)
-[Privacy Policy](@/hs-notes/privacy.md) 
-[Terms and Conditions](@/hs-notes/terms.md)
+<!-- [Privacy Policy](@/hs-notes/privacy.md) 
+[Terms and Conditions](@/hs-notes/terms.md) -->

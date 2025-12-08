@@ -18,13 +18,16 @@ section-title {
     grid-area: title;
     font-size: var(--text-h3);
     line-height: var(--line-h3);
+    
+
     display: inline-block;
+    
 }
 
 section-title .ionicon { 
     width:var(--text-h2) !important; 
     height: auto;
-    vertical-align: middle;
+    vertical-align: sub;
 }
 
 // section-subtitle {

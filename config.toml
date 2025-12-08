@@ -73,6 +73,11 @@ highlight_themes_css = [
 
 [extra]
 # Put all your custom variables here
-resume_data = "resume.yaml"
-reads_data = "reads/reads.yaml"
-accent_color = "#30616d"
+tagline = "Developer & IT Specialist"
+fullname = "James Peter Mitchell"
+email = "mail@jpmitchell.ca"
+profiles = [ 
+    { network="linkedin", username="james-mitchell-1427838a", url="https://www.linkedin.com/in/james-mitchell-1427838a" }, 
+    { network="github", username="jmitchell24", url="https://github.com/jmitchell24" }, 
+    { network="stackoverflow", username="james-mitchell", url="https://stackoverflow.com/users/1103084/james-mitchell" }, 
+]

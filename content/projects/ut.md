@@ -5,8 +5,23 @@ updated: 2024-10-12
 extra: 
     logo: "img/project-placeholder.png"
     banner: "project-placeholder.png"
-    summary: "A collaborative sound mapping platform where communities document and preserve the acoustic character of their neighborhoods."
+    summary: "A C++ library with common code from my other projects."
     type: "Code Library"
-    platforms: ["C++"]
+    platforms: ["Linux", "Windows"]
 ---
-This open-source project combines geolocation with audio recording to create rich soundscapes of cities and towns. Users contribute field recordings tagged with location data, building an ever-growing archive of how places sound across different times and seasons.
+
+### Overview 
+
+A collection of common code I use in my personal projects. 
+I've maintained this in some form since I was in high school. 
+It is my [Perpetual Stew](https://en.wikipedia.org/wiki/Perpetual_stew) of code, and it's very tasty!
+
+### Features
+- A complete string view implementation.
+- Basic terminal utilities: escape sequences, raw mode, shell, etc...
+- Various math utilities, for gamedev and graphics code.
+- Many more misc. utilities...
+
+### Links 
+
+[Repository on Github](https://github.com/jmitchell24/ut)

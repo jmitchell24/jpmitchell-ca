@@ -4,25 +4,7 @@
         <loc>https://www.jpmitchell.ca/</loc>
     </url>
     <url>
-        <loc>https://www.jpmitchell.ca/about/</loc>
-    </url>
-    <url>
         <loc>https://www.jpmitchell.ca/extra/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/gbtwo/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/gbtwo/app/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/hs-notes/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/hs-notes/privacy/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/hs-notes/terms/</loc>
     </url>
     <url>
         <loc>https://www.jpmitchell.ca/links/</loc>
@@ -93,10 +75,6 @@
         <loc>https://www.jpmitchell.ca/posts/page/1/</loc>
     </url>
     <url>
-        <loc>https://www.jpmitchell.ca/posts/test-project/</loc>
-        <lastmod>2025-11-26</lastmod>
-    </url>
-    <url>
         <loc>https://www.jpmitchell.ca/posts/theme-switcher/</loc>
         <lastmod>2025-11-25</lastmod>
     </url>
@@ -123,19 +101,11 @@
         <lastmod>2024-08-05</lastmod>
     </url>
     <url>
+        <loc>https://www.jpmitchell.ca/projects/typo-mortis/</loc>
+        <lastmod>2024-11-20</lastmod>
+    </url>
+    <url>
         <loc>https://www.jpmitchell.ca/projects/ut/</loc>
         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/test/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/toy/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/typo_mortis/</loc>
-    </url>
-    <url>
-        <loc>https://www.jpmitchell.ca/typo_mortis/app/</loc>
     </url>
 </urlset>

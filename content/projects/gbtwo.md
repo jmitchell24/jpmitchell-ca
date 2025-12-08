@@ -5,7 +5,7 @@ updated: 2024-11-20
 extra: 
     type: "Gameboy Emulator"
     platforms: [ "Web", "Linux", "Windows" ]
-    summary: "A gameboy emulator, written in C++ using GLFW + IMGUI. "
+    summary: "An emulator and hardware showcase of the original Nintendo handheld."
 ---
 
 

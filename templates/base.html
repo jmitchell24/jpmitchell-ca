@@ -1,4 +1,3 @@
-{% set resume = load_data(path=config.extra.resume_data) %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>{{ resume.basics.name }} | {{ resume.basics.label }}</title>
+    <title> James Peter Mitchell | {{config.extra.tagline}} </title>
     
     <link rel="preload" href="/fonts/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/fonts/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
@@ -44,8 +43,8 @@
     links.forEach(link => {
             // Check if link is external
             if (link.hostname && link.hostname !== window.location.hostname) {
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
             }
         });
     });
@@ -125,52 +124,6 @@
                     "Copy Code", "Code Copied!", 
                     () => pre.textContent || pre.innerText);
             });
-
-            // preElements.forEach((pre, index) => {
-            //     // Skip if button already exists
-            //     if (pre.querySelector('.copy-btn')) 
-            //         return;
-                
-            //     // Create wrapper div for positioning
-            //     const wrapper = document.createElement('pre-wrapper');
-            //     wrapper.style.position = 'relative';
-            //     wrapper.style.display = 'inline-block';
-            //     wrapper.style.width = '100%';
-                
-            //     // Insert wrapper before pre element
-            //     pre.parentNode.insertBefore(wrapper, pre);
-            //     wrapper.appendChild(pre);
-                
-            //     // Create copy button
-            //     const copyBtn = document.createElement('button');
-            //     copyBtn.className = 'copy-btn';
-            //     copyBtn.innerHTML = 'Copy Code';
-            //     copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
-                
-            //     // Copy functionality
-            //     copyBtn.addEventListener('click', async () => {
-            //         try {
-            //             const text = pre.textContent || pre.innerText;
-            //             await navigator.clipboard.writeText(text);
-                        
-            //             // Visual feedback
-            //             const originalText = copyBtn.innerHTML;
-            //             copyBtn.innerHTML = 'Code Copied!';
-                        
-            //             //Reset after 2 seconds
-            //             setTimeout(() => {
-            //                 copyBtn.innerHTML = originalText;
-            //             }, 1500);
-                        
-            //         } catch (err) {
-            //             // Fallback for older browsers
-            //             // ...
-            //         }
-            //     });
-                
-            //     // Add button to wrapper
-            //     wrapper.appendChild(copyBtn);
-            // });
         }
 
         // Run when DOM is loaded
@@ -204,7 +157,6 @@
         }
 
         setTheme(current_theme);
-
     </script>
 
 </body>
