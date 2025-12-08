@@ -15,10 +15,7 @@
         </a>
     </section-nav>
 
-    
-
     <section-content>
-
         <post> 
             <post-header> 
                 <post-header-item> 
@@ -43,32 +40,7 @@
                 {{ page.content | safe }}
             </post-content>
         </post>
-
-        
     </section-content>
 </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // const span = document.querySelector('[data-updated]');
-        // const updatedDate = new Date(span.dataset.updated);
-        // const now = new Date();
-        // const totalDays = Math.floor((now - updatedDate) / (1000 * 60 * 60 * 24));
-        
-        // const years = Math.floor(totalDays / 365);
-        // const days = totalDays % 365;
-        
-        // span.textContent = `${span.textContent} ${years} years, ${days} days ago`;
-
-        // add permalink copy button
-        // const element = document.querySelector('section-subtitle');
-        // addCopyButtonToElement(element, 
-        //     "Copy Permalink", "Permalink Copied!", 
-        //     () => '{{page.permalink | safe}}'
-        // );
-    });
-
-
-</script>
 
 {% endblock %}

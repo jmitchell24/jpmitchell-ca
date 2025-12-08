@@ -10,36 +10,25 @@ project-item {
     display: grid;
     flex: 0 0 calc(50% - var(--space-3) / 2);
     grid-template-areas: 
-        "logo   "
         "content"
         "status ";
-    grid-template-rows: 1fr 1fr auto;
-    border: var(--border-size) var(--color-darker) solid; 
+    grid-template-rows: 1fr auto;
+    border: var(--border-size) var(--color-dark) solid; 
     border-radius: var(--border-radius);
-    background-color: var(--color-darker); 
+    background-color: var(--color-light);
 
     cursor: pointer;
 }
 
-
-
-
-
 project-item-title {
     grid-area: title;
-    
+
     font-size: var(--text-h4);
     line-height: var(--line-h4);
     display: inline-block;
 }
-project-item-logo {
-    grid-area: logo; 
-    justify-self: center;
-    
 
-    border: var(--border-size) var(--color-darker) solid; 
-    
-}
+
 project-item-content {
     grid-area: content;
     display: flex;
@@ -47,16 +36,14 @@ project-item-content {
 
     padding:var(--space-2);
 
-    border-radius: var(--border-radius);
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-
-    background-color: var(--color-light);
+    
 }
 
 project-item:hover { 
     border-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
+
 project-item:hover project-item-status {
     background-color: var(--color-primary);
     color: var(--color-darker);
@@ -64,14 +51,12 @@ project-item:hover project-item-status {
 
 project-item-status { 
     grid-area: status;
+    
+    background-color: var(--color-dark);
     color: var(--color-light);
 
-    // border: var(--border-size) solid var(--color-darker); 
-    border: 0;
-
-    padding: var(--space-1) var(--space-2);
-
     
+    padding: var(--space-1) var(--space-2);
 }
 
 project-item-status .ionicon { 

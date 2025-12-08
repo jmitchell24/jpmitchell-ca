@@ -3,8 +3,6 @@ title: Homescreen Notes
 date: 2024-06-20
 updated: 2024-11-15
 extra: 
-    logo: "img/project-placeholder.png"
-    banner: "project-placeholder.png"
     summary: "A minimalist note taking app for Android. First published in 2016, downloaded over 10,000 times."
     type: "Mobile App"
     platforms: ["Android"]
@@ -12,29 +10,23 @@ extra:
 
 ### Overview 
 
-<gallery>
-<gallery-item> <img src="/img/old-hs-notes_1.png"> </gallery-item>
-<gallery-item> <img src="/img/old-hs-notes_2.png"> </gallery-item>
-<gallery-item> <img src="/img/old-hs-notes_3.png"> </gallery-item>
-<gallery-item> <img src="/img/old-hs-notes_4.png"> </gallery-item>
-</gallery>
+A note-taking app for Android. Designed for simplicity and minimalism. It's key feature is the ability to take notes directly using a homescreen widget. 
 
+### Development
 
+Homescreen Notes is the first android app I created after graduating from my program at [Fanshawe College](https://www.fanshawec.ca). I learned a lot about the Android operating system, mobile app development, and software publishing. 
 
-Homescreen Notes is the first android app I created after graduating my program at Fanshawe College. 
+The original release was in 2016, and the app has had over <strong>10,000</strong> downloads, and high user ratings. 
 
-Its a very simple note-taking app, made with a focus on minimalism and very 'low friction' use. 
+### Screenshots 
 
-A stand-out feature was the ability to write notes directly onto the app widget, saving the user from an additional context switch. 
+<img width=200 src="/img/project-hsnotes-1.png"> 
+<img width=200 src="/img/project-hsnotes-2.png"> 
+<img width=200 src="/img/project-hsnotes-3.png"> 
+<img width=200 src="/img/project-hsnotes-4.png"> 
 
-Originally published in 2016, it has high user ratings and has been downloaded over <strong>10,000</strong> times. 
-
-As of Summer 2025, I am currently working on a new, modernized version called "Hs Notes". 
+### Links 
 
 [Play Store Link](https://play.google.com/store/apps/details?id=com.james_mitchell.homescreen_notes_v2)
-
-[Play Store Link (Hs Notes)](https://play.google.com/store/apps/details?id=ca.jpmitchell.homescreen_notes_preview)
-
 [Privacy Policy](@/hs-notes/privacy.md) 
-
 [Terms and Conditions](@/hs-notes/terms.md)
