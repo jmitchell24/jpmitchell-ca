@@ -1,0 +1,14 @@
+
+<code-wrapper>
+    {{ body | markdown | safe }}
+
+    <code-footer>
+        
+        <code-footer-lang></code-footer-lang>
+        {% include "ionicons/code-slash-outline.html" %}
+        <code-footer-chars></code-footer-chars>
+        {% include "ionicons/code-download-outline.html" %}
+        <code-footer-copy></code-footer-copy>
+        
+    </code-footer>
+</code-wrapper>

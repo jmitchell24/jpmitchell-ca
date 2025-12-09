@@ -15,7 +15,7 @@ Here's an example that demonstrates why they are useful:
 
 Let's say that I want to enumerate dog breeds. I know which ones I want now, but I'll need to be able to add more later. I'd like to be able to convert the enum value to and from a human-readable string. This is how to do all of that using x-macros.
 
-```c++
+{% code() %} ```c++
 #include <string>
 #include <iostream>
 using namespace std;
@@ -71,15 +71,15 @@ int main()
 
     return 0;
 }
-
-```
+``` {% end %}
 
 Pay attention to the pre-processor macro `EXPAND_ENUM_DOGS`, that's the important part. It has an input parameter. That parameter is itself ANOTHER pre-processor macro with its own input parameters. 
 
 It doesn't define anything on it's own, but can be used by its input (`DOG`, in this example) to do something useful. This is a form of [Metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming). Your pre-defined data elements are encoded within the macro, which becomes the source of truth any code you may want to generate. 
 
 To demonstrate, look closely at the `to_string` function:
-```c++
+
+{% code() %} ```c++
 string to_string(Dog dog)
 {
     #define CASE(_enum, _str) case _enum: return _str;
@@ -87,20 +87,22 @@ string to_string(Dog dog)
     #undef CASE
     return "DOG_INVALID";
 }
-```
+``` {% end %}
 
 This is the literal expansion of `EXPAND_ENUM_DOGS(CASE)`
-```c++
+
+{% code() %} ```c++
 case DOG_BEAGLE: return "beagle";
 case DOG_DOBERMAN: return "doberman";
 case DOG_PUG: return "pug";
 case DOG_POODLE: return "poodle";
 case DOG_TERRIER: return "terrier";
 case DOG_BOXER: return "boxer";
-```
+``` {% end %}
 
-And again, look at the `to_dog` function: 
-```c++
+And again, look at the `to_dog` function
+
+{% code() %} ```c++
 Dog to_dog(string const& str)
 {
     #define CASE(_enum, _str) if (str == _str) return Dog::_enum;
@@ -108,17 +110,18 @@ Dog to_dog(string const& str)
     #undef CASE
     return DOG_INVALID;
 }
-```
+``` {% end %}
 
-The same macro `EXPAND_ENUM_DOGS(CASE)` expands differently, since it sees a new definition for `CASE`: 
-```c++
+The same macro `EXPAND_ENUM_DOGS(CASE)` expands differently, since it sees a new definition for `CASE`
+
+{% code() %} ```c++
 if (str == "beagle") return Dog::DOG_BEAGLE;
 if (str == "doberman") return Dog::DOG_DOBERMAN;
 if (str == "pug") return Dog::DOG_PUG;
 if (str == "poodle") return Dog::DOG_POODLE;
 if (str == "terrier") return Dog::DOG_TERRIER;
 if (str == "boxer") return Dog::DOG_BOXER;
-```
+``` {% end %}
 
 The key idea is to repeat against the execution of a pre-processor macro. This ability can then be leveraged to eliminate large repeating patterns in your code, as well as guarantee correctness. 
 

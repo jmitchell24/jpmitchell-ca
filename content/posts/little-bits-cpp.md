@@ -11,23 +11,21 @@ Some useful tips and factoids for C++ developers.
 
 ### Get the nth byte of an integer 
 
-```c++
-
+{% code() %} ```c++
 int getByte(int num, unsigned byteno)
 {
     // Mask and return the required byte
     return (num >> (byteno * 8)) & 0xFF;    
 }
-
-```
+``` {% end %}
 
 ### Reserved macro identifiers 
 Best practice is to avoid using preceding underscores in macro identifiers. [^1]
 
-```c++
+{% code() %} ```c++
 #define foo(x__) x__        // prefer this... 
 #define foo(__x__) __x__    // to this (might produce a warning)
-``` 
+``` {% end %}
 
 ### Misconceptions about **emplace_back()** and **push_back()**
 
@@ -39,7 +37,7 @@ The *l-value* must be explicitly converted to an *r-value* with `std::move()` to
 
 Since C++11 `push_back()` has an overload which accepts an *r-value* and thus it can be be used to avoid the copy just the same as `emplace_back()`
 
-```c++
+{% code() %} ```c++
 void example() 
 {
     auto w = Widget(1,2,3);
@@ -50,12 +48,12 @@ void example()
     vec.push_back(std::move(w));    // invokes r-value ctor, no copy
     vec.emplace_back(std::move(w)); // same thing
 }
-```
+``` {% end %}
 
 ### Same name, different compilation unit
 Having structs with the _same name_ in separate compilation units can cause undefined behavior. I was getting `std::bad_alloc` exceptions from code that looked like this: 
 
-```c++
+{% code() %} ```c++
 // Mesh.cpp
 struct vertex_t
 {
@@ -68,7 +66,7 @@ struct vertex_t
 {
     GLfloat position[3];
 };
-```
+``` {% end %}
 
 To the best of my knowledge this shouldn't cause undefined behavior, but regardless I was able to narrow down the problem to being the names of these two structs. 
 
@@ -80,7 +78,7 @@ A change made to the standard for C++11 makes possible a very simple thread-safe
 > 
 > If control enters the declaration concurrently while the variable is being initialized, the concurrent execution shall wait for completion of the initialization.
 
-```c++
+{% code() %} ```c++
 class Singleton
 {
 public:
@@ -92,11 +90,12 @@ public:
 private:
       
 };
-```
+``` {% end %}
 
 ### The Minutia of pointers to union members
 Pointers to union members are guaranteed to be equivalent
-```c++
+
+{% code() %} ```c++
 union Foo
 {
     char    c;
@@ -109,7 +108,7 @@ assert((void*)&f == (void*)&f.c);
 assert((void*)&f == (void*)&f.s);
 assert((void*)&f == (void*)&f.i);
 assert((void*)&f == (void*)&f.l);
-```
+``` {% end %}
 
 From _C standard (N1570, 6.7.2.1 Structure and union specifiers)_:
 > 16 The size of a union is sufficient to contain the largest of its members. The value of at most one of the members can be stored in a union object at any time. **A pointer to a union object, suitably converted, points to each of its members** (or if a member is a bit- field, then to the unit in which it resides), and vice versa.
@@ -118,7 +117,7 @@ From _C standard (N1570, 6.7.2.1 Structure and union specifiers)_:
 ### Virtual Destructors (when, why, how)
 Needed when you want to delete an object with just a pointer to the base class. [^3]
 
-```c++
+{% code() %} ```c++
 class Base
 {
     ~virtual Base() {} 
@@ -135,7 +134,7 @@ Base* p = new Derived();
 
 // virtual destructor needs to be defined (even an empty one) or else this causes undefined behavior
 delete p;
-```
+``` {% end %}
 
 ### References 
 

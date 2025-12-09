@@ -435,20 +435,21 @@ Base Elements -> Lists
 */
 
 ul, ol {
-    padding-left: 4ch;
+    padding-left: 3ch;
 }
 
 ul {
-    list-style-type: circle;
+    list-style-type: disc;
 }
 
 ol {
     list-style-type: decimal;
-    padding-left: 4ch;
+    padding-left: 3ch;
 }
 
 li {
     /* padding-left: 0.25rem; */
+    padding-left: 0;
 }
 
 li > ul,

@@ -35,7 +35,7 @@ updated: 2025-06-03
 ### Generating Byte String 
 
 #### C++ 
-``` c++
+{% code() %} ```c++
 inline static std::string createBytesString(size_t bytes)
 {
     size_t constexpr b10 = size_t(1) << 10;
@@ -53,10 +53,10 @@ inline static std::string createBytesString(size_t bytes)
     else if (bytes < b60) return std::to_string(bytes / b50) + " PiB";
     return std::to_string(bytes / b60) + " EiB";
 }
-```
+``` {% end %}
 
 #### Python 
-``` python 
+{% code() %} ```python
 def create_bytes_string(bytes):
     b10 = 1 << 10  
     b20 = 1 << 20  
@@ -78,4 +78,4 @@ def create_bytes_string(bytes):
     elif bytes < b60:
         return f"{bytes // b50} PiB"
     return f"{bytes // b60} EiB"
-```
+``` {% end %}

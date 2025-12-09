@@ -17,9 +17,9 @@ Typo Mortis a sinister little typing game. The idea came to me a few days before
 
 ### Development
 
-GBTWO is a project that I began in August 2025. I had attempted many years ago to create a Gameboy emulator, but I was ultimately unsuccessful. Life circumstances provided me with the time to make a second attempt (explains the name). I consider this project wildly more successful, even in its current state. I plan to continue development for the foreseeable future, and to maintain the WASM/Emscripten build for posterity here, on my personal site.
+I'm currently refactoring the spaghetti code I wrote to get the first version finished, and will begin expanding scope and features soon. 
 
-I don't intend to ever release the source code, but I will always keep the web build freely available on this page. 
+I'm writing in C++, with [Raylib](https://www.raylib.com/). I have no intention to release source code, but I am exploring options for publication / distribution. For now, I will be regularily posting updates here, on my site. You can try the latest build now by clicking the link below.
 
 ### Screenshots
 
@@ -28,3 +28,10 @@ I don't intend to ever release the source code, but I will always keep the web b
 
 ### Try it out
 [Click here launch in your Browser](/apps/typo-mortis.html)
+
+### Support
+
+If you enjoyed playing Typo Mortis, I would very much appreciate your help in funding its continued development.
+
+[Ko-Fi](https://ko-fi.com/jpmitchellca)
+[Paypal](https://www.paypal.com/donate/?hosted_button_id=3RUDZR9MCLX8W)

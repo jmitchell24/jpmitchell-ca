@@ -1,5 +1,5 @@
 ---
-title: "Here's my new game, Typo Mortis (Halloween 2025)"
+title: "Here's my new game Typo Mortis"
 author: "James Mitchell"
 draft: false
 tags: fun

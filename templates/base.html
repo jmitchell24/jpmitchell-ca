@@ -67,62 +67,92 @@
 
     {% include "base-footer.html"  %}
 
+    <!-- Link Fixes -->
+
+    <script>
+        document.querySelectorAll('*').forEach(item => {
+            const url = item.getAttribute('data-internal-href');
+            if (url) { 
+                item.setAttribute('title', url);
+                item.addEventListener('click', (e) => {
+                    window.location.href = url; 
+                });
+            }
+
+            // Make it keyboard accessible
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'link');
+
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        });
+
+        document.querySelectorAll('*').forEach(item => {
+            const url = item.getAttribute('data-external-href');
+            if (url) { 
+                item.setAttribute('title', url);
+                item.addEventListener('click', (e) => {
+                    window.open(url, '_blank');
+                });
+                
+                // Make it keyboard accessible
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'link');
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.click();
+                    }
+                });
+            }
+        });
+    </script>
+
     <!-- Copy Buttons -->
 
     <script>
-        function addCopyButtonToElement(element, btnText, btnClickText, getClipText) {
-                // Skip if button already exists
-                if (element.querySelector('.copy-btn')) 
-                    return;
-                
-                // Create wrapper div for positioning
-                const wrapper = document.createElement('element-wrapper');
-                wrapper.style.position = 'relative';
-                wrapper.style.display = 'inline-block';
-                wrapper.style.width = '100%';
-                
-                // Insert wrapper before pre element
-                element.parentNode.insertBefore(wrapper, element);
-                wrapper.appendChild(element);
-                
-                // Create copy button
-                const copyBtn = document.createElement('button');
-                copyBtn.className = 'copy-btn';
-                copyBtn.innerHTML = btnText;
-                copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
-                
-                // Copy functionality
-                copyBtn.addEventListener('click', async () => {
-                    try {
-                        await navigator.clipboard.writeText(getClipText());
-                        
-                        // Visual feedback
-                        const originalText = copyBtn.innerHTML;
-                        copyBtn.innerHTML = btnClickText;
-                        
-                        //Reset after 2 seconds
-                        setTimeout(() => {
-                            copyBtn.innerHTML = originalText;
-                        }, 1500);
-                        
-                    } catch (err) {
-                        // Fallback for older browsers
-                        // ...
-                    }
-                });
-                
-                // Add button to wrapper
-                wrapper.appendChild(copyBtn);
+        function addCopyButton2(el) { 
+            const pre = el.querySelector("pre"); 
+            
+            const preLangText = pre.getAttribute("data-lang") || "plaintext"; 
+            const preCodeText = pre.textContent || pre.innerText; 
+
+            const footerLang = el.querySelector("code-footer > code-footer-lang"); 
+            const footerCopy = el.querySelector("code-footer > code-footer-copy");
+            const footerChars = el.querySelector("code-footer > code-footer-chars"); 
+
+            footerLang.innerText = preLangText; 
+            footerChars.innerText = `${preCodeText.length} chars`; 
+            footerCopy.innerText = "click to copy";
+
+            el.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(pre.textContent || pre.innerText);
+                    
+                    // Visual feedback
+                    const originalText = footerCopy.innerHTML;
+                    footerCopy.innerHTML = "copied...";
+                    
+                    // Reset after 2 seconds
+                    setTimeout(() => {
+                        footerCopy.innerHTML = originalText;
+                    }, 1500);
+                    
+                } catch (err) {
+                    // Fallback for older browsers
+                    // ...
+                }
+            });
         }
         
         // Function to add copy buttons to all pre elements
         function addCopyButtons() {
-            const preElements = document.querySelectorAll('pre');
-            
-            preElements.forEach((pre, index) => { 
-                addCopyButtonToElement(pre, 
-                    "Copy Code", "Code Copied!", 
-                    () => pre.textContent || pre.innerText);
+            document.querySelectorAll("code-wrapper").forEach((el, idx) => { 
+                addCopyButton2(el); 
             });
         }
 
@@ -158,6 +188,5 @@
 
         setTheme(current_theme);
     </script>
-
 </body>
 </html>

@@ -22,7 +22,7 @@
 <section>
     <section-title>
         {% include "ionicons/cube-outline.html" %}
-        Projects
+        Latest Projects
     </section-title>
 
     <section-nav>
@@ -35,31 +35,35 @@
     {% set projects = get_section(path="projects/_index.md") %}
 
     <section-content>
-        <tinypost-list>
-        {% for it in projects.pages | slice(end=3) %}
-            <tinypost-item data-internal-href="{{it.path}}">
-                <tinypost-item-title>
-                    {{ it.title }}
-                </tinypost-item-title>
+        <project-list>
+        {% for it in projects.pages | slice(end=2) %}
+            <project-item data-internal-href="{{ it.path }}">
+                <project-item-content>
+                    <project-item-title>
+                        {{ it.title }}
+                    </project-item-title>
 
-                <tinypost-item-content>
-                    {{ it.extra.summary }}
-                </tinypost-item-content>
-
-                <tinypost-item-status>
+                    {% if it.extra.summary %}
+                    {{it.extra.summary}}
+                    {% else %}
+                    No Summary
+                    {% endif %}
+                </project-item-content>
+                
+                <project-item-status>
                     {% include "ionicons/shapes-outline.html" %}
-                    {{ it.extra.type | default(value="Project") }}                    
-                </tinypost-item-status>
-            </tinypost-item>
+                    {{ it.extra.type | default(value="Project") }}
+                </project-item-status>
+            </project-item>
         {% endfor %}
-        </tinypost-list>
+        </project-list>
     </section-content>
 </section> 
 
 <section> 
     <section-title> 
         {% include "ionicons/newspaper-outline.html" %}
-        Recent Posts 
+        Latest Posts 
     </section-title>  
     
     <section-nav>
@@ -123,49 +127,6 @@
     </section-content>
 </section> 
 
-<script>
-    document.querySelectorAll('*').forEach(item => {
-        const url = item.getAttribute('data-internal-href');
-        if (url) { 
-            item.setAttribute('title', url);
-            item.addEventListener('click', (e) => {
-                window.location.href = url; 
-            });
-        }
 
-        // Make it keyboard accessible
-        item.setAttribute('tabindex', '0');
-        item.setAttribute('role', 'link');
-
-        item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                item.click();
-            }
-        });
-    });
-</script>
-
-<script>
-    document.querySelectorAll('*').forEach(item => {
-        const url = item.getAttribute('data-external-href');
-        if (url) { 
-            item.setAttribute('title', url);
-            item.addEventListener('click', (e) => {
-                window.open(url, '_blank');
-            });
-            
-            // Make it keyboard accessible
-            item.setAttribute('tabindex', '0');
-            item.setAttribute('role', 'link');
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    item.click();
-                }
-            });
-        }
-    });
-</script>
 
 {% endblock content %}
