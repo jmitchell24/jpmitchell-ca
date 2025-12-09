@@ -389,7 +389,7 @@ Base Elements -> Paragraphs
 */
 
 p {
-    padding: var(--space-2) 0;
+    
 }
 
 /* 
@@ -409,8 +409,16 @@ a {
     
     width: fit-content;
     text-decoration: none;
+
+    
+
+    height: fit-content;
+
+    display: inline-block;
+    line-height: inherit; 
     
     font-size: var(--text-caption);
+    line-height: var(--text-body);
 }
 
 a:hover {
