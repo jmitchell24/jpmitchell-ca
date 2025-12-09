@@ -79,6 +79,10 @@
                     {{ it.title }}
                 </tinypost-item-title>
 
+                <tinypost-item-content>
+                {{ it.summary | safe }}
+                </tinypost-item-content>
+
                 <tinypost-item-status>
                     {% include "ionicons/time-outline.html" %} 
                     Posted 
