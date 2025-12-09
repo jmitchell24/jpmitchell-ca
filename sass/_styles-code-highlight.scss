@@ -58,6 +58,14 @@ code-footer:hover {
     
 }
 
+@media (max-width: 768px) {
+    code-footer { 
+        width: auto;
+        border-bottom-right-radius: var(--border-radius);
+        border-top-right-radius: 0; 
+    }
+}
+
 .z-code {
     
 
