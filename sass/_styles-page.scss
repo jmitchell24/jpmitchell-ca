@@ -9,8 +9,10 @@ post > post-header {
 
     padding:var(--space-2); 
 
-    // border: var(--border-size) var(--color-darker) solid; 
+    border: var(--border-size) var(--color-gray) dashed; 
     border-radius: var(--border-radius);
+
+    color: var(--color-gray);
 
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 ---
 title: Homescreen Notes
-date: 2024-06-20
-updated: 2024-11-15
+date: 2016-01-01
+updated: 2024-04-01
 extra: 
     summary: "A minimalist note taking app for Android."
     type: "Mobile App"

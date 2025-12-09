@@ -1,7 +1,7 @@
 ---
 title: GBTWO 
-date: 2024-09-15
-updated: 2024-11-20
+date: 2025-08-09
+updated: 2025-11-02
 extra: 
     type: "Gameboy Emulator"
     platforms: [ "Web", "Linux", "Windows" ]
