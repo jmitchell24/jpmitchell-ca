@@ -18,20 +18,20 @@
     {% set posts = get_section(path="posts/_index.md") %}
     
     <section-content>
-        <post-list>
+        <tinypost-list>
             {% for it in posts.pages %}
-            <post-item data-internal-href="{{it.path}}">
-                <post-item-title> 
+            <tinypost-item data-internal-href="{{it.path}}">
+                <tinypost-item-title> 
                     {{ it.title }}
-                </post-item-title>
+                </tinypost-item-title>
 
-                <post-item-status>
+                <tinypost-item-status>
                     {% include "ionicons/time-outline.html" %}
                     {{ it.date | date(format="%a %b. %d, %Y") }} 
-                </post-item-status>
-            </post-item>
+                </tinypost-item-status>
+            </tinypost-item>
             {% endfor %}
-        </post-list>
+        </tinypost-list>
     </section-content>
 </section>
 

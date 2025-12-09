@@ -47,8 +47,8 @@
                 </tinypost-item-content>
 
                 <tinypost-item-status>
-                    {% include "ionicons/time-outline.html" %} 
-                    {{ it.date | date(format="%a %b. %d, %Y") }}
+                    {% include "ionicons/shapes-outline.html" %}
+                    {{ it.extra.type | default(value="Project") }}                    
                 </tinypost-item-status>
             </tinypost-item>
         {% endfor %}
@@ -81,6 +81,7 @@
 
                 <tinypost-item-status>
                     {% include "ionicons/time-outline.html" %} 
+                    Posted 
                     {{ it.date | date(format="%a %b. %d, %Y") }}
                 </tinypost-item-status>
             </tinypost-item>
@@ -108,14 +109,10 @@
         <tinypost-list>
             {% for it in links.pages | slice(end=3) %}
             <tinypost-item>
-                <tinypost-item-title data-external-href="{{it.path}}">
+                <tinypost-item-title data-external-href="{{it.extra.url}}">
+                    {% include "ionicons/link-outline.html" %}
                     {{ it.title }}
                 </tinypost-item-title>
-
-                <tinypost-item-status>
-                    {% include "ionicons/time-outline.html" %} 
-                    {{ it.date | date(format="%a %b. %d, %Y") }}
-                </tinypost-item-status>
             </tinypost-item>
             {% endfor %}
         </tinypost-list> 

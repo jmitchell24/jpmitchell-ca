@@ -9,10 +9,12 @@ tinypost-list {
 tinypost-item {
     display: grid;
     grid-template-areas:  
-        "status title "
-        "status content ";
-    grid-template-columns: auto 1fr ;
-    border: var(--border-size) var(--color-darker) solid; 
+        "title"
+        "content"
+        "status";
+
+
+    border: var(--border-size) var(--color-gray) solid; 
     border-radius: var(--border-radius);
     
     background-color: var(--color-light); 
@@ -26,9 +28,14 @@ tinypost-item:hover {
     background-color: var(--color-primary); 
 }
 
-tinypost-item:hover tinypost-item-status{ 
+tinypost-item:hover tinypost-item-status { 
     color: var(--color-darker); 
     background-color: var(--color-primary);
+    border-top: var(--border-size) dashed var(--color-primary); 
+}
+
+tinypost-item:hover tinypost-item-title .ionicon { 
+    color: var(--color-darker); 
 }
 
 tinypost-item-title {    
@@ -40,6 +47,13 @@ tinypost-item-title {
     padding: var(--space-2); 
 }
 
+tinypost-item-title .ionicon { 
+    width:var(--text-h3) !important; 
+    height: auto;
+    vertical-align:text-top;
+    color: var(--color-gray);
+}
+
 tinypost-item-content { 
     grid-area: content;
     padding: var(--space-2); 
@@ -47,19 +61,21 @@ tinypost-item-content {
 
 tinypost-item-status { 
     grid-area: status;
-    background-color: var(--color-dark);
-    color: var(--color-light);
-    width: var(--aside-width); 
+    
+    color: var(--color-gray);
 
     font-size: var(--text-caption);
     line-height: var(--line-caption);
 
-    // border: var(--border-size) solid var(--color-darker); 
-    border: 0;
+    border-top: var(--border-size) dashed var(--color-gray); 
+    // border: 0;
 
     padding: var(--space-1) var(--space-2);   
 
-    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    
 }
 
 tinypost-item-status .ionicon { 
@@ -67,6 +83,8 @@ tinypost-item-status .ionicon {
     height: auto;
     vertical-align:text-bottom;
 }
+
+
 
 @media (max-width: 768px) {
 

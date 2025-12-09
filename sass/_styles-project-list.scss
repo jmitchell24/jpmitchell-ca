@@ -13,7 +13,7 @@ project-item {
         "content"
         "status ";
     grid-template-rows: 1fr auto;
-    border: var(--border-size) var(--color-dark) solid; 
+    border: var(--border-size) var(--color-gray) solid; 
     border-radius: var(--border-radius);
     background-color: var(--color-light);
 
@@ -46,14 +46,15 @@ project-item:hover {
 
 project-item:hover project-item-status {
     background-color: var(--color-primary);
+    border-top: var(--border-size) var(--color-primary) dashed;
     color: var(--color-darker);
 }
 
 project-item-status { 
     grid-area: status;
     
-    background-color: var(--color-dark);
-    color: var(--color-light);
+    border-top: var(--border-size) var(--color-gray) dashed;
+    color: var(--color-gray);
 
     
     padding: var(--space-1) var(--space-2);

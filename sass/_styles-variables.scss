@@ -12,16 +12,23 @@
     --color-primary-darker: hsl(40 7.8% 26.7%); /* hsl(40 13% 25%) */ 
 
 
-    --color-secondary: gray;
-    --color-success: lightgreen;
-    --color-warning: orange;
-    --color-alert: orangered;
+    // --color-secondary: gray;
+    // --color-success: lightgreen;
+    // --color-warning: orange;
+    // --color-alert: orangered;
 
-    --color-darker: #2b2c2f;
-    --color-dark: #38393c;
-    --color-gray: #88898d;
-    --color-light: #e9e9e9;
-    --color-lighter: #feffff;
+    // old colors (2025-12-09)
+    // --color-darker  : hsl(225 4.4% 17.6%);
+    // --color-dark    : hsl(225 3.4% 22.7%);
+    // --color-gray    : hsl(228 2.1% 54.3%);
+    // --color-light   : hsl(0   0%   91.4%);
+    // --color-lighter : hsl(180 100% 99.8%);
+
+    --color-darker  : hsl(210 6% 15%);
+    --color-dark    : hsl(210 6% 30%);
+    --color-gray    : hsl(210 6% 50%);
+    --color-light   : hsl(210 6% 80%);
+    --color-lighter : hsl(210 6% 90%);
     
     /* #endregion Colors */
 
