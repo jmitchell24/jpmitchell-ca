@@ -22,7 +22,7 @@
 <section>
     <section-title>
         {% include "ionicons/cube-outline.html" %}
-        Latest Projects
+        Best Projects
     </section-title>
 
     <section-nav>
@@ -101,29 +101,46 @@
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
-        Recent Reading 
+        Worth Reading
     </section-title>  
 
     <section-nav>
         <a href="/links">
              {% include "ionicons/arrow-redo-outline.html" %} 
-             All Links 
+             All Reads 
         </a>
     </section-nav>
     
-    {% set links = get_section(path="links/_index.md") %}
+    {% set links = load_data(path="links/links.toml") %}
     
+
+
     <section-content>
-        <tinypost-list>
-            {% for it in links.pages | slice(end=3) %}
-            <tinypost-item>
-                <tinypost-item-title data-external-href="{{it.extra.url}}">
-                    {% include "ionicons/link-outline.html" %}
-                    {{ it.title }}
-                </tinypost-item-title>
-            </tinypost-item>
+        <link-list>
+            
+            {% for it in links.links | slice(end=3) %}
+            <link-item >
+               <!-- https://web.archive.org/web/20250520160612/https://ktema.org/articles/the-overengineered-resume/  -->
+            
+                <link-item-title data-external-href="{{it.url}}"> 
+                    {{ it.title }} 
+                </link-item-title>
+
+                {% if it.arc %}
+                    <link-item-arc data-external-href="https://web.archive.org/web/{{it.arc}}/{{it.url}}"> 
+                        {% include "ionicons/archive-outline.html" %} 
+                    </link-item-arc>
+                {% else %}
+                    <link-item-arc data-external-href="https://web.archive.org/web/*/{{it.url}}"> 
+                        {% include "ionicons/archive-outline.html" %} 
+                    </link-item-arc>
+                {% endif %}
+            </link-item>
             {% endfor %}
-        </tinypost-list> 
+            
+        </link-list>
+
+
     </section-content>
 </section> 
 

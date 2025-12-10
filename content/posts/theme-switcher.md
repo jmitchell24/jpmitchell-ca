@@ -19,7 +19,7 @@ This is the html for the theme selector. I prefer to use custom tags instead of 
 `onclick` is set to call the js function that will perform the switch. 
 `data-theme` declares the theme assigned to the button. 
 
-```html
+{% code() %} ```html
 <theme-switcher> 
     <theme-switcher-button onclick="setTheme('alt0')" data-theme="alt0"> Coral Burst </theme-switcher-button>  
     <theme-switcher-button onclick="setTheme('alt1')" data-theme="alt1"> Sunset Pink </theme-switcher-button>  
@@ -32,7 +32,7 @@ This is the html for the theme selector. I prefer to use custom tags instead of 
     <theme-switcher-button onclick="setTheme('alt8')" data-theme="alt8"> Lime Zest </theme-switcher-button>  
     <theme-switcher-button onclick="setTheme('alt9')" data-theme="alt9"> Golden Honey </theme-switcher-button>  
 </theme-switcher>
-```
+``` {% end %}
 
 ### CSS 
 
@@ -40,8 +40,7 @@ Nothing particularily interesting here.
 All accents across the site use the `--color-primary` variable. I created a separate selector for all potential values of the `data-theme` attribute. 
 The relevant detail is just that the theme color is being displayed prominantly on the button (through the `:hover` and `.theme-active` selector). 
 
-```css
-
+{% code() %} ```css
 :root {
     --color-primary: #fac863;
 
@@ -98,21 +97,21 @@ theme-switcher-button.theme-active {
         width: auto;
     }
 }
-```
+``` {% end %}
 
 ### Javascript
 
 This is the important part. 
 First, I get the inital value for the selected theme. I pull a previously selected theme from `localStorage` if it exists, otherwise I set a default. 
 
-```javascript 
+{% code() %} ```javascript 
 const THEME_KEY = "selected-theme"; 
 let current_theme = localStorage.getItem(THEME_KEY) || "alt9"; 
-```
+``` {% end %}
 
 Next I setup a function to perform the switch. 
 
-```javascript
+{% code() %} ```javascript
 function setTheme(theme) { 
     document.body.setAttribute("data-theme", theme); 
     document.querySelectorAll("theme-switcher-button").forEach(btn => { 
@@ -126,7 +125,7 @@ function setTheme(theme) {
     localStorage.setItem(THEME_KEY, theme); 
     current_theme = theme; 
 }
-```
+``` {% end %}
 
 It does the following: 
 - Set the `data-theme` attribute on the `body` element. This is what applies the new color to the entire page. 
@@ -137,7 +136,7 @@ It does the following:
 
 Here's the complete code (feel free to copy/paste 😉)  
 
-```javascript
+{% code() %} ```javascript
 const THEME_KEY = "selected-theme"; 
 let current_theme = localStorage.getItem(THEME_KEY) || "alt9"; 
     
@@ -157,7 +156,6 @@ function setTheme(theme) {
 }
 
 setTheme(current_theme);
-
-```
+``` {% end %}
 
 And that is all there is to it! 

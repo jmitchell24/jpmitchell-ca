@@ -7,7 +7,7 @@
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
-        My favorite articles and posts 
+        Worth Reading 
     </section-title>   
 
     <section-nav>
@@ -17,27 +17,32 @@
         </a>
     </section-nav>
 
-    
+    {% set links = load_data(path="links/links.toml") %}
 
     <section-content>    
-        <tinypost-list>
-            {% for it in links.pages %}
-            <tinypost-item data-external-href="{{ it.extra.url }}">
-                <tinypost-item-title>
-                    {{ it.title }}
-                </tinypost-item-title>
+        <link-list>
+            
+            {% for it in links.links %}
+            <link-item >
+               <!-- https://web.archive.org/web/20250520160612/https://ktema.org/articles/the-overengineered-resume/  -->
+            
+                <link-item-title data-external-href="{{it.url}}"> 
+                    {{ it.title }} 
+                </link-item-title>
 
-                <tinypost-item-content>
-                    {{ it.extra.summary }}
-                </tinypost-item-content>
-
-                <tinypost-item-status>
-                    {% include "ionicons/time-outline.html" %}
-                    {{ it.date | date(format="%a %b. %d, %Y") }}
-                </tinypost-item-status>
-            </tinypost-item>
+                {% if it.arc %}
+                    <link-item-arc data-external-href="https://web.archive.org/web/{{it.arc}}/{{it.url}}"> 
+                        {% include "ionicons/archive-outline.html" %} 
+                    </link-item-arc>
+                {% else %}
+                    <link-item-arc data-external-href="https://web.archive.org/web/*/{{it.url}}"> 
+                        {% include "ionicons/archive-outline.html" %} 
+                    </link-item-arc>
+                {% endif %}
+            </link-item>
             {% endfor %}
-        </tinypost-list> 
+            
+        </link-list>
     </section-content>
     
 </section>

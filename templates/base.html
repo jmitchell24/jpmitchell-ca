@@ -70,45 +70,49 @@
     <!-- Link Fixes -->
 
     <script>
-        document.querySelectorAll('*').forEach(item => {
-            const url = item.getAttribute('data-internal-href');
-            if (url) { 
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-internal-href]').forEach(item => {
+                const url = item.getAttribute('data-internal-href');
                 item.setAttribute('title', url);
                 item.addEventListener('click', (e) => {
                     window.location.href = url; 
                 });
-            }
 
-            // Make it keyboard accessible
-            item.setAttribute('tabindex', '0');
-            item.setAttribute('role', 'link');
-
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    item.click();
-                }
-            });
-        });
-
-        document.querySelectorAll('*').forEach(item => {
-            const url = item.getAttribute('data-external-href');
-            if (url) { 
-                item.setAttribute('title', url);
-                item.addEventListener('click', (e) => {
-                    window.open(url, '_blank');
-                });
-                
                 // Make it keyboard accessible
                 item.setAttribute('tabindex', '0');
                 item.setAttribute('role', 'link');
+
                 item.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         item.click();
                     }
                 });
-            }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-external-href]').forEach(item => {
+                const url = item.getAttribute('data-external-href');
+                item.setAttribute('title', url);
+                item.style.cursor = 'pointer';
+                
+                item.addEventListener('click', (e) => {
+                    // Don't check e.target, just handle any click within the element
+                    window.open(url, '_blank');
+                });
+                
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'link');
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        window.open(url, '_blank');
+                    }
+                });
+            });
         });
     </script>
 
