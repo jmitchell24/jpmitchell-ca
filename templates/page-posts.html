@@ -37,6 +37,11 @@
                     {% include "ionicons/glasses-outline.html" %}
                     {{ page.reading_time }} minutes 
                 </post-header-item>
+
+                <post-header-item>
+                    {% include "ionicons/link-outline.html" %}
+                    <a href="{{page.permalink}}"> {{page.permalink}} </a>
+                </post-header-item>
             </post-header>
 
             <post-content>

@@ -1,7 +1,7 @@
 ---
 title: jpmitchell.ca
-date: 2024-03-10
-updated: 2024-08-05
+date: 2025-03-01
+updated: 2025-12-11
 extra: 
     type: "Portfolio & Blog"
     platforms: ["World Wide Web"]

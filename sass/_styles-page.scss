@@ -22,6 +22,31 @@ post > post-header {
     line-height: var(--line-caption);
 }
 
+post-header-item > a { 
+    border: inherit;
+    border-radius: inherit;
+    margin: inherit;
+    padding: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background-color: inherit;
+}
+
+post-header-item > a:hover { 
+    border: inherit;
+    border-radius: inherit;
+    margin: inherit;
+    padding: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    
+    color: var(--color-darker); 
+    background-color: inherit;
+
+    text-decoration: underline;
+}
+
 post-header .ionicon { 
     width:var(--text-h5) !important; 
     height: auto;

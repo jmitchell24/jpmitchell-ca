@@ -125,6 +125,7 @@
             const preLangText = pre.getAttribute("data-lang") || "plaintext"; 
             const preCodeText = pre.textContent || pre.innerText; 
 
+            const footer = el.querySelector("code-footer"); 
             const footerLang = el.querySelector("code-footer > code-footer-lang"); 
             const footerCopy = el.querySelector("code-footer > code-footer-copy");
             const footerChars = el.querySelector("code-footer > code-footer-chars"); 
@@ -133,7 +134,7 @@
             footerChars.innerText = `${preCodeText.length} chars`; 
             footerCopy.innerText = "click to copy";
 
-            el.addEventListener('click', async () => {
+            footer.addEventListener('click', async () => {
                 try {
                     await navigator.clipboard.writeText(pre.textContent || pre.innerText);
                     

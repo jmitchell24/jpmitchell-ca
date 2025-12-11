@@ -21,13 +21,21 @@
         <tinypost-list>
             {% for it in posts.pages %}
             <tinypost-item data-internal-href="{{it.path}}">
-                <tinypost-item-title> 
-                    {{ it.title }}
-                </tinypost-item-title>
+                
+
+                <tinypost-item-content>
+                    <tinypost-item-title>
+                        {{ it.title }}
+                    </tinypost-item-title>
+                    {% if it.summary %}
+                    {{ it.summary | safe }}
+                    {% endif %}
+                </tinypost-item-content>
 
                 <tinypost-item-status>
-                    {% include "ionicons/time-outline.html" %}
-                    {{ it.date | date(format="%a %b. %d, %Y") }} 
+                    {% include "ionicons/time-outline.html" %} 
+                    Posted 
+                    {{ it.date | date(format="%a %b. %d, %Y") }}
                 </tinypost-item-status>
             </tinypost-item>
             {% endfor %}

@@ -9,6 +9,8 @@ updated: 2025-11-25
 
 I really like [x-macros](https://en.wikipedia.org/wiki/X_macro), and over the past few years I've been using them more and more in my code. 
 
+
+
 Here's an example that demonstrates why they are useful: 
 
 ### Example - Enums 

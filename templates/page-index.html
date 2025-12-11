@@ -32,8 +32,6 @@
         </a>
     </section-nav>
 
-    
-
     {% set projects = get_section(path="projects/_index.md") %}
 
     <section-content>
@@ -86,12 +84,15 @@
         <tinypost-list>
             {% for it in posts_sorted %}
             <tinypost-item data-internal-href="{{it.path}}">
-                <tinypost-item-title>
-                    {{ it.title }}
-                </tinypost-item-title>
+                
 
                 <tinypost-item-content>
-                {{ it.summary | safe }}
+                    <tinypost-item-title>
+                        {{ it.title }}
+                    </tinypost-item-title>
+                    {% if it.extra.summary %}
+                    {{it.extra.summary}}
+                    {% endif %}
                 </tinypost-item-content>
 
                 <tinypost-item-status>
