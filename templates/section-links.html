@@ -7,7 +7,7 @@
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
-        Worth Reading 
+        Links
     </section-title>   
 
     <section-nav>
@@ -20,29 +20,40 @@
     {% set links = load_data(path="links/links.toml") %}
 
     <section-content>    
+        Links to good content that I found on the internet. Snapshots of each page are available through the links on the right. 
+
+        {% set links_by_cat = links.links | group_by(attribute="cat") %}
+        {% for cat, cat_links in links_by_cat %}
+
+        <h3> {{ cat }} </h3>
+
         <link-list>
-            
-            {% for it in links.links %}
+            {% set links_sorted = cat_links | sort(attribute="date") | reverse %}
+            {% for it in links_sorted %}
             <link-item >
-               <!-- https://web.archive.org/web/20250520160612/https://ktema.org/articles/the-overengineered-resume/  -->
-            
                 <link-item-title data-external-href="{{it.url}}"> 
                     {{ it.title }} 
                 </link-item-title>
 
                 {% if it.arc %}
-                    <link-item-arc data-external-href="https://web.archive.org/web/{{it.arc}}/{{it.url}}"> 
-                        {% include "ionicons/archive-outline.html" %} 
-                    </link-item-arc>
+                <link-item-arc data-external-href="https://web.archive.org/web/{{it.arc}}/{{it.url}}"> 
                 {% else %}
-                    <link-item-arc data-external-href="https://web.archive.org/web/*/{{it.url}}"> 
-                        {% include "ionicons/archive-outline.html" %} 
-                    </link-item-arc>
+                <link-item-arc data-external-href="https://web.archive.org/web/*/{{it.url}}"> 
                 {% endif %}
+
+                    {% include "ionicons/archive-outline.html" %} 
+
+                    <link-item-arc-time>
+                    {{ it.date | date(format="%b. %d") }}
+                    </link-item-arc-time>
+                </link-item-arc>
             </link-item>
             {% endfor %}
             
         </link-list>
+        {% endfor %}
+
+
     </section-content>
     
 </section>

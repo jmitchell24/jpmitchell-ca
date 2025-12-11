@@ -12,8 +12,8 @@
     </section-title>   
 
     <section-content>
-        <p> Welcome to my website. This is where I post my recent work, my writing, and also links to good reading that I've found on the internet. </p>       
-        <p> Are you hiring? If so, feel free to check out my <a href="/resume/2025-12-09_resume.pdf">Resume,</a> and send me an <a href="mailto:{{config.extra.email}}"> Email. </a> </p>
+        <p> Welcome to my website. This is where I post my recent work, my writing, and also links to good content that I've found on the internet. </p>       
+        <p> Are you hiring? If so, feel free to check out my <a href="/resume/2025-12-09_resume.pdf">Resume</a> and send me an <a href="mailto:{{config.extra.email}}"> Email </a> </p>
         <p> I am currently accepting offers. </p>
     </section-content>
     
@@ -22,7 +22,7 @@
 <section>
     <section-title>
         {% include "ionicons/cube-outline.html" %}
-        Best Projects
+        Projects
     </section-title>
 
     <section-nav>
@@ -32,9 +32,13 @@
         </a>
     </section-nav>
 
+    
+
     {% set projects = get_section(path="projects/_index.md") %}
 
     <section-content>
+        What I'm working on.  
+
         <project-list>
         {% for it in projects.pages | slice(end=2) %}
             <project-item data-internal-href="{{ it.path }}">
@@ -63,7 +67,7 @@
 <section> 
     <section-title> 
         {% include "ionicons/newspaper-outline.html" %}
-        Latest Posts 
+        Posts 
     </section-title>  
     
     <section-nav>
@@ -74,10 +78,13 @@
     </section-nav>
 
     {% set posts = get_section(path="posts/_index.md") %}
-    
+    {% set posts_sorted = posts.pages | sort(attribute="date") | reverse | slice(end=3) %}
+
     <section-content>
+        Guides, articles, and blog entries.
+
         <tinypost-list>
-            {% for it in posts.pages | slice(end=3) %}
+            {% for it in posts_sorted %}
             <tinypost-item data-internal-href="{{it.path}}">
                 <tinypost-item-title>
                     {{ it.title }}
@@ -101,24 +108,27 @@
 <section> 
     <section-title> 
         {% include "ionicons/link-outline.html" %}
-        Worth Reading
+        Links
     </section-title>  
 
     <section-nav>
         <a href="/links">
              {% include "ionicons/arrow-redo-outline.html" %} 
-             All Reads 
+             All Links 
         </a>
     </section-nav>
     
     {% set links = load_data(path="links/links.toml") %}
-    
+    {% set links_sorted = links.links | sort(attribute="date") | reverse | slice(end=3) %}
 
 
     <section-content>
+        Pages that are worth reading. Snapshots are on the right.
+        
+
         <link-list>
             
-            {% for it in links.links | slice(end=3) %}
+            {% for it in links_sorted %}
             <link-item >
                <!-- https://web.archive.org/web/20250520160612/https://ktema.org/articles/the-overengineered-resume/  -->
             
@@ -144,6 +154,15 @@
     </section-content>
 </section> 
 
+<!-- <section> 
+    <section-title> 
+        {% include "ionicons/cash-outline.html" %}
+        Support 
+    </section-title>  
 
+    <section-content>
+        Do you like this site? Consider supporting it with a donation. 
+    </section-content>
+</section>  -->
 
 {% endblock content %}

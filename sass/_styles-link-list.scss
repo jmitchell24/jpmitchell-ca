@@ -29,6 +29,21 @@ link-item-arc {
 
     background-color: var(--color-light);
     color: var(--color-gray); 
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2);
+
+    font-size: var(--text-caption);
+    line-height: var(--line-caption);
+
+    
+}
+
+link-item-arc-time { 
+    min-width: 6ch;
+
+    text-align: end;
 }
 
 link-item-title { 
@@ -46,6 +61,8 @@ link-item-title {
     white-space: nowrap !important;
 }
 
+
+
 link-item-title:hover { 
     background-color: var(--color-primary);
     border-color: var(--color-primary);
@@ -60,7 +77,6 @@ link-item-arc:hover {
 
 link-item-arc .ionicon { 
     width:var(--text-h4) !important; 
-    vertical-align:middle;
 }
 
 link-item-title .ionicon { 

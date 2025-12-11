@@ -4,7 +4,7 @@ author: "James Mitchell"
 draft: false
 tags: [c++]
 date: 2025-10-23
-updated: 2025-10-23
+update: 2025-12-11
 ---
 
 For C++26, a proposal has been made to add range support to std::optional. That means code that looks like this will become valid C++. 
@@ -45,11 +45,11 @@ if (optional_val != NULL)
 
 ``` {% end %}
 
-But another way to conceptualize std::optional is as a range. For myself this definition helps make sense of the idea: 
+But another way to conceptualize std::optional is as a range. For myself this definition helps make sense of the idea.
 
 > A range of values that has only 0 or 1 elements.
 
-This framing is not without precident, this conception of optional values exists already in other languages such as Rust (among many others). 
+This framing is not without precident, this conception of optional values exists already in other languages such as Rust. 
 
 {% code() %} ```rust
 
@@ -63,4 +63,4 @@ for i in foo {
 
 I personally like this framing. I also like the improved 'elegance' of syntax for what is ultimately an extremely common code pattern. 
 
-For more information, you can see the proposal [here](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3168r1.html). 
+For more information, you can see the proposal [here](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3168r1.html)
