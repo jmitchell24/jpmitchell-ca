@@ -3,3 +3,39 @@ form {
     flex-direction: column;
     gap: var(--space-1);
 }
+
+launch-button > a { 
+    background-color: var(--color-light);
+    color: var(--color-darker);
+    
+    font-size: var(--text-h4);
+    text-decoration: none;
+
+    border-radius: var(--border-radius);
+    border: var(--border-size) var(--color-gray) solid; 
+
+    padding: var(--space-2);
+    width: fit-content;
+
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+
+    text-decoration: none;
+}
+
+launch-button .ionicon { 
+    width:var(--text-h4) !important; 
+    height: auto;
+    vertical-align:text-bottom;
+}
+
+launch-button:hover .ionicon { 
+    color: var(--color-darker); 
+}
+
+@media (max-width: 768px) {
+    launch-button > a { 
+        width: auto;
+    }
+}

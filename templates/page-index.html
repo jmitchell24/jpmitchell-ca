@@ -90,8 +90,8 @@
                     <tinypost-item-title>
                         {{ it.title }}
                     </tinypost-item-title>
-                    {% if it.extra.summary %}
-                    {{it.extra.summary}}
+                    {% if it.summary %}
+                    {{ it.summary | safe }}
                     {% endif %}
                 </tinypost-item-content>
 
@@ -134,16 +134,17 @@
                <!-- https://web.archive.org/web/20250520160612/https://ktema.org/articles/the-overengineered-resume/  -->
             
                 <link-item-title data-external-href="{{it.url}}"> 
+                    {% include "ionicons/link-outline.html" %} 
                     {{ it.title }} 
                 </link-item-title>
 
                 {% if it.arc %}
                     <link-item-arc data-external-href="https://web.archive.org/web/{{it.arc}}/{{it.url}}"> 
-                        {% include "ionicons/archive-outline.html" %} 
+                        {% include "ionicons/library-outline.html" %} 
                     </link-item-arc>
                 {% else %}
                     <link-item-arc data-external-href="https://web.archive.org/web/*/{{it.url}}"> 
-                        {% include "ionicons/archive-outline.html" %} 
+                        {% include "ionicons/library-outline.html" %} 
                     </link-item-arc>
                 {% endif %}
             </link-item>

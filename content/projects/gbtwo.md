@@ -28,6 +28,6 @@ I have no intention to release the source code, but I will always keep the web b
 
 <img src="/img/project-gbtwo.png"> 
 
-
-### Try it out
-[Click here launch in your Browser](/apps/gbtwo.html)
+{% launcher(url="/apps/gbtwo.html") %} 
+Launch GBTWO 
+{% end %}

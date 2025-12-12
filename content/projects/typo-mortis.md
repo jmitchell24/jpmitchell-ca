@@ -25,13 +25,6 @@ I'm writing in C++, with [Raylib](https://www.raylib.com/). I have no intention 
 
 <img src="/img/project-typo-mortis.png"> 
 
-
-### Try it out
-[Click here launch in your Browser](/apps/typo-mortis.html)
-
-### Support
-
-If you enjoyed playing Typo Mortis, I would very much appreciate your help in funding its continued development.
-
-[Ko-Fi](https://ko-fi.com/jpmitchellca)
-[Paypal](https://www.paypal.com/donate/?hosted_button_id=3RUDZR9MCLX8W)
+{% launcher(url="/apps/typo-mortis.html") %} 
+Launch Typo Mortis 
+{% end %}

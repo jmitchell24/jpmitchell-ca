@@ -32,6 +32,7 @@
             {% for it in links_sorted %}
             <link-item >
                 <link-item-title data-external-href="{{it.url}}"> 
+                    {% include "ionicons/link-outline.html" %} 
                     {{ it.title }} 
                 </link-item-title>
 
@@ -41,7 +42,7 @@
                 <link-item-arc data-external-href="https://web.archive.org/web/*/{{it.url}}"> 
                 {% endif %}
 
-                    {% include "ionicons/archive-outline.html" %} 
+                    {% include "ionicons/library-outline.html" %} 
 
                     <link-item-arc-time>
                     {{ it.date | date(format="%b. %d") }}

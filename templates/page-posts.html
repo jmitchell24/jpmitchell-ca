@@ -21,14 +21,14 @@
             <post-header>
                 <post-header-item>
                     {% include "ionicons/time-outline.html" %}
-                    Posted {{ page.date | date(format="%A %B %d, %Y") }} 
+                    Posted {{ page.date | date(format="%B %d, %Y") }} 
                 </post-header-item>
 
                 {% if page.updated %}
 
                 <post-header-item>
                     {% include "ionicons/alarm-outline.html" %}
-                    Updated {{ page.updated | date(format="%A %B %d, %Y") }}
+                    Updated {{ page.updated | date(format="%B %d, %Y") }}
                 </post-header-item>
 
                 {% endif %}
@@ -38,10 +38,10 @@
                     {{ page.reading_time }} minutes 
                 </post-header-item>
 
-                <post-header-item>
+                <!-- <post-header-item>
                     {% include "ionicons/link-outline.html" %}
                     <a href="{{page.permalink}}"> {{page.permalink}} </a>
-                </post-header-item>
+                </post-header-item> -->
             </post-header>
 
             <post-content>
