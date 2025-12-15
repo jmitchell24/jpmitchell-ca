@@ -140,15 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
         function createSnowflake() {
             const snowflake = document.createElement('christmas-snowflake');
 
+                
+
             const dur = Math.random() * 3 + 5; 
 
             snowflake.innerHTML = '❄';
             snowflake.style.left = Math.random() * 100 + '%';
             snowflake.style.animationDuration = dur + 's';
-            snowflake.style.opacity = 1 + Math.random() / 2;
             snowflake.style.fontSize = Math.random() * 3 + 0.5 + 'em';
 
-            body.appendChild(snowflake);
+            christmasContainer.appendChild(snowflake);
 
             setTimeout(() => {
                 snowflake.remove();
@@ -157,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create initial snowflakes
         for (let i = 0; i < 50; i++) {
-        setTimeout(createSnowflake, i * 100);
+            setTimeout(createSnowflake, i * 100);
         }
 
         // Continuously create new snowflakes

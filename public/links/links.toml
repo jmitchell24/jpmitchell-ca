@@ -10,5 +10,6 @@ links = [
     { cat="2025", date="2025-07-23", title="Flash of unstyled content (FOUC) ", url="https://en.wikipedia.org/wiki/Flash_of_unstyled_content" },
     { cat="2025", date="2025-11-24", title="A History of Laptop Displays", url="https://www.dosdays.co.uk/topics/laptop_displays.php" },
     { cat="2025", date="2025-12-12", title="The Copenhagen Trap", arc="20251212191744", url="https://aliveness.kunnas.com/articles/copenhagen-trap" },
+    { cat="2025", date="2025-12-15", title="Fix your timestep", arc="20250930044329", url="https://gafferongames.com/post/fix_your_timestep/" }
 # { date="", title="", url="" },
 ]
