@@ -142,12 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 
 
-            const dur = Math.random() * 3 + 5; 
+            const dur = Math.random() * 3 + 7; 
 
             snowflake.innerHTML = '❄';
             snowflake.style.left = Math.random() * 100 + '%';
             snowflake.style.animationDuration = dur + 's';
-            snowflake.style.fontSize = Math.random() * 3 + 0.5 + 'em';
+            snowflake.style.fontSize = Math.random() * 2 + 0.5 + 'em';
 
             christmasContainer.appendChild(snowflake);
 

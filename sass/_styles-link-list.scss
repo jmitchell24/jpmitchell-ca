@@ -84,3 +84,8 @@ link-item-title .ionicon {
     vertical-align:middle;
     color: var(--color-gray);
 }
+
+link-item-title:hover .ionicon { 
+    
+    color: var(--color-darker);
+}

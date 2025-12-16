@@ -18,13 +18,17 @@ christmas-snowflake {
     animation: fall linear infinite;
     text-decoration:line-through;
     text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
+
+    /* Add hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, opacity;
 }
 
 @keyframes fall {
     to {
         transform: 
             translateY(100vh) 
-            translateX(25vh) 
+            translateX(25vw) 
             rotate(360deg);
         opacity: 0;
     }
