@@ -1,7 +1,7 @@
 ---
 title: UT
 date: 2023-12-01
-updated: 2024-10-12
+updated: 2025-12-18
 extra: 
     logo: "img/project-placeholder.png"
     banner: "project-placeholder.png"
@@ -24,4 +24,6 @@ It is my [Perpetual Stew](https://en.wikipedia.org/wiki/Perpetual_stew) of code,
 
 ### Links 
 
-[Repository on Github](https://github.com/jmitchell24/ut)
+{% big_link(url="https://github.com/jmitchell24/ut", icon="github") %}
+Repository on Github
+{% end %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section> 
+    <section-title> 
+        {% include "ionicons/link-outline.html" %}
+        {{ page.title }}
+    </section-title> 
+
+    <section-nav>
+        {% if page.extra.nav is defined %}
+
+        <a href="{{ page.extra.nav.url }}">
+            {% include "ionicons/arrow-undo-outline.html" %}
+             {{ page.extra.nav.title }}
+        </a>
+    
+        {% endif %}
+    </section-nav>
+
+    <section-content>
+
+        {{ page.content | safe }}
+
+
+    
+    </section-content>
+</section>
+
+{% endblock %}

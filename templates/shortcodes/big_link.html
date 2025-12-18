@@ -1,0 +1,18 @@
+<launch-button> 
+    
+    <a href="{{url}}" >
+        {% if icon is defined %}
+            {% if icon == "github" %}
+            {% include "ionicons/logo-github.html" %}
+            {% elif icon == "play" %}
+            {% include "ionicons/play-outline.html" %}
+            {% else %}
+            {% include "ionicons/link-outline.html" %}
+            {% endif %}
+        {% else %}
+            {% include "ionicons/link-outline.html" %}
+        {% endif %}
+
+        {{body}}
+    </a>
+</launch-button>

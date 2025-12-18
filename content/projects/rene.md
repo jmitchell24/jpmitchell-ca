@@ -1,11 +1,12 @@
 ---
 title: Rene
-date: 2024-03-10
-updated: 2024-08-05
+date: 2025-04-17
+updated: 2025-12-18
 extra: 
     type: "Command Line Program"
     platforms: ["Linux"]
     summary: "A powerful, minimalist file auto-namer."
+    screenshots: [ "/img/project-rene.png" ]
 ---
 
 ### Overview 
@@ -26,8 +27,10 @@ I used the [FTXUI](https://github.com/ArthurSonzogni/FTXUI) TUI library, but I a
 
 ### Screenshots 
 
-<img src="/img/project-rene.png"> 
+{{ screenshot_list() }}
 
 ### Links 
 
-[Repository on Github](https://github.com/jmitchell24/rene)
+{% big_link(url="https://github.com/jmitchell24/rene") %}
+Repository on Github
+{% end %}

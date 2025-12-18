@@ -1,7 +1,7 @@
 ---
 title: jpmitchell.ca
 date: 2025-03-01
-updated: 2025-12-11
+updated: 2025-12-18
 extra: 
     type: "Portfolio & Blog"
     platforms: ["World Wide Web"]
@@ -24,4 +24,6 @@ I make full use of core web technologies: HTML, CSS, and Javascript. I also use 
 
 ### Links
 
-[Repository on Github](https://github.com/jmitchell24/jpmitchell-ca)
+{% big_link(url="https://github.com/jmitchell24/jpmitchell-ca", icon="github") %}
+Repository on Github
+{% end %}

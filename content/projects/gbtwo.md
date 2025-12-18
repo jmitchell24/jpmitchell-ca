@@ -1,11 +1,12 @@
 ---
 title: GBTWO 
 date: 2025-08-09
-updated: 2025-11-02
+updated: 2025-12-18
 extra: 
     type: "Hardware Emulator"
     platforms: [ "Web", "Linux", "Windows" ]
     summary: "An emulator and hardware showcase of the original Nintendo handheld."
+    screenshots: [ "/img/project-gbtwo.png" ]
 ---
 
 ### Overview
@@ -26,8 +27,8 @@ I have no intention to release the source code, but I will always keep the web b
 
 ### Screenshots
 
-<img src="/img/project-gbtwo.png"> 
+{{ screenshot_list(cols=1, cols_mobile=1) }}
 
-{% launcher(url="/apps/gbtwo.html") %} 
+{% big_link(url="/apps/gbtwo.html", icon="play") %} 
 Launch GBTWO 
 {% end %}

@@ -1,0 +1,15 @@
+<screenshot-list 
+    {% if cols %}data-cols="{{cols}}"{% endif %}
+    {% if cols_mobile %}data-cols-mobile="{{cols_mobile}}"{% endif %}>
+    {% for img in page.extra.screenshots %}
+    <screenshot-item>
+        <a href="{{img}}" target="_blank">
+            <img src={{img}}></img>
+            <screenshot-caption>
+                {% include "ionicons/camera-outline.html" %}
+                Click to Open 
+            </screenshot-caption>
+        </a>
+    </screenshot-item>
+    {% endfor %}
+</screenshot-list>

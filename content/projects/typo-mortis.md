@@ -1,14 +1,13 @@
 ---
 title: Typo Mortis  
-date: 2024-09-15
-updated: 2024-11-20
+date: 2025-11-01
+updated: 2025-12-18
 extra: 
     type: "Video Game"
     platforms: [ "Web", "Linux", "Windows" ]
     summary: "A sinister little typing game."
+    screenshots: [ "/img/project-typo-mortis.png" ]
 ---
-
-
 
 ### Overview
 
@@ -19,12 +18,14 @@ Typo Mortis a sinister little typing game. The idea came to me a few days before
 
 I'm currently refactoring the spaghetti code I wrote to get the first version finished, and will begin expanding scope and features soon. 
 
-I'm writing in C++, with [Raylib](https://www.raylib.com/). I have no intention to release source code, but I am exploring options for publication / distribution. For now, I will be regularily posting updates here, on my site. You can try the latest build now by clicking the link below.
+I'm writing in C++, with [Raylib.](https://www.raylib.com/) I have no intention to release source code, but I am exploring options for publication / distribution. For now, I will be regularily posting updates here, on my site. You can try the latest build now by clicking the link below.
 
 ### Screenshots
 
-<img src="/img/project-typo-mortis.png"> 
+{{ screenshot_list(cols=1, cols_mobile=1) }}
 
-{% launcher(url="/apps/typo-mortis.html") %} 
+### Links 
+
+{% big_link(url="/apps/typo-mortis.html", icon="play") %} 
 Launch Typo Mortis 
 {% end %}

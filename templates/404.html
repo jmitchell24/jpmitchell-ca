@@ -11,18 +11,30 @@
     <section-content>
         
         
-        
-        {% include "404-snoopy.html" %}
+        <snoopy-svg>
+        {% include "imgs/snoopy.html" %}
+        </snoopy-svg>   
 
         <blockquote id="peanuts-quote">
-            Not all who wander are lost
-            <br>
-            - albert einstien 
         </blockquote>
 
         
     </section-content>
 </section> 
+
+<style>
+    snoopy-svg {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    snoopy-svg svg {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+</style>
 
 <script>
     const quoteArray = [ 
