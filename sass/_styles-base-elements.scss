@@ -255,30 +255,6 @@ details[open] > summary {
 /* #endregion Details */ 
 
 
-
-
-/* 
-
-Caption 
-
-*/ 
-
-/* h1 > summary,
-h2 > summary,
-h3 > summary,
-h4 > summary,
-h5 > summary,
-h6 > summary { 
-    display: inline-block;
-    text-align: right;
-    width: 100%;
-    color: #868686;
-    font-size: var(--text-small);
-} */
-
-
-
-
 @media (max-width: 768px) {
     
     body { 
@@ -618,8 +594,9 @@ Base Elements -> Horizontal Rules
 */
 
 hr {
-    height: .15rem;
-    background-color: var(--color-darker);
+    background-color: transparent;
+    color: transparent;
+    border-bottom: var(--border-size) dashed var(--color-gray);
 }
 
 /* 
@@ -703,25 +680,13 @@ Base Elements -> Footnotes
     font-size: 0.9rem;
 }
 
-/* 
+/*
 
-Base Elements -> Mobile Responsive Adjustments 
+Base Elements -> 
 
 */
 
-@media (max-width: 768px) {
-
-    
-
-    
-    // table {
-    //     font-size: 0.9rem;
-    // }
-    
-    // th,
-    // td {
-    //     padding: 0.5rem 0.75rem;
-    // }
+#continue-reading { 
+    display: none;
 }
-
 

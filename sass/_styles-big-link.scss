@@ -1,10 +1,6 @@
-form { 
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-}
 
-launch-button > a { 
+
+big-link > a { 
     background-color: var(--color-light);
     color: var(--color-darker);
     
@@ -24,18 +20,18 @@ launch-button > a {
     text-decoration: none;
 }
 
-launch-button .ionicon { 
+big-link .ionicon { 
     width:var(--text-h4) !important; 
     height: auto;
     vertical-align:text-bottom;
 }
 
-launch-button:hover .ionicon { 
+big-link:hover .ionicon { 
     color: var(--color-darker); 
 }
 
 @media (max-width: 768px) {
-    launch-button > a { 
+    big-link > a { 
         width: auto;
     }
 }

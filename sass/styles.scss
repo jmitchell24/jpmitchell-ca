@@ -8,19 +8,22 @@
 @use "_styles-aside";
 @use "_styles-header";
 @use "_styles-footer";
-@use "_styles-form";
-@use "_styles-zdog";
-@use "_styles-code";
-@use "_styles-extra";
-@use "_styles-screenshot-list"; 
 
-@use "_styles-page"; 
+@use "_styles-zdog";
+@use "_styles-extra";
+
+
+@use "_styles-big-link";
+
+
+@use "_styles-post"; 
 @use "_styles-section";
 
 @use "_styles-project-list";
 @use "_styles-post-list"; 
 @use "_styles-tinypost-list"; 
 @use "_styles-link-list"; 
+@use "_styles-screenshot-list"; 
 
 @use "_styles-code-highlight"; 
 

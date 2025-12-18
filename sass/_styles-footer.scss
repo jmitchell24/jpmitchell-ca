@@ -3,26 +3,11 @@
 footer { 
     display: flex;
     flex-direction: column;
-}
-
-footer-text { 
     font-size: var(--text-caption); 
     line-height: 1.1rem;
 }
 
-footer-flags { 
 
-}
-
-footer-flags a { 
-    background-color: transparent;
-    border-radius: var(--border-radius);
-    border: .15rem solid transparent;
-}
-
-footer-flags a:hover { 
-
-}
 
 
 

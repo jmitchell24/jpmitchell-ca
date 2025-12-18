@@ -7,10 +7,12 @@ date: 2025-11-28
 updated: 2025-11-28
 ---
 
-Something something LZON 
+Here's how I finally learned how utf-8 works. I'm choosing to ignore the fact that I've been programming for over 20 years and just now decided to actually read the [specification.](https://www.ietf.org/rfc/rfc3629.txt)
 
-```c++
-void printBanner(color const& c1, color const c2)
+The story begins with some code, as always. I was working on a new project and as I was wasting time printing the introductory text. I used ASCII art. I used escape sequence colors. I was having a lot of fun! 
+
+{% code() %} ```c++
+void printBanner(color const& c1, color const& c2)
 {
     cstrview banner = R"(
          # #### ####
@@ -34,7 +36,7 @@ void printBanner(color const& c1, color const c2)
     int maxx =0;
     int maxy =0;
 
-    for (auto&& it: banner.split("\n"))
+    for (auto&& it: bannerf.split("\n"))
     {
         auto line = it.splitUtf8();
         lines.push_back(line);
@@ -56,6 +58,12 @@ void printBanner(color const& c1, color const c2)
         cout << "\n";
     }
 }
+``` {% end %}
 
+So far so good. The code looked right. I smashed the build button. And then saw this. 
 
-```
+{% code() %} ```
+
+sad trombone... 
+
+``` {% end %}
