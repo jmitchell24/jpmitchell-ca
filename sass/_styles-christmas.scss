@@ -17,6 +17,7 @@ christmas-snowflake {
     pointer-events: none;
     animation: fall linear infinite;
     text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
+    opacity: 0.45;
 
     /* Add hardware acceleration */
     transform: translateZ(0);

@@ -42,6 +42,6 @@
     </aside-ul>
 
     <aside-subtitle>
-        {{ config.extra.tagline }}
+        <span title="Site Build Date: {{ now() | date(format="%B %d, %Y") }} ">{{ config.extra.tagline }}</span>
     </aside-subtitle>
 </aside>

@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 
 
-            const dur = Math.random() * 3 + 7; 
+            const dur = Math.random() * 22 + 7; 
 
             snowflake.innerHTML = '❄';
             snowflake.style.left = Math.random() * 100 + '%';
