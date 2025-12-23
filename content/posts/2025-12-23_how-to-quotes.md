@@ -42,7 +42,7 @@ const quoteArray = [
 ];
 
 const today = new Date();
-const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000)+3;
+const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
 const seed = dayOfYear * 9301 + 49297;
 const randomIndex = seed % quoteArray.length;
 const randomQuote = quoteArray[randomIndex];
