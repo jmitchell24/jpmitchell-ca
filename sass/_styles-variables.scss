@@ -7,10 +7,11 @@
 
 /* https://colorpicker.dev/#474134 */
 
-    --color-primary: #fac863; /* hsl(40 93.8% 68.4%) */ 
-    --color-primary-dark: hsl(40 73.8% 58%); /* hsl(40 73.8% 58%) */
-    --color-primary-darker: hsl(40 7.8% 26.7%); /* hsl(40 13% 25%) */ 
+    // --color-primary: #fac863; /* hsl(40 93.8% 68.4%) */ 
+    // --color-primary-dark: hsl(40 73.8% 58%); /* hsl(40 73.8% 58%) */
+    // --color-primary-darker: hsl(40 7.8% 26.7%); /* hsl(40 13% 25%) */ 
 
+    --color-primary-hue: 85;
 
     // --color-secondary: gray;
     // --color-success: lightgreen;
@@ -24,11 +25,11 @@
     // --color-light   : hsl(0   0%   91.4%);
     // --color-lighter : hsl(180 100% 99.8%);
 
-    --color-darker  : hsl(210 6% 15%);
-    --color-dark    : hsl(210 6% 30%);
-    --color-gray    : hsl(210 6% 45%);
-    --color-light   : hsl(210 6% 85%);
-    --color-lighter : hsl(210 6% 95%);
+    // --color-darker  : hsl(210 6% 15%);
+    // --color-dark    : hsl(210 6% 30%);
+    // --color-gray    : hsl(210 6% 45%);
+    // --color-light   : hsl(210 6% 85%);
+    // --color-lighter : hsl(210 6% 95%);
     
     /* #endregion Colors */
 
@@ -84,13 +85,38 @@
     --aside-width: 12rem;
 }
 
-[data-theme="alt0"] { --color-primary: #fa6363; }
-[data-theme="alt1"] { --color-primary: #fa63a8; }
-[data-theme="alt2"] { --color-primary: #c863fa; }
-[data-theme="alt3"] { --color-primary: #8363fa; }
-[data-theme="alt4"] { --color-primary: #63a8fa; }
-[data-theme="alt5"] { --color-primary: #63fac8; }
-[data-theme="alt6"] { --color-primary: #63fa83; }
-[data-theme="alt7"] { --color-primary: #83fa63; }
-[data-theme="alt8"] { --color-primary: #c8fa63; }
-[data-theme="alt9"] { --color-primary: #fac863; }
+// [data-theme="alt0"] { --color-primary: #fa6363; }
+// [data-theme="alt1"] { --color-primary: #fa63a8; }
+// [data-theme="alt2"] { --color-primary: #c863fa; }
+// [data-theme="alt3"] { --color-primary: #8363fa; }
+// [data-theme="alt4"] { --color-primary: #63a8fa; }
+// [data-theme="alt5"] { --color-primary: #63fac8; }
+// [data-theme="alt6"] { --color-primary: #63fa83; }
+// [data-theme="alt7"] { --color-primary: #83fa63; }
+// [data-theme="alt8"] { --color-primary: #c8fa63; }
+// [data-theme="alt9"] { --color-primary: #fac863; }
+
+
+[data-dark-mode="on"] { 
+    --color-primary-dark  : hsl(var(--color-primary-hue) 20%  25.0%);
+    --color-primary       : hsl(var(--color-primary-hue) 35%  45%  );
+    --color-primary-light : hsl(var(--color-primary-hue) 60%  65.0%);
+
+    --color-darker  : hsl(210 6% 15%);
+    --color-dark    : hsl(210 6% 30%);
+    --color-gray    : hsl(210 6% 45%);
+    --color-light   : hsl(210 6% 85%);
+    --color-lighter : hsl(210 6% 95%);
+}
+
+[data-dark-mode="off"] { 
+    --color-primary-dark  : hsl(var(--color-primary-hue) 60%  65.0%);
+    --color-primary       : hsl(var(--color-primary-hue) 45%  25%  );
+    --color-primary-light : hsl(var(--color-primary-hue) 20%  45.0%);
+
+    --color-darker  : hsl(210 6% 75%);
+    --color-dark    : hsl(210 6% 60%);
+    --color-gray    : hsl(210 6% 35%);
+    --color-light   : hsl(210 6% 25%);
+    --color-lighter : hsl(210 6% 10%);
+}
