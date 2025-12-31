@@ -1,0 +1,74 @@
+
+<x-settings-popup>
+    <x-segment>
+        <x-segment-title> Theme </x-segment-title>
+
+        <x-segment-nav>
+            <a href="javascript:history.back()">
+                {% include "ionicons/home-outline.html" %} 
+            </a>
+        </x-segment-nav>
+
+        <x-segment-content>
+
+            Base Theme 
+
+            <x-theme-list>
+                <x-theme-dark-item data-active="true">
+                    {% include "ionicons/home-outline.html" %}
+                </x-theme-dark-item>
+                <x-theme-light-item>
+                    {% include "ionicons/home-outline.html" %}
+                </x-theme-light-item>
+
+                
+            </x-theme-list>
+
+            Primary Color
+            {% set num_items = 36 %}
+            <x-theme-list>
+            {% for i in range(end=num_items) %}
+                {%- set hue = i * 360 / (num_items - 1) | round -%}
+                <x-theme-color-item data-hue="{{ hue }}" style="--hue:{{ hue }};">
+                    {% include "ionicons/home-outline.html" %}
+                </x-theme-color-item>
+            {% endfor %}
+            </x-theme-list>
+
+
+
+        </x-segment-content>
+    </x-segment>
+
+    <x-segment>
+        <x-segment-title>Build Details</x-segment-title>
+
+        <x-segment-content>
+            <code-wrapper>
+                <pre><code>
+Build Time: 
+{{ now() | date(format="%B %d, %Y at %I:%M %p") }}
+                </code></pre>
+
+                <code-footer>
+                    <code-footer-lang></code-footer-lang>
+                    {% include "ionicons/home-outline.html" %}
+                    <code-footer-chars></code-footer-chars>
+                    {% include "ionicons/home-outline.html" %}
+                    <code-footer-copy></code-footer-copy>
+                </code-footer>
+            </code-wrapper>
+
+            
+
+            
+
+            {{ config.extra.msg_sitedetails | markdown | safe }}
+        </x-segment-content>
+    </x-segment>
+
+</x-settings-popup>
+
+
+ 
+

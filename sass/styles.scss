@@ -17,7 +17,6 @@
 
 
 @use "_styles-post"; 
-@use "_styles-section";
 
 @use "_styles-project-list";
 @use "_styles-post-list"; 
@@ -28,6 +27,9 @@
 @use "_styles-code-highlight"; 
 
 @use "_styles-x-mas"; 
+@use "_styles-x-segment"; 
+@use "_styles-x-settings"; 
+@use "_styles-x-theme"; 
 
 /* #endregion Imports */ 
 
@@ -35,7 +37,11 @@
 /* #region Misc Styles */ 
 
 html {
-visibility: visible !important;
+    visibility: visible !important;
+}
+
+.animate-everything * { 
+    transition: all var(--transition-speed) ease;
 }
 
 /* #endregion Misc Styles */ 

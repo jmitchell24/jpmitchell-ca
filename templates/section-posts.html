@@ -2,22 +2,22 @@
 
 {% block content %}
 
-<section> 
-    <section-title> 
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/newspaper-outline.html" %}
         Posts 
-    </section-title>   
+    </x-segment-title>   
 
-    <section-nav>
+    <x-segment-nav>
         <a href="/">
             {% include "ionicons/arrow-undo-outline.html" %}
              Home
         </a>
-    </section-nav>
+    </x-segment-nav>
 
     {% set posts = get_section(path="posts/_index.md") %}
     
-    <section-content>
+    <x-segment-content>
         <tinypost-list>
             {% for it in posts.pages %}
             <tinypost-item data-internal-href="{{it.path}}">
@@ -40,8 +40,8 @@
             </tinypost-item>
             {% endfor %}
         </tinypost-list>
-    </section-content>
-</section>
+    </x-segment-content>
+</x-segment>
 
 
 <script>

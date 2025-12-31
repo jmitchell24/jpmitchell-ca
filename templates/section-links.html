@@ -4,22 +4,22 @@
 
 {% set links = get_section(path="links/_index.md") %}
 
-<section> 
-    <section-title> 
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/link-outline.html" %}
         Links
-    </section-title>   
+    </x-segment-title>   
 
-    <section-nav>
+    <x-segment-nav>
         <a href="/">
             {% include "ionicons/arrow-undo-outline.html" %}
              Home
         </a>
-    </section-nav>
+    </x-segment-nav>
 
     {% set links = load_data(path="links/links.toml") %}
 
-    <section-content>    
+    <x-segment-content>    
         Links to good content that I found on the internet. Snapshots of each page are available through the links on the right. 
 
         {% set links_by_cat = links.links | group_by(attribute="cat") %}
@@ -55,9 +55,9 @@
         {% endfor %}
 
 
-    </section-content>
+    </x-segment-content>
     
-</section>
+</x-segment>
 
 <script>
     document.querySelectorAll('*').forEach(item => {

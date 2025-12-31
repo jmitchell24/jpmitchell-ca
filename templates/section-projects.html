@@ -2,22 +2,22 @@
 
 {% block content %}
 
-<section> 
-    <section-title> 
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/cube-outline.html" %}
         Projects
-    </section-title>   
+    </x-segment-title>   
 
-    <section-nav>
+    <x-segment-nav>
         <a href="/">
             {% include "ionicons/arrow-undo-outline.html" %}
             Home
         </a>
-    </section-nav>
+    </x-segment-nav>
 
     {% set projects = get_section(path="projects/_index.md") %}
     
-    <section-content>
+    <x-segment-content>
         <project-list>
             {% for it in projects.pages %}
 
@@ -42,8 +42,8 @@
             
             {% endfor %}
         </project-list>
-    </section-content>
-</section>
+    </x-segment-content>
+</x-segment>
 
 <script>
     document.querySelectorAll('*').forEach(item => {

@@ -81,3 +81,9 @@ profiles = [
     { network="github", username="jmitchell24", url="https://github.com/jmitchell24" }, 
     { network="stackoverflow", username="james-mitchell", url="https://stackoverflow.com/users/1103084/james-mitchell" }, 
 ]
+
+
+
+msg_sitedetails = """
+Built from scratch with [Zola](https://getzola.org)
+"""

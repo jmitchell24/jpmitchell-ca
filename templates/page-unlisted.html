@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<section> 
-    <section-title> 
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/link-outline.html" %}
         {{ page.title }}
-    </section-title> 
+    </x-segment-title> 
 
-    <section-nav>
+    <x-segment-nav>
         {% if page.extra.nav is defined %}
 
         <a href="{{ page.extra.nav.url }}">
@@ -17,15 +17,15 @@
         </a>
     
         {% endif %}
-    </section-nav>
+    </x-segment-nav>
 
-    <section-content>
+    <x-segment-content>
 
         {{ page.content | safe }}
 
 
     
-    </section-content>
-</section>
+    </x-segment-content>
+</x-segment>
 
 {% endblock %}

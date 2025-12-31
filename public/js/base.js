@@ -156,49 +156,150 @@ function setTheme(theme) {
 }
 
 setTheme(current_theme);
-    
-/// Christmas Easter Egg 
+  
+//
+// Christmas Easter Egg 
+// 
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-    const isChristmas = new Date().getMonth() === 11; // December is month 11 (0-indexed)
+//     const isChristmas = new Date().getMonth() === 11; // December is month 11 (0-indexed)
 
-    console.log(isChristmas
-        ? "christmas detected :)"
-        : "christmas not detected :("
-    );
+//     console.log(isChristmas
+//         ? "christmas detected :)"
+//         : "christmas not detected :("
+//     );
 
-    if (isChristmas) { 
-        const body = document.querySelector("body")
+//     if (isChristmas) { 
+//         const body = document.querySelector("body")
 
-        const christmasContainer = document.createElement("x-mas-container"); 
-        body.appendChild(christmasContainer);
+//         const christmasContainer = document.createElement("x-mas-container"); 
+//         body.appendChild(christmasContainer);
 
-        function createSnowflake() {
-            const snowflake = document.createElement('x-mas-snowflake');
+//         function createSnowflake() {
+//             const snowflake = document.createElement('x-mas-snowflake');
 
                 
 
-            const dur = Math.random() * 22 + 7; 
+//             const dur = Math.random() * 22 + 7; 
 
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * 100 + '%';
-            snowflake.style.animationDuration = dur + 's';
-            snowflake.style.fontSize = Math.random() * 2 + 0.5 + 'em';
+//             snowflake.innerHTML = '❄';
+//             snowflake.style.left = Math.random() * 100 + '%';
+//             snowflake.style.animationDuration = dur + 's';
+//             snowflake.style.fontSize = Math.random() * 2 + 0.5 + 'em';
 
-            christmasContainer.appendChild(snowflake);
+//             christmasContainer.appendChild(snowflake);
 
-            setTimeout(() => {
-                snowflake.remove();
-            }, dur * 1000);
+//             setTimeout(() => {
+//                 snowflake.remove();
+//             }, dur * 1000);
+//         }
+
+//         // Create initial snowflakes
+//         for (let i = 0; i < 50; i++) {
+//             setTimeout(createSnowflake, i * 100);
+//         }
+
+//         // Continuously create new snowflakes
+//         setInterval(createSnowflake, 200);
+//     } 
+// });
+
+
+
+
+
+
+
+
+//
+// Settings Popup
+//
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const settingsOverlay = document.querySelector("x-settings-overlay"); 
+    settingsOverlay.addEventListener("click", (e) => { 
+        if (e.target === settingsOverlay) { 
+            history.back(); 
+            console.log("overlay click"); 
         }
-
-        // Create initial snowflakes
-        for (let i = 0; i < 50; i++) {
-            setTimeout(createSnowflake, i * 100);
-        }
-
-        // Continuously create new snowflakes
-        setInterval(createSnowflake, 200);
-    } 
+    });
+    
 });
+
+//
+// Theme List 
+//
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    let pageHueIndex = parseInt(localStorage.getItem("theme-hue-index") ?? "0"); 
+    let pageThemeMode = localStorage.getItem("theme-mode") ?? "dark";
+
+    const themeItemsColor = document.querySelectorAll('x-theme-color-item');
+    const themeItemDark = document.querySelector("x-theme-dark-item"); 
+    const themeItemLight = document.querySelector("x-theme-light-item"); 
+
+    function updatePageHueIndex(idx) { 
+        pageHueIndex = idx; 
+        localStorage.setItem("theme-hue-index", idx); 
+        document.documentElement.style.setProperty("--color-primary-hue", 
+            themeItemsColor[pageHueIndex].getAttribute("data-hue")
+        );
+    }
+
+    function updatePageThemeMode(mode, animate) { 
+        pageThemeMode = mode; 
+        localStorage.setItem("theme-mode", mode); 
+
+        if (animate) {
+            document.body.classList.add("animate-everything"); 
+        }
+            
+
+        if (mode == "dark") document.body.setAttribute("data-dark-mode", "on"); 
+        if (mode == "light") document.body.setAttribute("data-dark-mode", "off"); 
+
+        if (animate) { 
+            setTimeout(() => {
+                document.body.classList.remove("animate-everything"); 
+            }, 500);
+        }
+        
+    }
+
+    function updateThemeItems() { 
+        themeItemsColor.forEach((it, idx) => {
+            it.setAttribute("data-active", idx == pageHueIndex ? "true" : "false"); 
+        });
+    }
+
+    function updateThemeMode() { 
+        themeItemDark.setAttribute("data-active", pageThemeMode == "dark" ? "true" : "false"); 
+        themeItemLight.setAttribute("data-active", pageThemeMode == "light" ? "true" : "false"); 
+    }
+
+    themeItemsColor.forEach((it, idx) => { 
+        it.addEventListener("click", (e) => { 
+            updatePageHueIndex(idx);      
+            updateThemeItems(); 
+        });
+    });
+
+    themeItemLight.addEventListener("click", (e) => {
+        updatePageThemeMode("light", true); 
+        updateThemeMode();
+    });
+
+    themeItemDark.addEventListener("click", (e) => { 
+        updatePageThemeMode("dark", true); 
+        updateThemeMode(); 
+    });
+
+    updateThemeItems();
+    updatePageThemeMode(pageThemeMode, false); 
+
+    updateThemeMode(); 
+    updatePageHueIndex(pageHueIndex);
+}); 

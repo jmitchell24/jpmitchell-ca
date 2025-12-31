@@ -4,37 +4,38 @@
 {% block content %}
 
 
-
-<section> 
-    <section-title> 
+<!-- Welcome -->
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/hand-left-outline.html" %}
         Welcome 
-    </section-title>   
+    </x-segment-title>   
 
-    <section-content>
+    <x-segment-content>
         <p> Welcome to my website. This is where I post my recent work, my writing, and also links to good content that I've found on the internet. </p>       
         <p> Are you hiring? If so, feel free to check out my <a href="/resume/2025-12-09_resume.pdf">Resume</a> and send me an <a href="mailto:{{config.extra.email}}"> Email </a> </p>
         <p> I am currently accepting offers. </p>
-    </section-content>
+    </x-segment-content>
     
-</section>
+</x-segment>
 
-<section>
-    <section-title>
+<!-- Projects -->
+<x-segment>
+    <x-segment-title>
         {% include "ionicons/cube-outline.html" %}
         Projects
-    </section-title>
+    </x-segment-title>
 
-    <section-nav>
+    <x-segment-nav>
         <a href="/projects">
              {% include "ionicons/arrow-redo-outline.html" %} 
             All Projects 
         </a>
-    </section-nav>
+    </x-segment-nav>
 
     {% set projects = get_section(path="projects/_index.md") %}
 
-    <section-content>
+    <x-segment-content>
         What I'm working on.  
 
         <project-list>
@@ -59,26 +60,27 @@
             </project-item>
         {% endfor %}
         </project-list>
-    </section-content>
-</section> 
+    </x-segment-content>
+</x-segment> 
 
-<section> 
-    <section-title> 
+<!-- Posts -->
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/newspaper-outline.html" %}
         Posts 
-    </section-title>  
+    </x-segment-title>  
     
-    <section-nav>
+    <x-segment-nav>
         <a href="/posts">
              {% include "ionicons/arrow-redo-outline.html" %} 
              All Posts 
         </a>
-    </section-nav>
+    </x-segment-nav>
 
     {% set posts = get_section(path="posts/_index.md") %}
     {% set posts_sorted = posts.pages | sort(attribute="date") | reverse | slice(end=3) %}
 
-    <section-content>
+    <x-segment-content>
         Guides, articles, and blog entries.
 
         <tinypost-list>
@@ -103,27 +105,28 @@
             </tinypost-item>
             {% endfor %}
         </tinypost-list>
-    </section-content>
-</section>
+    </x-segment-content>
+</x-segment>
 
-<section> 
-    <section-title> 
+<!-- Links -->
+<x-segment> 
+    <x-segment-title> 
         {% include "ionicons/link-outline.html" %}
         Links
-    </section-title>  
+    </x-segment-title>  
 
-    <section-nav>
+    <x-segment-nav>
         <a href="/links">
              {% include "ionicons/arrow-redo-outline.html" %} 
              All Links 
         </a>
-    </section-nav>
+    </x-segment-nav>
     
     {% set links = load_data(path="links/links.toml") %}
     {% set links_sorted = links.links | sort(attribute="date") | reverse | slice(end=3) %}
 
 
-    <section-content>
+    <x-segment-content>
         Pages that are worth reading. Snapshots are on the right.
         
 
@@ -153,18 +156,9 @@
         </link-list>
 
 
-    </section-content>
-</section> 
+    </x-segment-content>
+</x-segment> 
 
-<!-- <section> 
-    <section-title> 
-        {% include "ionicons/cash-outline.html" %}
-        Support 
-    </section-title>  
 
-    <section-content>
-        Do you like this site? Consider supporting it with a donation. 
-    </section-content>
-</section>  -->
 
 {% endblock content %}
