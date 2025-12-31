@@ -5,51 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title> James Peter Mitchell | {{config.extra.tagline}} </title>
+    <title> {{ page.title | default(value=config.title) }} </title>
     
-    <link rel="preload" href="/fonts/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/fonts/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
-
-    <link rel="stylesheet" type="text/css" href="/styles.css"/>
-    
+    <!-- #region Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <!-- #endregion Favicon -->
 
-    <!-- Matomo -->
-    <script>
-        var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//matomo.delm.win/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '1']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <!-- End Matomo Code -->
+    <!-- #region Fonts -->
+    <link rel="preload" href="/fonts/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <!-- #endregion Fonts -->
 
-    <!-- External Links Fix -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Get all links
-    const links = document.querySelectorAll('a');
+    <!-- #region Stylesheets -->
+    <link rel="preload" href="/styles.css" as="style" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/styles.css"/>
+    <!-- #endregion Stylesheets -->
 
-    links.forEach(link => {
-            // Check if link is external
-            if (link.hostname && link.hostname !== window.location.hostname) {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
-            }
-        });
-    });
-    </script>
-    <!-- End External Links Fix -->
+    <!-- FOUC FIX -->
+    <style> html { visibility: hidden ;  } </style>
+
 </head>
 <body>
     {% include "base-header.html"  %}

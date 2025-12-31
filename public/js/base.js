@@ -1,7 +1,42 @@
 
 
+//
+// Matomo 
+// 
+    
+var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var u="//matomo.delm.win/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+    
 
-/// Link Fixes 
+// 
+// External Link Fix 
+// 
+    
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all links
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+        // Check if link is external
+        if (link.hostname && link.hostname !== window.location.hostname) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+});
+    
+// 
+// More Link Fixes 
+// 
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-external-href]').forEach(item => {
@@ -44,8 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/// Copy Buttons
-
+// 
+// Copy Buttons
+// 
     
 function addCopyButton2(el) { 
     const pre = el.querySelector("pre"); 
@@ -96,8 +132,9 @@ if (document.readyState === 'loading') {
     addCopyButtons();
 }
 
-/// Theme Controls 
-
+// 
+// Theme Controls 
+// 
     
 const THEME_KEY = "selected-theme"; 
 
@@ -134,11 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isChristmas) { 
         const body = document.querySelector("body")
 
-        const christmasContainer = document.createElement("christmas-container"); 
+        const christmasContainer = document.createElement("x-mas-container"); 
         body.appendChild(christmasContainer);
 
         function createSnowflake() {
-            const snowflake = document.createElement('christmas-snowflake');
+            const snowflake = document.createElement('x-mas-snowflake');
 
                 
 
@@ -163,8 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Continuously create new snowflakes
         setInterval(createSnowflake, 200);
-    }
-
-
-    
+    } 
 });

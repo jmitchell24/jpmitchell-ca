@@ -8,9 +8,21 @@ extra:
     
 --- 
 
-<p align="center">
-  <img src="/img/project-jot.png" />
-</p>
+{% center_stuff() %}
+![Logo](/img/project-jot.png)
+
+
+
+![Last Commit](https://img.shields.io/github/last-commit/jmitchell24/jot)
+![Build Status](https://github.com/jmitchell24/jot/actions/workflows/ci.yml/badge.svg)
+![Repo Size](https://img.shields.io/github/repo-size/jmitchell24/jot)
+![Issues](https://img.shields.io/github/issues/jmitchell24/jot)
+![Stars](https://img.shields.io/github/stars/jmitchell24/jot)
+{% end %}
+
+
+
+
 
 ### Overview 
 
@@ -24,7 +36,7 @@ Other than learning a little about how `/dev/uinput` works, this program is a re
 
 - Continuous Integration through Github Actions
 - Automated Release Builds 
-- Githbub Badges, and an otherwise comprehensive README.md
+- Github Badges, and an otherwise comprehensive README.md
 
 ### Links 
 
